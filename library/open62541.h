@@ -1,6 +1,6 @@
 /* THIS IS A SINGLE-FILE DISTRIBUTION CONCATENATED FROM THE OPEN62541 SOURCES
  * visit http://open62541.org/ for information about this software
- * Git-Revision: v1.2.2-1-gf8b18036
+ * Git-Revision: v1.2.2-freertos-1-gd9ba6525
  */
 
 /*
@@ -31,8 +31,8 @@
 #define UA_OPEN62541_VER_MAJOR 1
 #define UA_OPEN62541_VER_MINOR 2
 #define UA_OPEN62541_VER_PATCH 2
-#define UA_OPEN62541_VER_LABEL "-1-gf8b18036" /* Release candidate label, etc. */
-#define UA_OPEN62541_VER_COMMIT "v1.2.2-1-gf8b18036"
+#define UA_OPEN62541_VER_LABEL "-freertos-1-gd9ba6525" /* Release candidate label, etc. */
+#define UA_OPEN62541_VER_COMMIT "v1.2.2-freertos-1-gd9ba6525"
 
 /**
  * Feature Options
@@ -46,13 +46,13 @@
 #define UA_ENABLE_METHODCALLS
 #define UA_ENABLE_NODEMANAGEMENT
 #define UA_ENABLE_SUBSCRIPTIONS
-#define UA_ENABLE_PUBSUB
+/* #undef UA_ENABLE_PUBSUB */
 /* #undef UA_ENABLE_PUBSUB_FILE_CONFIG */
-#define UA_ENABLE_PUBSUB_ETH_UADP
+/* #undef UA_ENABLE_PUBSUB_ETH_UADP */
 /* #undef UA_ENABLE_PUBSUB_ETH_UADP_ETF */
 /* #undef UA_ENABLE_PUBSUB_ETH_UADP_XDP */
-#define UA_ENABLE_PUBSUB_DELTAFRAMES
-#define UA_ENABLE_PUBSUB_INFORMATIONMODEL
+/* #undef UA_ENABLE_PUBSUB_DELTAFRAMES */
+/* #undef UA_ENABLE_PUBSUB_INFORMATIONMODEL */
 /* #undef UA_ENABLE_PUBSUB_INFORMATIONMODEL_METHODS */
 #define UA_ENABLE_DA
 /* #undef UA_ENABLE_ENCRYPTION */
@@ -62,7 +62,7 @@
 /* #undef UA_ENABLE_EXPERIMENTAL_HISTORIZING */
 /* #undef UA_ENABLE_SUBSCRIPTIONS_EVENTS */
 /* #undef UA_ENABLE_JSON_ENCODING */
-#define UA_ENABLE_PUBSUB_MQTT
+/* #undef UA_ENABLE_PUBSUB_MQTT */
 /* #undef UA_ENABLE_ENCRYPTION_MBEDTLS */
 /* #undef UA_ENABLE_ENCRYPTION_OPENSSL */
 /* #undef UA_ENABLE_SUBSCRIPTIONS_ALARMS_CONDITIONS */
@@ -76,7 +76,7 @@
 #define UA_ENABLE_TYPEDESCRIPTION
 #define UA_ENABLE_NODESET_COMPILER_DESCRIPTIONS
 /* #undef UA_ENABLE_DETERMINISTIC_RNG */
-#define UA_ENABLE_DISCOVERY
+/* #undef UA_ENABLE_DISCOVERY */
 /* #undef UA_ENABLE_DISCOVERY_MULTICAST */
 /* #undef UA_ENABLE_WEBSOCKET_SERVER */
 /* #undef UA_ENABLE_QUERY */
@@ -13891,7 +13891,7 @@ _UA_END_DECLS
 
 /*********************************** amalgamated original file "/home/sk/git/development/products/common/firmware/open62541/library/src_generated/open62541/types_generated.h" ***********************************/
 
-/* Generated from Opc.Ua.Types.bsd with script /home/sk/git/development/products/common/firmware/open62541/tools/generate_datatypes.py * on host pc-49a83f by user sk at 2021-09-10 11:37:26 */
+/* Generated from Opc.Ua.Types.bsd with script /home/sk/git/development/products/common/firmware/open62541/tools/generate_datatypes.py * on host pc-49a83f by user sk at 2021-09-10 12:17:57 */
 
 
 #ifdef UA_ENABLE_AMALGAMATION
@@ -13906,7 +13906,7 @@ _UA_BEGIN_DECLS
  * Every type is assigned an index in an array containing the type descriptions.
  * These descriptions are used during type handling (copying, deletion,
  * binary encoding, ...). */
-#define UA_TYPES_COUNT 246
+#define UA_TYPES_COUNT 190
 extern UA_EXPORT const UA_DataType UA_TYPES[UA_TYPES_COUNT];
 
 /**
@@ -14076,27 +14076,6 @@ typedef struct {
 #define UA_TYPES_VIEWATTRIBUTES 25
 
 /**
- * UadpNetworkMessageContentMask
- * ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
- */
-typedef UA_UInt32 UA_UadpNetworkMessageContentMask;
-
-#define UA_UADPNETWORKMESSAGECONTENTMASK_NONE 0
-#define UA_UADPNETWORKMESSAGECONTENTMASK_PUBLISHERID 1
-#define UA_UADPNETWORKMESSAGECONTENTMASK_GROUPHEADER 2
-#define UA_UADPNETWORKMESSAGECONTENTMASK_WRITERGROUPID 4
-#define UA_UADPNETWORKMESSAGECONTENTMASK_GROUPVERSION 8
-#define UA_UADPNETWORKMESSAGECONTENTMASK_NETWORKMESSAGENUMBER 16
-#define UA_UADPNETWORKMESSAGECONTENTMASK_SEQUENCENUMBER 32
-#define UA_UADPNETWORKMESSAGECONTENTMASK_PAYLOADHEADER 64
-#define UA_UADPNETWORKMESSAGECONTENTMASK_TIMESTAMP 128
-#define UA_UADPNETWORKMESSAGECONTENTMASK_PICOSECONDS 256
-#define UA_UADPNETWORKMESSAGECONTENTMASK_DATASETCLASSID 512
-#define UA_UADPNETWORKMESSAGECONTENTMASK_PROMOTEDFIELDS 1024
-
-#define UA_TYPES_UADPNETWORKMESSAGECONTENTMASK 26
-
-/**
  * XVType
  * ^^^^^^
  */
@@ -14105,7 +14084,7 @@ typedef struct {
     UA_Float value;
 } UA_XVType;
 
-#define UA_TYPES_XVTYPE 27
+#define UA_TYPES_XVTYPE 26
 
 /**
  * ElementOperand
@@ -14115,7 +14094,7 @@ typedef struct {
     UA_UInt32 index;
 } UA_ElementOperand;
 
-#define UA_TYPES_ELEMENTOPERAND 28
+#define UA_TYPES_ELEMENTOPERAND 27
 
 /**
  * VariableAttributes
@@ -14138,7 +14117,7 @@ typedef struct {
     UA_Boolean historizing;
 } UA_VariableAttributes;
 
-#define UA_TYPES_VARIABLEATTRIBUTES 29
+#define UA_TYPES_VARIABLEATTRIBUTES 28
 
 /**
  * EnumValueType
@@ -14150,18 +14129,7 @@ typedef struct {
     UA_LocalizedText description;
 } UA_EnumValueType;
 
-#define UA_TYPES_ENUMVALUETYPE 30
-
-/**
- * BrokerConnectionTransportDataType
- * ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
- */
-typedef struct {
-    UA_String resourceUri;
-    UA_String authenticationProfileUri;
-} UA_BrokerConnectionTransportDataType;
-
-#define UA_TYPES_BROKERCONNECTIONTRANSPORTDATATYPE 31
+#define UA_TYPES_ENUMVALUETYPE 29
 
 /**
  * EventFieldList
@@ -14173,7 +14141,7 @@ typedef struct {
     UA_Variant *eventFields;
 } UA_EventFieldList;
 
-#define UA_TYPES_EVENTFIELDLIST 32
+#define UA_TYPES_EVENTFIELDLIST 30
 
 /**
  * MonitoredItemCreateResult
@@ -14187,7 +14155,7 @@ typedef struct {
     UA_ExtensionObject filterResult;
 } UA_MonitoredItemCreateResult;
 
-#define UA_TYPES_MONITOREDITEMCREATERESULT 33
+#define UA_TYPES_MONITOREDITEMCREATERESULT 31
 
 /**
  * EUInformation
@@ -14200,7 +14168,7 @@ typedef struct {
     UA_LocalizedText description;
 } UA_EUInformation;
 
-#define UA_TYPES_EUINFORMATION 34
+#define UA_TYPES_EUINFORMATION 32
 
 /**
  * ServerDiagnosticsSummaryDataType
@@ -14221,7 +14189,7 @@ typedef struct {
     UA_UInt32 rejectedRequestsCount;
 } UA_ServerDiagnosticsSummaryDataType;
 
-#define UA_TYPES_SERVERDIAGNOSTICSSUMMARYDATATYPE 35
+#define UA_TYPES_SERVERDIAGNOSTICSSUMMARYDATATYPE 33
 
 /**
  * ContentFilterElementResult
@@ -14235,7 +14203,7 @@ typedef struct {
     UA_DiagnosticInfo *operandDiagnosticInfos;
 } UA_ContentFilterElementResult;
 
-#define UA_TYPES_CONTENTFILTERELEMENTRESULT 36
+#define UA_TYPES_CONTENTFILTERELEMENTRESULT 34
 
 /**
  * LiteralOperand
@@ -14245,23 +14213,7 @@ typedef struct {
     UA_Variant value;
 } UA_LiteralOperand;
 
-#define UA_TYPES_LITERALOPERAND 37
-
-/**
- * UadpDataSetMessageContentMask
- * ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
- */
-typedef UA_UInt32 UA_UadpDataSetMessageContentMask;
-
-#define UA_UADPDATASETMESSAGECONTENTMASK_NONE 0
-#define UA_UADPDATASETMESSAGECONTENTMASK_TIMESTAMP 1
-#define UA_UADPDATASETMESSAGECONTENTMASK_PICOSECONDS 2
-#define UA_UADPDATASETMESSAGECONTENTMASK_STATUS 4
-#define UA_UADPDATASETMESSAGECONTENTMASK_MAJORVERSION 8
-#define UA_UADPDATASETMESSAGECONTENTMASK_MINORVERSION 16
-#define UA_UADPDATASETMESSAGECONTENTMASK_SEQUENCENUMBER 32
-
-#define UA_TYPES_UADPDATASETMESSAGECONTENTMASK 38
+#define UA_TYPES_LITERALOPERAND 35
 
 /**
  * MessageSecurityMode
@@ -14276,7 +14228,7 @@ typedef enum {
 } UA_MessageSecurityMode;
 UA_STATIC_ASSERT(sizeof(UA_MessageSecurityMode) == sizeof(UA_Int32), enum_must_be_32bit);
 
-#define UA_TYPES_MESSAGESECURITYMODE 39
+#define UA_TYPES_MESSAGESECURITYMODE 36
 
 /**
  * UtcTime
@@ -14284,7 +14236,7 @@ UA_STATIC_ASSERT(sizeof(UA_MessageSecurityMode) == sizeof(UA_Int32), enum_must_b
  * A date/time value specified in Universal Coordinated Time (UTC). */
 typedef UA_DateTime UA_UtcTime;
 
-#define UA_TYPES_UTCTIME 40
+#define UA_TYPES_UTCTIME 37
 
 /**
  * UserIdentityToken
@@ -14294,7 +14246,7 @@ typedef struct {
     UA_String policyId;
 } UA_UserIdentityToken;
 
-#define UA_TYPES_USERIDENTITYTOKEN 41
+#define UA_TYPES_USERIDENTITYTOKEN 38
 
 /**
  * X509IdentityToken
@@ -14305,7 +14257,7 @@ typedef struct {
     UA_ByteString certificateData;
 } UA_X509IdentityToken;
 
-#define UA_TYPES_X509IDENTITYTOKEN 42
+#define UA_TYPES_X509IDENTITYTOKEN 39
 
 /**
  * MonitoredItemNotification
@@ -14316,7 +14268,7 @@ typedef struct {
     UA_DataValue value;
 } UA_MonitoredItemNotification;
 
-#define UA_TYPES_MONITOREDITEMNOTIFICATION 43
+#define UA_TYPES_MONITOREDITEMNOTIFICATION 40
 
 /**
  * StructureType
@@ -14330,7 +14282,7 @@ typedef enum {
 } UA_StructureType;
 UA_STATIC_ASSERT(sizeof(UA_StructureType) == sizeof(UA_Int32), enum_must_be_32bit);
 
-#define UA_TYPES_STRUCTURETYPE 44
+#define UA_TYPES_STRUCTURETYPE 41
 
 /**
  * ResponseHeader
@@ -14346,7 +14298,7 @@ typedef struct {
     UA_ExtensionObject additionalHeader;
 } UA_ResponseHeader;
 
-#define UA_TYPES_RESPONSEHEADER 45
+#define UA_TYPES_RESPONSEHEADER 42
 
 /**
  * SignatureData
@@ -14357,18 +14309,7 @@ typedef struct {
     UA_ByteString signature;
 } UA_SignatureData;
 
-#define UA_TYPES_SIGNATUREDATA 46
-
-/**
- * NetworkAddressUrlDataType
- * ^^^^^^^^^^^^^^^^^^^^^^^^^
- */
-typedef struct {
-    UA_String networkInterface;
-    UA_String url;
-} UA_NetworkAddressUrlDataType;
-
-#define UA_TYPES_NETWORKADDRESSURLDATATYPE 47
+#define UA_TYPES_SIGNATUREDATA 43
 
 /**
  * ModifySubscriptionResponse
@@ -14381,7 +14322,7 @@ typedef struct {
     UA_UInt32 revisedMaxKeepAliveCount;
 } UA_ModifySubscriptionResponse;
 
-#define UA_TYPES_MODIFYSUBSCRIPTIONRESPONSE 48
+#define UA_TYPES_MODIFYSUBSCRIPTIONRESPONSE 44
 
 /**
  * NodeAttributes
@@ -14395,7 +14336,7 @@ typedef struct {
     UA_UInt32 userWriteMask;
 } UA_NodeAttributes;
 
-#define UA_TYPES_NODEATTRIBUTES 49
+#define UA_TYPES_NODEATTRIBUTES 45
 
 /**
  * ActivateSessionResponse
@@ -14410,7 +14351,7 @@ typedef struct {
     UA_DiagnosticInfo *diagnosticInfos;
 } UA_ActivateSessionResponse;
 
-#define UA_TYPES_ACTIVATESESSIONRESPONSE 50
+#define UA_TYPES_ACTIVATESESSIONRESPONSE 46
 
 /**
  * EnumField
@@ -14423,7 +14364,7 @@ typedef struct {
     UA_String name;
 } UA_EnumField;
 
-#define UA_TYPES_ENUMFIELD 51
+#define UA_TYPES_ENUMFIELD 47
 
 /**
  * VariableTypeAttributes
@@ -14443,7 +14384,7 @@ typedef struct {
     UA_Boolean isAbstract;
 } UA_VariableTypeAttributes;
 
-#define UA_TYPES_VARIABLETYPEATTRIBUTES 52
+#define UA_TYPES_VARIABLETYPEATTRIBUTES 48
 
 /**
  * CallMethodResult
@@ -14459,7 +14400,7 @@ typedef struct {
     UA_Variant *outputArguments;
 } UA_CallMethodResult;
 
-#define UA_TYPES_CALLMETHODRESULT 53
+#define UA_TYPES_CALLMETHODRESULT 49
 
 /**
  * MonitoringMode
@@ -14473,7 +14414,7 @@ typedef enum {
 } UA_MonitoringMode;
 UA_STATIC_ASSERT(sizeof(UA_MonitoringMode) == sizeof(UA_Int32), enum_must_be_32bit);
 
-#define UA_TYPES_MONITORINGMODE 54
+#define UA_TYPES_MONITORINGMODE 50
 
 /**
  * SetMonitoringModeResponse
@@ -14487,7 +14428,7 @@ typedef struct {
     UA_DiagnosticInfo *diagnosticInfos;
 } UA_SetMonitoringModeResponse;
 
-#define UA_TYPES_SETMONITORINGMODERESPONSE 55
+#define UA_TYPES_SETMONITORINGMODERESPONSE 51
 
 /**
  * BrowseResultMask
@@ -14508,7 +14449,7 @@ typedef enum {
 } UA_BrowseResultMask;
 UA_STATIC_ASSERT(sizeof(UA_BrowseResultMask) == sizeof(UA_Int32), enum_must_be_32bit);
 
-#define UA_TYPES_BROWSERESULTMASK 56
+#define UA_TYPES_BROWSERESULTMASK 52
 
 /**
  * RequestHeader
@@ -14524,7 +14465,7 @@ typedef struct {
     UA_ExtensionObject additionalHeader;
 } UA_RequestHeader;
 
-#define UA_TYPES_REQUESTHEADER 57
+#define UA_TYPES_REQUESTHEADER 53
 
 /**
  * MonitoredItemModifyResult
@@ -14537,7 +14478,7 @@ typedef struct {
     UA_ExtensionObject filterResult;
 } UA_MonitoredItemModifyResult;
 
-#define UA_TYPES_MONITOREDITEMMODIFYRESULT 58
+#define UA_TYPES_MONITOREDITEMMODIFYRESULT 54
 
 /**
  * CloseSecureChannelRequest
@@ -14547,7 +14488,7 @@ typedef struct {
     UA_RequestHeader requestHeader;
 } UA_CloseSecureChannelRequest;
 
-#define UA_TYPES_CLOSESECURECHANNELREQUEST 59
+#define UA_TYPES_CLOSESECURECHANNELREQUEST 55
 
 /**
  * NotificationMessage
@@ -14560,7 +14501,7 @@ typedef struct {
     UA_ExtensionObject *notificationData;
 } UA_NotificationMessage;
 
-#define UA_TYPES_NOTIFICATIONMESSAGE 60
+#define UA_TYPES_NOTIFICATIONMESSAGE 56
 
 /**
  * CreateSubscriptionResponse
@@ -14574,23 +14515,7 @@ typedef struct {
     UA_UInt32 revisedMaxKeepAliveCount;
 } UA_CreateSubscriptionResponse;
 
-#define UA_TYPES_CREATESUBSCRIPTIONRESPONSE 61
-
-/**
- * BrokerTransportQualityOfService
- * ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
- */
-typedef enum {
-    UA_BROKERTRANSPORTQUALITYOFSERVICE_NOTSPECIFIED = 0,
-    UA_BROKERTRANSPORTQUALITYOFSERVICE_BESTEFFORT = 1,
-    UA_BROKERTRANSPORTQUALITYOFSERVICE_ATLEASTONCE = 2,
-    UA_BROKERTRANSPORTQUALITYOFSERVICE_ATMOSTONCE = 3,
-    UA_BROKERTRANSPORTQUALITYOFSERVICE_EXACTLYONCE = 4,
-    __UA_BROKERTRANSPORTQUALITYOFSERVICE_FORCE32BIT = 0x7fffffff
-} UA_BrokerTransportQualityOfService;
-UA_STATIC_ASSERT(sizeof(UA_BrokerTransportQualityOfService) == sizeof(UA_Int32), enum_must_be_32bit);
-
-#define UA_TYPES_BROKERTRANSPORTQUALITYOFSERVICE 62
+#define UA_TYPES_CREATESUBSCRIPTIONRESPONSE 57
 
 /**
  * EnumDefinition
@@ -14601,19 +14526,7 @@ typedef struct {
     UA_EnumField *fields;
 } UA_EnumDefinition;
 
-#define UA_TYPES_ENUMDEFINITION 63
-
-/**
- * MdnsDiscoveryConfiguration
- * ^^^^^^^^^^^^^^^^^^^^^^^^^^
- * The discovery information needed for mDNS registration. */
-typedef struct {
-    UA_String mdnsServerName;
-    size_t serverCapabilitiesSize;
-    UA_String *serverCapabilities;
-} UA_MdnsDiscoveryConfiguration;
-
-#define UA_TYPES_MDNSDISCOVERYCONFIGURATION 64
+#define UA_TYPES_ENUMDEFINITION 58
 
 /**
  * AxisScaleEnumeration
@@ -14627,7 +14540,7 @@ typedef enum {
 } UA_AxisScaleEnumeration;
 UA_STATIC_ASSERT(sizeof(UA_AxisScaleEnumeration) == sizeof(UA_Int32), enum_must_be_32bit);
 
-#define UA_TYPES_AXISSCALEENUMERATION 65
+#define UA_TYPES_AXISSCALEENUMERATION 59
 
 /**
  * BrowseDirection
@@ -14642,7 +14555,7 @@ typedef enum {
 } UA_BrowseDirection;
 UA_STATIC_ASSERT(sizeof(UA_BrowseDirection) == sizeof(UA_Int32), enum_must_be_32bit);
 
-#define UA_TYPES_BROWSEDIRECTION 66
+#define UA_TYPES_BROWSEDIRECTION 60
 
 /**
  * CallMethodRequest
@@ -14655,7 +14568,7 @@ typedef struct {
     UA_Variant *inputArguments;
 } UA_CallMethodRequest;
 
-#define UA_TYPES_CALLMETHODREQUEST 67
+#define UA_TYPES_CALLMETHODREQUEST 61
 
 /**
  * ReadResponse
@@ -14669,34 +14582,7 @@ typedef struct {
     UA_DiagnosticInfo *diagnosticInfos;
 } UA_ReadResponse;
 
-#define UA_TYPES_READRESPONSE 68
-
-/**
- * PermissionType
- * ^^^^^^^^^^^^^^
- */
-typedef UA_UInt32 UA_PermissionType;
-
-#define UA_PERMISSIONTYPE_NONE 0
-#define UA_PERMISSIONTYPE_BROWSE 1
-#define UA_PERMISSIONTYPE_READROLEPERMISSIONS 2
-#define UA_PERMISSIONTYPE_WRITEATTRIBUTE 4
-#define UA_PERMISSIONTYPE_WRITEROLEPERMISSIONS 8
-#define UA_PERMISSIONTYPE_WRITEHISTORIZING 16
-#define UA_PERMISSIONTYPE_READ 32
-#define UA_PERMISSIONTYPE_WRITE 64
-#define UA_PERMISSIONTYPE_READHISTORY 128
-#define UA_PERMISSIONTYPE_INSERTHISTORY 256
-#define UA_PERMISSIONTYPE_MODIFYHISTORY 512
-#define UA_PERMISSIONTYPE_DELETEHISTORY 1024
-#define UA_PERMISSIONTYPE_RECEIVEEVENTS 2048
-#define UA_PERMISSIONTYPE_CALL 4096
-#define UA_PERMISSIONTYPE_ADDREFERENCE 8192
-#define UA_PERMISSIONTYPE_REMOVEREFERENCE 16384
-#define UA_PERMISSIONTYPE_DELETENODE 32768
-#define UA_PERMISSIONTYPE_ADDNODE 65536
-
-#define UA_TYPES_PERMISSIONTYPE 69
+#define UA_TYPES_READRESPONSE 62
 
 /**
  * TimestampsToReturn
@@ -14712,7 +14598,7 @@ typedef enum {
 } UA_TimestampsToReturn;
 UA_STATIC_ASSERT(sizeof(UA_TimestampsToReturn) == sizeof(UA_Int32), enum_must_be_32bit);
 
-#define UA_TYPES_TIMESTAMPSTORETURN 70
+#define UA_TYPES_TIMESTAMPSTORETURN 63
 
 /**
  * NodeClass
@@ -14732,7 +14618,7 @@ typedef enum {
 } UA_NodeClass;
 UA_STATIC_ASSERT(sizeof(UA_NodeClass) == sizeof(UA_Int32), enum_must_be_32bit);
 
-#define UA_TYPES_NODECLASS 71
+#define UA_TYPES_NODECLASS 64
 
 /**
  * ObjectTypeAttributes
@@ -14747,7 +14633,7 @@ typedef struct {
     UA_Boolean isAbstract;
 } UA_ObjectTypeAttributes;
 
-#define UA_TYPES_OBJECTTYPEATTRIBUTES 72
+#define UA_TYPES_OBJECTTYPEATTRIBUTES 65
 
 /**
  * SecurityTokenRequestType
@@ -14760,7 +14646,7 @@ typedef enum {
 } UA_SecurityTokenRequestType;
 UA_STATIC_ASSERT(sizeof(UA_SecurityTokenRequestType) == sizeof(UA_Int32), enum_must_be_32bit);
 
-#define UA_TYPES_SECURITYTOKENREQUESTTYPE 73
+#define UA_TYPES_SECURITYTOKENREQUESTTYPE 66
 
 /**
  * CloseSessionResponse
@@ -14770,7 +14656,7 @@ typedef struct {
     UA_ResponseHeader responseHeader;
 } UA_CloseSessionResponse;
 
-#define UA_TYPES_CLOSESESSIONRESPONSE 74
+#define UA_TYPES_CLOSESESSIONRESPONSE 67
 
 /**
  * SetPublishingModeRequest
@@ -14783,7 +14669,7 @@ typedef struct {
     UA_UInt32 *subscriptionIds;
 } UA_SetPublishingModeRequest;
 
-#define UA_TYPES_SETPUBLISHINGMODEREQUEST 75
+#define UA_TYPES_SETPUBLISHINGMODEREQUEST 68
 
 /**
  * IssuedIdentityToken
@@ -14795,21 +14681,7 @@ typedef struct {
     UA_String encryptionAlgorithm;
 } UA_IssuedIdentityToken;
 
-#define UA_TYPES_ISSUEDIDENTITYTOKEN 76
-
-/**
- * ServerOnNetwork
- * ^^^^^^^^^^^^^^^
- */
-typedef struct {
-    UA_UInt32 recordId;
-    UA_String serverName;
-    UA_String discoveryUrl;
-    size_t serverCapabilitiesSize;
-    UA_String *serverCapabilities;
-} UA_ServerOnNetwork;
-
-#define UA_TYPES_SERVERONNETWORK 77
+#define UA_TYPES_ISSUEDIDENTITYTOKEN 69
 
 /**
  * DeleteMonitoredItemsResponse
@@ -14823,17 +14695,7 @@ typedef struct {
     UA_DiagnosticInfo *diagnosticInfos;
 } UA_DeleteMonitoredItemsResponse;
 
-#define UA_TYPES_DELETEMONITOREDITEMSRESPONSE 78
-
-/**
- * DatagramConnectionTransportDataType
- * ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
- */
-typedef struct {
-    UA_ExtensionObject discoveryAddress;
-} UA_DatagramConnectionTransportDataType;
-
-#define UA_TYPES_DATAGRAMCONNECTIONTRANSPORTDATATYPE 79
+#define UA_TYPES_DELETEMONITOREDITEMSRESPONSE 70
 
 /**
  * ApplicationType
@@ -14848,15 +14710,7 @@ typedef enum {
 } UA_ApplicationType;
 UA_STATIC_ASSERT(sizeof(UA_ApplicationType) == sizeof(UA_Int32), enum_must_be_32bit);
 
-#define UA_TYPES_APPLICATIONTYPE 80
-
-/**
- * DiscoveryConfiguration
- * ^^^^^^^^^^^^^^^^^^^^^^
- * A base type for discovery configuration information. */
-typedef void * UA_DiscoveryConfiguration;
-
-#define UA_TYPES_DISCOVERYCONFIGURATION 81
+#define UA_TYPES_APPLICATIONTYPE 71
 
 /**
  * BrowseNextRequest
@@ -14869,7 +14723,7 @@ typedef struct {
     UA_ByteString *continuationPoints;
 } UA_BrowseNextRequest;
 
-#define UA_TYPES_BROWSENEXTREQUEST 82
+#define UA_TYPES_BROWSENEXTREQUEST 72
 
 /**
  * ModifySubscriptionRequest
@@ -14885,7 +14739,7 @@ typedef struct {
     UA_Byte priority;
 } UA_ModifySubscriptionRequest;
 
-#define UA_TYPES_MODIFYSUBSCRIPTIONREQUEST 83
+#define UA_TYPES_MODIFYSUBSCRIPTIONREQUEST 73
 
 /**
  * BrowseDescription
@@ -14900,7 +14754,7 @@ typedef struct {
     UA_UInt32 resultMask;
 } UA_BrowseDescription;
 
-#define UA_TYPES_BROWSEDESCRIPTION 84
+#define UA_TYPES_BROWSEDESCRIPTION 74
 
 /**
  * SignedSoftwareCertificate
@@ -14911,7 +14765,7 @@ typedef struct {
     UA_ByteString signature;
 } UA_SignedSoftwareCertificate;
 
-#define UA_TYPES_SIGNEDSOFTWARECERTIFICATE 85
+#define UA_TYPES_SIGNEDSOFTWARECERTIFICATE 75
 
 /**
  * BrowsePathTarget
@@ -14922,7 +14776,7 @@ typedef struct {
     UA_UInt32 remainingPathIndex;
 } UA_BrowsePathTarget;
 
-#define UA_TYPES_BROWSEPATHTARGET 86
+#define UA_TYPES_BROWSEPATHTARGET 76
 
 /**
  * WriteResponse
@@ -14936,7 +14790,7 @@ typedef struct {
     UA_DiagnosticInfo *diagnosticInfos;
 } UA_WriteResponse;
 
-#define UA_TYPES_WRITERESPONSE 87
+#define UA_TYPES_WRITERESPONSE 77
 
 /**
  * AddNodesResult
@@ -14947,35 +14801,7 @@ typedef struct {
     UA_NodeId addedNodeId;
 } UA_AddNodesResult;
 
-#define UA_TYPES_ADDNODESRESULT 88
-
-/**
- * UadpDataSetReaderMessageDataType
- * ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
- */
-typedef struct {
-    UA_UInt32 groupVersion;
-    UA_UInt16 networkMessageNumber;
-    UA_UInt16 dataSetOffset;
-    UA_Guid dataSetClassId;
-    UA_UadpNetworkMessageContentMask networkMessageContentMask;
-    UA_UadpDataSetMessageContentMask dataSetMessageContentMask;
-    UA_Double publishingInterval;
-    UA_Double receiveOffset;
-    UA_Double processingOffset;
-} UA_UadpDataSetReaderMessageDataType;
-
-#define UA_TYPES_UADPDATASETREADERMESSAGEDATATYPE 89
-
-/**
- * RegisterServerResponse
- * ^^^^^^^^^^^^^^^^^^^^^^
- * Registers a server with the discovery server. */
-typedef struct {
-    UA_ResponseHeader responseHeader;
-} UA_RegisterServerResponse;
-
-#define UA_TYPES_REGISTERSERVERRESPONSE 90
+#define UA_TYPES_ADDNODESRESULT 78
 
 /**
  * AddReferencesItem
@@ -14990,21 +14816,7 @@ typedef struct {
     UA_NodeClass targetNodeClass;
 } UA_AddReferencesItem;
 
-#define UA_TYPES_ADDREFERENCESITEM 91
-
-/**
- * RegisterServer2Response
- * ^^^^^^^^^^^^^^^^^^^^^^^
- */
-typedef struct {
-    UA_ResponseHeader responseHeader;
-    size_t configurationResultsSize;
-    UA_StatusCode *configurationResults;
-    size_t diagnosticInfosSize;
-    UA_DiagnosticInfo *diagnosticInfos;
-} UA_RegisterServer2Response;
-
-#define UA_TYPES_REGISTERSERVER2RESPONSE 92
+#define UA_TYPES_ADDREFERENCESITEM 79
 
 /**
  * DeleteReferencesResponse
@@ -15018,7 +14830,7 @@ typedef struct {
     UA_DiagnosticInfo *diagnosticInfos;
 } UA_DeleteReferencesResponse;
 
-#define UA_TYPES_DELETEREFERENCESRESPONSE 93
+#define UA_TYPES_DELETEREFERENCESRESPONSE 80
 
 /**
  * RelativePathElement
@@ -15031,7 +14843,7 @@ typedef struct {
     UA_QualifiedName targetName;
 } UA_RelativePathElement;
 
-#define UA_TYPES_RELATIVEPATHELEMENT 94
+#define UA_TYPES_RELATIVEPATHELEMENT 81
 
 /**
  * SubscriptionAcknowledgement
@@ -15042,34 +14854,7 @@ typedef struct {
     UA_UInt32 sequenceNumber;
 } UA_SubscriptionAcknowledgement;
 
-#define UA_TYPES_SUBSCRIPTIONACKNOWLEDGEMENT 95
-
-/**
- * ConfigurationVersionDataType
- * ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
- */
-typedef struct {
-    UA_UInt32 majorVersion;
-    UA_UInt32 minorVersion;
-} UA_ConfigurationVersionDataType;
-
-#define UA_TYPES_CONFIGURATIONVERSIONDATATYPE 96
-
-/**
- * DataSetFieldContentMask
- * ^^^^^^^^^^^^^^^^^^^^^^^
- */
-typedef UA_UInt32 UA_DataSetFieldContentMask;
-
-#define UA_DATASETFIELDCONTENTMASK_NONE 0
-#define UA_DATASETFIELDCONTENTMASK_STATUSCODE 1
-#define UA_DATASETFIELDCONTENTMASK_SOURCETIMESTAMP 2
-#define UA_DATASETFIELDCONTENTMASK_SERVERTIMESTAMP 4
-#define UA_DATASETFIELDCONTENTMASK_SOURCEPICOSECONDS 8
-#define UA_DATASETFIELDCONTENTMASK_SERVERPICOSECONDS 16
-#define UA_DATASETFIELDCONTENTMASK_RAWDATA 32
-
-#define UA_TYPES_DATASETFIELDCONTENTMASK 97
+#define UA_TYPES_SUBSCRIPTIONACKNOWLEDGEMENT 82
 
 /**
  * TransferResult
@@ -15081,25 +14866,7 @@ typedef struct {
     UA_UInt32 *availableSequenceNumbers;
 } UA_TransferResult;
 
-#define UA_TYPES_TRANSFERRESULT 98
-
-/**
- * PublishedVariableDataType
- * ^^^^^^^^^^^^^^^^^^^^^^^^^
- */
-typedef struct {
-    UA_NodeId publishedVariable;
-    UA_UInt32 attributeId;
-    UA_Double samplingIntervalHint;
-    UA_UInt32 deadbandType;
-    UA_Double deadbandValue;
-    UA_String indexRange;
-    UA_Variant substituteValue;
-    size_t metaDataPropertiesSize;
-    UA_QualifiedName *metaDataProperties;
-} UA_PublishedVariableDataType;
-
-#define UA_TYPES_PUBLISHEDVARIABLEDATATYPE 99
+#define UA_TYPES_TRANSFERRESULT 83
 
 /**
  * CreateMonitoredItemsResponse
@@ -15113,32 +14880,7 @@ typedef struct {
     UA_DiagnosticInfo *diagnosticInfos;
 } UA_CreateMonitoredItemsResponse;
 
-#define UA_TYPES_CREATEMONITOREDITEMSRESPONSE 100
-
-/**
- * RolePermissionType
- * ^^^^^^^^^^^^^^^^^^
- */
-typedef struct {
-    UA_NodeId roleId;
-    UA_PermissionType permissions;
-} UA_RolePermissionType;
-
-#define UA_TYPES_ROLEPERMISSIONTYPE 101
-
-/**
- * OverrideValueHandling
- * ^^^^^^^^^^^^^^^^^^^^^
- */
-typedef enum {
-    UA_OVERRIDEVALUEHANDLING_DISABLED = 0,
-    UA_OVERRIDEVALUEHANDLING_LASTUSABLEVALUE = 1,
-    UA_OVERRIDEVALUEHANDLING_OVERRIDEVALUE = 2,
-    __UA_OVERRIDEVALUEHANDLING_FORCE32BIT = 0x7fffffff
-} UA_OverrideValueHandling;
-UA_STATIC_ASSERT(sizeof(UA_OverrideValueHandling) == sizeof(UA_Int32), enum_must_be_32bit);
-
-#define UA_TYPES_OVERRIDEVALUEHANDLING 102
+#define UA_TYPES_CREATEMONITOREDITEMSRESPONSE 84
 
 /**
  * DeleteReferencesItem
@@ -15152,7 +14894,7 @@ typedef struct {
     UA_Boolean deleteBidirectional;
 } UA_DeleteReferencesItem;
 
-#define UA_TYPES_DELETEREFERENCESITEM 103
+#define UA_TYPES_DELETEREFERENCESITEM 85
 
 /**
  * WriteValue
@@ -15165,7 +14907,7 @@ typedef struct {
     UA_DataValue value;
 } UA_WriteValue;
 
-#define UA_TYPES_WRITEVALUE 104
+#define UA_TYPES_WRITEVALUE 86
 
 /**
  * DataTypeAttributes
@@ -15180,7 +14922,7 @@ typedef struct {
     UA_Boolean isAbstract;
 } UA_DataTypeAttributes;
 
-#define UA_TYPES_DATATYPEATTRIBUTES 105
+#define UA_TYPES_DATATYPEATTRIBUTES 87
 
 /**
  * TransferSubscriptionsResponse
@@ -15194,7 +14936,7 @@ typedef struct {
     UA_DiagnosticInfo *diagnosticInfos;
 } UA_TransferSubscriptionsResponse;
 
-#define UA_TYPES_TRANSFERSUBSCRIPTIONSRESPONSE 106
+#define UA_TYPES_TRANSFERSUBSCRIPTIONSRESPONSE 88
 
 /**
  * AddReferencesResponse
@@ -15208,7 +14950,7 @@ typedef struct {
     UA_DiagnosticInfo *diagnosticInfos;
 } UA_AddReferencesResponse;
 
-#define UA_TYPES_ADDREFERENCESRESPONSE 107
+#define UA_TYPES_ADDREFERENCESRESPONSE 89
 
 /**
  * DeadbandType
@@ -15222,7 +14964,7 @@ typedef enum {
 } UA_DeadbandType;
 UA_STATIC_ASSERT(sizeof(UA_DeadbandType) == sizeof(UA_Int32), enum_must_be_32bit);
 
-#define UA_TYPES_DEADBANDTYPE 108
+#define UA_TYPES_DEADBANDTYPE 90
 
 /**
  * DataChangeTrigger
@@ -15236,7 +14978,7 @@ typedef enum {
 } UA_DataChangeTrigger;
 UA_STATIC_ASSERT(sizeof(UA_DataChangeTrigger) == sizeof(UA_Int32), enum_must_be_32bit);
 
-#define UA_TYPES_DATACHANGETRIGGER 109
+#define UA_TYPES_DATACHANGETRIGGER 91
 
 /**
  * BuildInfo
@@ -15251,7 +14993,7 @@ typedef struct {
     UA_DateTime buildDate;
 } UA_BuildInfo;
 
-#define UA_TYPES_BUILDINFO 110
+#define UA_TYPES_BUILDINFO 92
 
 /**
  * FilterOperand
@@ -15259,7 +15001,7 @@ typedef struct {
  */
 typedef void * UA_FilterOperand;
 
-#define UA_TYPES_FILTEROPERAND 111
+#define UA_TYPES_FILTEROPERAND 93
 
 /**
  * MonitoringParameters
@@ -15273,7 +15015,7 @@ typedef struct {
     UA_Boolean discardOldest;
 } UA_MonitoringParameters;
 
-#define UA_TYPES_MONITORINGPARAMETERS 112
+#define UA_TYPES_MONITORINGPARAMETERS 94
 
 /**
  * DoubleComplexNumberType
@@ -15284,7 +15026,7 @@ typedef struct {
     UA_Double imaginary;
 } UA_DoubleComplexNumberType;
 
-#define UA_TYPES_DOUBLECOMPLEXNUMBERTYPE 113
+#define UA_TYPES_DOUBLECOMPLEXNUMBERTYPE 95
 
 /**
  * DeleteNodesItem
@@ -15295,18 +15037,7 @@ typedef struct {
     UA_Boolean deleteTargetReferences;
 } UA_DeleteNodesItem;
 
-#define UA_TYPES_DELETENODESITEM 114
-
-/**
- * DatagramWriterGroupTransportDataType
- * ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
- */
-typedef struct {
-    UA_Byte messageRepeatCount;
-    UA_Double messageRepeatDelay;
-} UA_DatagramWriterGroupTransportDataType;
-
-#define UA_TYPES_DATAGRAMWRITERGROUPTRANSPORTDATATYPE 115
+#define UA_TYPES_DELETENODESITEM 96
 
 /**
  * ReadValueId
@@ -15319,7 +15050,7 @@ typedef struct {
     UA_QualifiedName dataEncoding;
 } UA_ReadValueId;
 
-#define UA_TYPES_READVALUEID 116
+#define UA_TYPES_READVALUEID 97
 
 /**
  * CallRequest
@@ -15331,7 +15062,7 @@ typedef struct {
     UA_CallMethodRequest *methodsToCall;
 } UA_CallRequest;
 
-#define UA_TYPES_CALLREQUEST 117
+#define UA_TYPES_CALLREQUEST 98
 
 /**
  * RelativePath
@@ -15342,7 +15073,7 @@ typedef struct {
     UA_RelativePathElement *elements;
 } UA_RelativePath;
 
-#define UA_TYPES_RELATIVEPATH 118
+#define UA_TYPES_RELATIVEPATH 99
 
 /**
  * DeleteNodesRequest
@@ -15354,22 +15085,7 @@ typedef struct {
     UA_DeleteNodesItem *nodesToDelete;
 } UA_DeleteNodesRequest;
 
-#define UA_TYPES_DELETENODESREQUEST 119
-
-/**
- * BrokerDataSetWriterTransportDataType
- * ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
- */
-typedef struct {
-    UA_String queueName;
-    UA_String resourceUri;
-    UA_String authenticationProfileUri;
-    UA_BrokerTransportQualityOfService requestedDeliveryGuarantee;
-    UA_String metaDataQueueName;
-    UA_Double metaDataUpdateTime;
-} UA_BrokerDataSetWriterTransportDataType;
-
-#define UA_TYPES_BROKERDATASETWRITERTRANSPORTDATATYPE 120
+#define UA_TYPES_DELETENODESREQUEST 100
 
 /**
  * MonitoredItemModifyRequest
@@ -15380,7 +15096,7 @@ typedef struct {
     UA_MonitoringParameters requestedParameters;
 } UA_MonitoredItemModifyRequest;
 
-#define UA_TYPES_MONITOREDITEMMODIFYREQUEST 121
+#define UA_TYPES_MONITOREDITEMMODIFYREQUEST 101
 
 /**
  * UserTokenType
@@ -15395,7 +15111,7 @@ typedef enum {
 } UA_UserTokenType;
 UA_STATIC_ASSERT(sizeof(UA_UserTokenType) == sizeof(UA_Int32), enum_must_be_32bit);
 
-#define UA_TYPES_USERTOKENTYPE 122
+#define UA_TYPES_USERTOKENTYPE 102
 
 /**
  * AggregateConfiguration
@@ -15409,7 +15125,7 @@ typedef struct {
     UA_Boolean useSlopedExtrapolation;
 } UA_AggregateConfiguration;
 
-#define UA_TYPES_AGGREGATECONFIGURATION 123
+#define UA_TYPES_AGGREGATECONFIGURATION 103
 
 /**
  * LocaleId
@@ -15417,7 +15133,7 @@ typedef struct {
  * An identifier for a user locale. */
 typedef UA_String UA_LocaleId;
 
-#define UA_TYPES_LOCALEID 124
+#define UA_TYPES_LOCALEID 104
 
 /**
  * UnregisterNodesResponse
@@ -15427,7 +15143,7 @@ typedef struct {
     UA_ResponseHeader responseHeader;
 } UA_UnregisterNodesResponse;
 
-#define UA_TYPES_UNREGISTERNODESRESPONSE 125
+#define UA_TYPES_UNREGISTERNODESRESPONSE 105
 
 /**
  * ContentFilterResult
@@ -15440,20 +15156,7 @@ typedef struct {
     UA_DiagnosticInfo *elementDiagnosticInfos;
 } UA_ContentFilterResult;
 
-#define UA_TYPES_CONTENTFILTERRESULT 126
-
-/**
- * SimpleTypeDescription
- * ^^^^^^^^^^^^^^^^^^^^^
- */
-typedef struct {
-    UA_NodeId dataTypeId;
-    UA_QualifiedName name;
-    UA_NodeId baseDataType;
-    UA_Byte builtInType;
-} UA_SimpleTypeDescription;
-
-#define UA_TYPES_SIMPLETYPEDESCRIPTION 127
+#define UA_TYPES_CONTENTFILTERRESULT 106
 
 /**
  * UserTokenPolicy
@@ -15467,7 +15170,7 @@ typedef struct {
     UA_String securityPolicyUri;
 } UA_UserTokenPolicy;
 
-#define UA_TYPES_USERTOKENPOLICY 128
+#define UA_TYPES_USERTOKENPOLICY 107
 
 /**
  * DeleteMonitoredItemsRequest
@@ -15480,7 +15183,7 @@ typedef struct {
     UA_UInt32 *monitoredItemIds;
 } UA_DeleteMonitoredItemsRequest;
 
-#define UA_TYPES_DELETEMONITOREDITEMSREQUEST 129
+#define UA_TYPES_DELETEMONITOREDITEMSREQUEST 108
 
 /**
  * SetMonitoringModeRequest
@@ -15494,7 +15197,7 @@ typedef struct {
     UA_UInt32 *monitoredItemIds;
 } UA_SetMonitoringModeRequest;
 
-#define UA_TYPES_SETMONITORINGMODEREQUEST 130
+#define UA_TYPES_SETMONITORINGMODEREQUEST 109
 
 /**
  * Duration
@@ -15502,7 +15205,7 @@ typedef struct {
  * A period of time measured in milliseconds. */
 typedef UA_Double UA_Duration;
 
-#define UA_TYPES_DURATION 131
+#define UA_TYPES_DURATION 110
 
 /**
  * ReferenceTypeAttributes
@@ -15519,18 +15222,7 @@ typedef struct {
     UA_LocalizedText inverseName;
 } UA_ReferenceTypeAttributes;
 
-#define UA_TYPES_REFERENCETYPEATTRIBUTES 132
-
-/**
- * DataSetFieldFlags
- * ^^^^^^^^^^^^^^^^^
- */
-typedef UA_UInt16 UA_DataSetFieldFlags;
-
-#define UA_DATASETFIELDFLAGS_NONE 0
-#define UA_DATASETFIELDFLAGS_PROMOTEDFIELD 1
-
-#define UA_TYPES_DATASETFIELDFLAGS 133
+#define UA_TYPES_REFERENCETYPEATTRIBUTES 111
 
 /**
  * GetEndpointsRequest
@@ -15545,7 +15237,7 @@ typedef struct {
     UA_String *profileUris;
 } UA_GetEndpointsRequest;
 
-#define UA_TYPES_GETENDPOINTSREQUEST 134
+#define UA_TYPES_GETENDPOINTSREQUEST 112
 
 /**
  * CloseSecureChannelResponse
@@ -15555,33 +15247,7 @@ typedef struct {
     UA_ResponseHeader responseHeader;
 } UA_CloseSecureChannelResponse;
 
-#define UA_TYPES_CLOSESECURECHANNELRESPONSE 135
-
-/**
- * PublishedDataItemsDataType
- * ^^^^^^^^^^^^^^^^^^^^^^^^^^
- */
-typedef struct {
-    size_t publishedDataSize;
-    UA_PublishedVariableDataType *publishedData;
-} UA_PublishedDataItemsDataType;
-
-#define UA_TYPES_PUBLISHEDDATAITEMSDATATYPE 136
-
-/**
- * PubSubState
- * ^^^^^^^^^^^
- */
-typedef enum {
-    UA_PUBSUBSTATE_DISABLED = 0,
-    UA_PUBSUBSTATE_PAUSED = 1,
-    UA_PUBSUBSTATE_OPERATIONAL = 2,
-    UA_PUBSUBSTATE_ERROR = 3,
-    __UA_PUBSUBSTATE_FORCE32BIT = 0x7fffffff
-} UA_PubSubState;
-UA_STATIC_ASSERT(sizeof(UA_PubSubState) == sizeof(UA_Int32), enum_must_be_32bit);
-
-#define UA_TYPES_PUBSUBSTATE 137
+#define UA_TYPES_CLOSESECURECHANNELRESPONSE 113
 
 /**
  * ViewDescription
@@ -15593,7 +15259,7 @@ typedef struct {
     UA_UInt32 viewVersion;
 } UA_ViewDescription;
 
-#define UA_TYPES_VIEWDESCRIPTION 138
+#define UA_TYPES_VIEWDESCRIPTION 114
 
 /**
  * SetPublishingModeResponse
@@ -15607,7 +15273,7 @@ typedef struct {
     UA_DiagnosticInfo *diagnosticInfos;
 } UA_SetPublishingModeResponse;
 
-#define UA_TYPES_SETPUBLISHINGMODERESPONSE 139
+#define UA_TYPES_SETPUBLISHINGMODERESPONSE 115
 
 /**
  * StatusChangeNotification
@@ -15618,7 +15284,7 @@ typedef struct {
     UA_DiagnosticInfo diagnosticInfo;
 } UA_StatusChangeNotification;
 
-#define UA_TYPES_STATUSCHANGENOTIFICATION 140
+#define UA_TYPES_STATUSCHANGENOTIFICATION 116
 
 /**
  * StructureField
@@ -15635,7 +15301,7 @@ typedef struct {
     UA_Boolean isOptional;
 } UA_StructureField;
 
-#define UA_TYPES_STRUCTUREFIELD 141
+#define UA_TYPES_STRUCTUREFIELD 117
 
 /**
  * NodeAttributesMask
@@ -15681,7 +15347,7 @@ typedef enum {
 } UA_NodeAttributesMask;
 UA_STATIC_ASSERT(sizeof(UA_NodeAttributesMask) == sizeof(UA_Int32), enum_must_be_32bit);
 
-#define UA_TYPES_NODEATTRIBUTESMASK 142
+#define UA_TYPES_NODEATTRIBUTESMASK 118
 
 /**
  * EventFilterResult
@@ -15695,31 +15361,7 @@ typedef struct {
     UA_ContentFilterResult whereClauseResult;
 } UA_EventFilterResult;
 
-#define UA_TYPES_EVENTFILTERRESULT 143
-
-/**
- * BrokerWriterGroupTransportDataType
- * ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
- */
-typedef struct {
-    UA_String queueName;
-    UA_String resourceUri;
-    UA_String authenticationProfileUri;
-    UA_BrokerTransportQualityOfService requestedDeliveryGuarantee;
-} UA_BrokerWriterGroupTransportDataType;
-
-#define UA_TYPES_BROKERWRITERGROUPTRANSPORTDATATYPE 144
-
-/**
- * KeyValuePair
- * ^^^^^^^^^^^^
- */
-typedef struct {
-    UA_QualifiedName key;
-    UA_Variant value;
-} UA_KeyValuePair;
-
-#define UA_TYPES_KEYVALUEPAIR 145
+#define UA_TYPES_EVENTFILTERRESULT 119
 
 /**
  * MonitoredItemCreateRequest
@@ -15731,7 +15373,7 @@ typedef struct {
     UA_MonitoringParameters requestedParameters;
 } UA_MonitoredItemCreateRequest;
 
-#define UA_TYPES_MONITOREDITEMCREATEREQUEST 146
+#define UA_TYPES_MONITOREDITEMCREATEREQUEST 120
 
 /**
  * ComplexNumberType
@@ -15742,7 +15384,7 @@ typedef struct {
     UA_Float imaginary;
 } UA_ComplexNumberType;
 
-#define UA_TYPES_COMPLEXNUMBERTYPE 147
+#define UA_TYPES_COMPLEXNUMBERTYPE 121
 
 /**
  * Range
@@ -15753,7 +15395,7 @@ typedef struct {
     UA_Double high;
 } UA_Range;
 
-#define UA_TYPES_RANGE 148
+#define UA_TYPES_RANGE 122
 
 /**
  * DataChangeNotification
@@ -15766,7 +15408,7 @@ typedef struct {
     UA_DiagnosticInfo *diagnosticInfos;
 } UA_DataChangeNotification;
 
-#define UA_TYPES_DATACHANGENOTIFICATION 149
+#define UA_TYPES_DATACHANGENOTIFICATION 123
 
 /**
  * Argument
@@ -15781,22 +15423,7 @@ typedef struct {
     UA_LocalizedText description;
 } UA_Argument;
 
-#define UA_TYPES_ARGUMENT 150
-
-/**
- * JsonDataSetMessageContentMask
- * ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
- */
-typedef UA_UInt32 UA_JsonDataSetMessageContentMask;
-
-#define UA_JSONDATASETMESSAGECONTENTMASK_NONE 0
-#define UA_JSONDATASETMESSAGECONTENTMASK_DATASETWRITERID 1
-#define UA_JSONDATASETMESSAGECONTENTMASK_METADATAVERSION 2
-#define UA_JSONDATASETMESSAGECONTENTMASK_SEQUENCENUMBER 4
-#define UA_JSONDATASETMESSAGECONTENTMASK_TIMESTAMP 8
-#define UA_JSONDATASETMESSAGECONTENTMASK_STATUS 16
-
-#define UA_TYPES_JSONDATASETMESSAGECONTENTMASK 151
+#define UA_TYPES_ARGUMENT 124
 
 /**
  * TransferSubscriptionsRequest
@@ -15809,7 +15436,7 @@ typedef struct {
     UA_Boolean sendInitialValues;
 } UA_TransferSubscriptionsRequest;
 
-#define UA_TYPES_TRANSFERSUBSCRIPTIONSREQUEST 152
+#define UA_TYPES_TRANSFERSUBSCRIPTIONSREQUEST 125
 
 /**
  * ChannelSecurityToken
@@ -15822,7 +15449,7 @@ typedef struct {
     UA_UInt32 revisedLifetime;
 } UA_ChannelSecurityToken;
 
-#define UA_TYPES_CHANNELSECURITYTOKEN 153
+#define UA_TYPES_CHANNELSECURITYTOKEN 126
 
 /**
  * ServerState
@@ -15841,7 +15468,7 @@ typedef enum {
 } UA_ServerState;
 UA_STATIC_ASSERT(sizeof(UA_ServerState) == sizeof(UA_Int32), enum_must_be_32bit);
 
-#define UA_TYPES_SERVERSTATE 154
+#define UA_TYPES_SERVERSTATE 127
 
 /**
  * EventNotificationList
@@ -15852,7 +15479,7 @@ typedef struct {
     UA_EventFieldList *events;
 } UA_EventNotificationList;
 
-#define UA_TYPES_EVENTNOTIFICATIONLIST 155
+#define UA_TYPES_EVENTNOTIFICATIONLIST 128
 
 /**
  * AnonymousIdentityToken
@@ -15862,7 +15489,7 @@ typedef struct {
     UA_String policyId;
 } UA_AnonymousIdentityToken;
 
-#define UA_TYPES_ANONYMOUSIDENTITYTOKEN 156
+#define UA_TYPES_ANONYMOUSIDENTITYTOKEN 129
 
 /**
  * FilterOperator
@@ -15891,7 +15518,7 @@ typedef enum {
 } UA_FilterOperator;
 UA_STATIC_ASSERT(sizeof(UA_FilterOperator) == sizeof(UA_Int32), enum_must_be_32bit);
 
-#define UA_TYPES_FILTEROPERATOR 157
+#define UA_TYPES_FILTEROPERATOR 130
 
 /**
  * AggregateFilter
@@ -15904,7 +15531,7 @@ typedef struct {
     UA_AggregateConfiguration aggregateConfiguration;
 } UA_AggregateFilter;
 
-#define UA_TYPES_AGGREGATEFILTER 158
+#define UA_TYPES_AGGREGATEFILTER 131
 
 /**
  * RepublishResponse
@@ -15915,7 +15542,7 @@ typedef struct {
     UA_NotificationMessage notificationMessage;
 } UA_RepublishResponse;
 
-#define UA_TYPES_REPUBLISHRESPONSE 159
+#define UA_TYPES_REPUBLISHRESPONSE 132
 
 /**
  * DeleteSubscriptionsResponse
@@ -15929,7 +15556,7 @@ typedef struct {
     UA_DiagnosticInfo *diagnosticInfos;
 } UA_DeleteSubscriptionsResponse;
 
-#define UA_TYPES_DELETESUBSCRIPTIONSRESPONSE 160
+#define UA_TYPES_DELETESUBSCRIPTIONSRESPONSE 133
 
 /**
  * RegisterNodesRequest
@@ -15941,7 +15568,7 @@ typedef struct {
     UA_NodeId *nodesToRegister;
 } UA_RegisterNodesRequest;
 
-#define UA_TYPES_REGISTERNODESREQUEST 161
+#define UA_TYPES_REGISTERNODESREQUEST 134
 
 /**
  * StructureDefinition
@@ -15955,7 +15582,7 @@ typedef struct {
     UA_StructureField *fields;
 } UA_StructureDefinition;
 
-#define UA_TYPES_STRUCTUREDEFINITION 162
+#define UA_TYPES_STRUCTUREDEFINITION 135
 
 /**
  * MethodAttributes
@@ -15971,7 +15598,7 @@ typedef struct {
     UA_Boolean userExecutable;
 } UA_MethodAttributes;
 
-#define UA_TYPES_METHODATTRIBUTES 163
+#define UA_TYPES_METHODATTRIBUTES 136
 
 /**
  * UserNameIdentityToken
@@ -15984,7 +15611,7 @@ typedef struct {
     UA_String encryptionAlgorithm;
 } UA_UserNameIdentityToken;
 
-#define UA_TYPES_USERNAMEIDENTITYTOKEN 164
+#define UA_TYPES_USERNAMEIDENTITYTOKEN 137
 
 /**
  * UnregisterNodesRequest
@@ -15996,21 +15623,7 @@ typedef struct {
     UA_NodeId *nodesToUnregister;
 } UA_UnregisterNodesRequest;
 
-#define UA_TYPES_UNREGISTERNODESREQUEST 165
-
-/**
- * DataSetOrderingType
- * ^^^^^^^^^^^^^^^^^^^
- */
-typedef enum {
-    UA_DATASETORDERINGTYPE_UNDEFINED = 0,
-    UA_DATASETORDERINGTYPE_ASCENDINGWRITERID = 1,
-    UA_DATASETORDERINGTYPE_ASCENDINGWRITERIDSINGLE = 2,
-    __UA_DATASETORDERINGTYPE_FORCE32BIT = 0x7fffffff
-} UA_DataSetOrderingType;
-UA_STATIC_ASSERT(sizeof(UA_DataSetOrderingType) == sizeof(UA_Int32), enum_must_be_32bit);
-
-#define UA_TYPES_DATASETORDERINGTYPE 166
+#define UA_TYPES_UNREGISTERNODESREQUEST 138
 
 /**
  * OpenSecureChannelResponse
@@ -16023,7 +15636,7 @@ typedef struct {
     UA_ByteString serverNonce;
 } UA_OpenSecureChannelResponse;
 
-#define UA_TYPES_OPENSECURECHANNELRESPONSE 167
+#define UA_TYPES_OPENSECURECHANNELRESPONSE 139
 
 /**
  * SetTriggeringResponse
@@ -16041,7 +15654,7 @@ typedef struct {
     UA_DiagnosticInfo *removeDiagnosticInfos;
 } UA_SetTriggeringResponse;
 
-#define UA_TYPES_SETTRIGGERINGRESPONSE 168
+#define UA_TYPES_SETTRIGGERINGRESPONSE 140
 
 /**
  * SimpleAttributeOperand
@@ -16055,36 +15668,7 @@ typedef struct {
     UA_String indexRange;
 } UA_SimpleAttributeOperand;
 
-#define UA_TYPES_SIMPLEATTRIBUTEOPERAND 169
-
-/**
- * UadpDataSetWriterMessageDataType
- * ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
- */
-typedef struct {
-    UA_UadpDataSetMessageContentMask dataSetMessageContentMask;
-    UA_UInt16 configuredSize;
-    UA_UInt16 networkMessageNumber;
-    UA_UInt16 dataSetOffset;
-} UA_UadpDataSetWriterMessageDataType;
-
-#define UA_TYPES_UADPDATASETWRITERMESSAGEDATATYPE 170
-
-/**
- * JsonNetworkMessageContentMask
- * ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
- */
-typedef UA_UInt32 UA_JsonNetworkMessageContentMask;
-
-#define UA_JSONNETWORKMESSAGECONTENTMASK_NONE 0
-#define UA_JSONNETWORKMESSAGECONTENTMASK_NETWORKMESSAGEHEADER 1
-#define UA_JSONNETWORKMESSAGECONTENTMASK_DATASETMESSAGEHEADER 2
-#define UA_JSONNETWORKMESSAGECONTENTMASK_SINGLEDATASETMESSAGE 4
-#define UA_JSONNETWORKMESSAGECONTENTMASK_PUBLISHERID 8
-#define UA_JSONNETWORKMESSAGECONTENTMASK_DATASETCLASSID 16
-#define UA_JSONNETWORKMESSAGECONTENTMASK_REPLYTO 32
-
-#define UA_TYPES_JSONNETWORKMESSAGECONTENTMASK 171
+#define UA_TYPES_SIMPLEATTRIBUTEOPERAND 141
 
 /**
  * RepublishRequest
@@ -16096,7 +15680,7 @@ typedef struct {
     UA_UInt32 retransmitSequenceNumber;
 } UA_RepublishRequest;
 
-#define UA_TYPES_REPUBLISHREQUEST 172
+#define UA_TYPES_REPUBLISHREQUEST 142
 
 /**
  * RegisterNodesResponse
@@ -16108,7 +15692,7 @@ typedef struct {
     UA_NodeId *registeredNodeIds;
 } UA_RegisterNodesResponse;
 
-#define UA_TYPES_REGISTERNODESRESPONSE 173
+#define UA_TYPES_REGISTERNODESRESPONSE 143
 
 /**
  * ModifyMonitoredItemsResponse
@@ -16122,23 +15706,7 @@ typedef struct {
     UA_DiagnosticInfo *diagnosticInfos;
 } UA_ModifyMonitoredItemsResponse;
 
-#define UA_TYPES_MODIFYMONITOREDITEMSRESPONSE 174
-
-/**
- * FieldTargetDataType
- * ^^^^^^^^^^^^^^^^^^^
- */
-typedef struct {
-    UA_Guid dataSetFieldId;
-    UA_String receiverIndexRange;
-    UA_NodeId targetNodeId;
-    UA_UInt32 attributeId;
-    UA_String writeIndexRange;
-    UA_OverrideValueHandling overrideValueHandling;
-    UA_Variant overrideValue;
-} UA_FieldTargetDataType;
-
-#define UA_TYPES_FIELDTARGETDATATYPE 175
+#define UA_TYPES_MODIFYMONITOREDITEMSRESPONSE 144
 
 /**
  * DeleteSubscriptionsRequest
@@ -16150,7 +15718,7 @@ typedef struct {
     UA_UInt32 *subscriptionIds;
 } UA_DeleteSubscriptionsRequest;
 
-#define UA_TYPES_DELETESUBSCRIPTIONSREQUEST 176
+#define UA_TYPES_DELETESUBSCRIPTIONSREQUEST 145
 
 /**
  * RedundancySupport
@@ -16167,7 +15735,7 @@ typedef enum {
 } UA_RedundancySupport;
 UA_STATIC_ASSERT(sizeof(UA_RedundancySupport) == sizeof(UA_Int32), enum_must_be_32bit);
 
-#define UA_TYPES_REDUNDANCYSUPPORT 177
+#define UA_TYPES_REDUNDANCYSUPPORT 146
 
 /**
  * BrowsePath
@@ -16178,7 +15746,7 @@ typedef struct {
     UA_RelativePath relativePath;
 } UA_BrowsePath;
 
-#define UA_TYPES_BROWSEPATH 178
+#define UA_TYPES_BROWSEPATH 147
 
 /**
  * ObjectAttributes
@@ -16193,7 +15761,7 @@ typedef struct {
     UA_Byte eventNotifier;
 } UA_ObjectAttributes;
 
-#define UA_TYPES_OBJECTATTRIBUTES 179
+#define UA_TYPES_OBJECTATTRIBUTES 148
 
 /**
  * PublishRequest
@@ -16205,7 +15773,7 @@ typedef struct {
     UA_SubscriptionAcknowledgement *subscriptionAcknowledgements;
 } UA_PublishRequest;
 
-#define UA_TYPES_PUBLISHREQUEST 180
+#define UA_TYPES_PUBLISHREQUEST 149
 
 /**
  * FindServersRequest
@@ -16220,51 +15788,7 @@ typedef struct {
     UA_String *serverUris;
 } UA_FindServersRequest;
 
-#define UA_TYPES_FINDSERVERSREQUEST 181
-
-/**
- * JsonDataSetWriterMessageDataType
- * ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
- */
-typedef struct {
-    UA_JsonDataSetMessageContentMask dataSetMessageContentMask;
-} UA_JsonDataSetWriterMessageDataType;
-
-#define UA_TYPES_JSONDATASETWRITERMESSAGEDATATYPE 182
-
-/**
- * FindServersOnNetworkResponse
- * ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
- */
-typedef struct {
-    UA_ResponseHeader responseHeader;
-    UA_DateTime lastCounterResetTime;
-    size_t serversSize;
-    UA_ServerOnNetwork *servers;
-} UA_FindServersOnNetworkResponse;
-
-#define UA_TYPES_FINDSERVERSONNETWORKRESPONSE 183
-
-/**
- * FieldMetaData
- * ^^^^^^^^^^^^^
- */
-typedef struct {
-    UA_String name;
-    UA_LocalizedText description;
-    UA_DataSetFieldFlags fieldFlags;
-    UA_Byte builtInType;
-    UA_NodeId dataType;
-    UA_Int32 valueRank;
-    size_t arrayDimensionsSize;
-    UA_UInt32 *arrayDimensions;
-    UA_UInt32 maxStringLength;
-    UA_Guid dataSetFieldId;
-    size_t propertiesSize;
-    UA_KeyValuePair *properties;
-} UA_FieldMetaData;
-
-#define UA_TYPES_FIELDMETADATA 184
+#define UA_TYPES_FINDSERVERSREQUEST 150
 
 /**
  * ReferenceDescription
@@ -16280,30 +15804,7 @@ typedef struct {
     UA_ExpandedNodeId typeDefinition;
 } UA_ReferenceDescription;
 
-#define UA_TYPES_REFERENCEDESCRIPTION 185
-
-/**
- * SubscribedDataSetMirrorDataType
- * ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
- */
-typedef struct {
-    UA_String parentNodeName;
-    size_t rolePermissionsSize;
-    UA_RolePermissionType *rolePermissions;
-} UA_SubscribedDataSetMirrorDataType;
-
-#define UA_TYPES_SUBSCRIBEDDATASETMIRRORDATATYPE 186
-
-/**
- * TargetVariablesDataType
- * ^^^^^^^^^^^^^^^^^^^^^^^
- */
-typedef struct {
-    size_t targetVariablesSize;
-    UA_FieldTargetDataType *targetVariables;
-} UA_TargetVariablesDataType;
-
-#define UA_TYPES_TARGETVARIABLESDATATYPE 187
+#define UA_TYPES_REFERENCEDESCRIPTION 151
 
 /**
  * CreateSubscriptionRequest
@@ -16319,21 +15820,7 @@ typedef struct {
     UA_Byte priority;
 } UA_CreateSubscriptionRequest;
 
-#define UA_TYPES_CREATESUBSCRIPTIONREQUEST 188
-
-/**
- * FindServersOnNetworkRequest
- * ^^^^^^^^^^^^^^^^^^^^^^^^^^^
- */
-typedef struct {
-    UA_RequestHeader requestHeader;
-    UA_UInt32 startingRecordId;
-    UA_UInt32 maxRecordsToReturn;
-    size_t serverCapabilityFilterSize;
-    UA_String *serverCapabilityFilter;
-} UA_FindServersOnNetworkRequest;
-
-#define UA_TYPES_FINDSERVERSONNETWORKREQUEST 189
+#define UA_TYPES_CREATESUBSCRIPTIONREQUEST 152
 
 /**
  * CallResponse
@@ -16347,7 +15834,7 @@ typedef struct {
     UA_DiagnosticInfo *diagnosticInfos;
 } UA_CallResponse;
 
-#define UA_TYPES_CALLRESPONSE 190
+#define UA_TYPES_CALLRESPONSE 153
 
 /**
  * DeleteNodesResponse
@@ -16361,21 +15848,7 @@ typedef struct {
     UA_DiagnosticInfo *diagnosticInfos;
 } UA_DeleteNodesResponse;
 
-#define UA_TYPES_DELETENODESRESPONSE 191
-
-/**
- * BrokerDataSetReaderTransportDataType
- * ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
- */
-typedef struct {
-    UA_String queueName;
-    UA_String resourceUri;
-    UA_String authenticationProfileUri;
-    UA_BrokerTransportQualityOfService requestedDeliveryGuarantee;
-    UA_String metaDataQueueName;
-} UA_BrokerDataSetReaderTransportDataType;
-
-#define UA_TYPES_BROKERDATASETREADERTRANSPORTDATATYPE 192
+#define UA_TYPES_DELETENODESRESPONSE 154
 
 /**
  * ModifyMonitoredItemsRequest
@@ -16389,7 +15862,7 @@ typedef struct {
     UA_MonitoredItemModifyRequest *itemsToModify;
 } UA_ModifyMonitoredItemsRequest;
 
-#define UA_TYPES_MODIFYMONITOREDITEMSREQUEST 193
+#define UA_TYPES_MODIFYMONITOREDITEMSREQUEST 155
 
 /**
  * ServiceFault
@@ -16399,7 +15872,7 @@ typedef struct {
     UA_ResponseHeader responseHeader;
 } UA_ServiceFault;
 
-#define UA_TYPES_SERVICEFAULT 194
+#define UA_TYPES_SERVICEFAULT 156
 
 /**
  * PublishResponse
@@ -16418,7 +15891,7 @@ typedef struct {
     UA_DiagnosticInfo *diagnosticInfos;
 } UA_PublishResponse;
 
-#define UA_TYPES_PUBLISHRESPONSE 195
+#define UA_TYPES_PUBLISHRESPONSE 157
 
 /**
  * CreateMonitoredItemsRequest
@@ -16432,7 +15905,7 @@ typedef struct {
     UA_MonitoredItemCreateRequest *itemsToCreate;
 } UA_CreateMonitoredItemsRequest;
 
-#define UA_TYPES_CREATEMONITOREDITEMSREQUEST 196
+#define UA_TYPES_CREATEMONITOREDITEMSREQUEST 158
 
 /**
  * OpenSecureChannelRequest
@@ -16447,7 +15920,7 @@ typedef struct {
     UA_UInt32 requestedLifetime;
 } UA_OpenSecureChannelRequest;
 
-#define UA_TYPES_OPENSECURECHANNELREQUEST 197
+#define UA_TYPES_OPENSECURECHANNELREQUEST 159
 
 /**
  * CloseSessionRequest
@@ -16458,7 +15931,7 @@ typedef struct {
     UA_Boolean deleteSubscriptions;
 } UA_CloseSessionRequest;
 
-#define UA_TYPES_CLOSESESSIONREQUEST 198
+#define UA_TYPES_CLOSESESSIONREQUEST 160
 
 /**
  * SetTriggeringRequest
@@ -16474,20 +15947,7 @@ typedef struct {
     UA_UInt32 *linksToRemove;
 } UA_SetTriggeringRequest;
 
-#define UA_TYPES_SETTRIGGERINGREQUEST 199
-
-/**
- * EnumDescription
- * ^^^^^^^^^^^^^^^
- */
-typedef struct {
-    UA_NodeId dataTypeId;
-    UA_QualifiedName name;
-    UA_EnumDefinition enumDefinition;
-    UA_Byte builtInType;
-} UA_EnumDescription;
-
-#define UA_TYPES_ENUMDESCRIPTION 200
+#define UA_TYPES_SETTRIGGERINGREQUEST 161
 
 /**
  * BrowseResult
@@ -16500,7 +15960,7 @@ typedef struct {
     UA_ReferenceDescription *references;
 } UA_BrowseResult;
 
-#define UA_TYPES_BROWSERESULT 201
+#define UA_TYPES_BROWSERESULT 162
 
 /**
  * AddReferencesRequest
@@ -16512,7 +15972,7 @@ typedef struct {
     UA_AddReferencesItem *referencesToAdd;
 } UA_AddReferencesRequest;
 
-#define UA_TYPES_ADDREFERENCESREQUEST 202
+#define UA_TYPES_ADDREFERENCESREQUEST 163
 
 /**
  * AddNodesItem
@@ -16528,7 +15988,7 @@ typedef struct {
     UA_ExpandedNodeId typeDefinition;
 } UA_AddNodesItem;
 
-#define UA_TYPES_ADDNODESITEM 203
+#define UA_TYPES_ADDNODESITEM 164
 
 /**
  * ServerStatusDataType
@@ -16543,7 +16003,7 @@ typedef struct {
     UA_LocalizedText shutdownReason;
 } UA_ServerStatusDataType;
 
-#define UA_TYPES_SERVERSTATUSDATATYPE 204
+#define UA_TYPES_SERVERSTATUSDATATYPE 165
 
 /**
  * BrowseNextResponse
@@ -16557,7 +16017,7 @@ typedef struct {
     UA_DiagnosticInfo *diagnosticInfos;
 } UA_BrowseNextResponse;
 
-#define UA_TYPES_BROWSENEXTRESPONSE 205
+#define UA_TYPES_BROWSENEXTRESPONSE 166
 
 /**
  * AxisInformation
@@ -16572,26 +16032,7 @@ typedef struct {
     UA_Double *axisSteps;
 } UA_AxisInformation;
 
-#define UA_TYPES_AXISINFORMATION 206
-
-/**
- * RegisteredServer
- * ^^^^^^^^^^^^^^^^
- * The information required to register a server with a discovery server. */
-typedef struct {
-    UA_String serverUri;
-    UA_String productUri;
-    size_t serverNamesSize;
-    UA_LocalizedText *serverNames;
-    UA_ApplicationType serverType;
-    UA_String gatewayServerUri;
-    size_t discoveryUrlsSize;
-    UA_String *discoveryUrls;
-    UA_String semaphoreFilePath;
-    UA_Boolean isOnline;
-} UA_RegisteredServer;
-
-#define UA_TYPES_REGISTEREDSERVER 207
+#define UA_TYPES_AXISINFORMATION 167
 
 /**
  * ApplicationDescription
@@ -16608,19 +16049,7 @@ typedef struct {
     UA_String *discoveryUrls;
 } UA_ApplicationDescription;
 
-#define UA_TYPES_APPLICATIONDESCRIPTION 208
-
-/**
- * StructureDescription
- * ^^^^^^^^^^^^^^^^^^^^
- */
-typedef struct {
-    UA_NodeId dataTypeId;
-    UA_QualifiedName name;
-    UA_StructureDefinition structureDefinition;
-} UA_StructureDescription;
-
-#define UA_TYPES_STRUCTUREDESCRIPTION 209
+#define UA_TYPES_APPLICATIONDESCRIPTION 168
 
 /**
  * ReadRequest
@@ -16634,26 +16063,7 @@ typedef struct {
     UA_ReadValueId *nodesToRead;
 } UA_ReadRequest;
 
-#define UA_TYPES_READREQUEST 210
-
-/**
- * DataSetWriterDataType
- * ^^^^^^^^^^^^^^^^^^^^^
- */
-typedef struct {
-    UA_String name;
-    UA_Boolean enabled;
-    UA_UInt16 dataSetWriterId;
-    UA_DataSetFieldContentMask dataSetFieldContentMask;
-    UA_UInt32 keyFrameCount;
-    UA_String dataSetName;
-    size_t dataSetWriterPropertiesSize;
-    UA_KeyValuePair *dataSetWriterProperties;
-    UA_ExtensionObject transportSettings;
-    UA_ExtensionObject messageSettings;
-} UA_DataSetWriterDataType;
-
-#define UA_TYPES_DATASETWRITERDATATYPE 211
+#define UA_TYPES_READREQUEST 169
 
 /**
  * ActivateSessionRequest
@@ -16670,7 +16080,7 @@ typedef struct {
     UA_SignatureData userTokenSignature;
 } UA_ActivateSessionRequest;
 
-#define UA_TYPES_ACTIVATESESSIONREQUEST 212
+#define UA_TYPES_ACTIVATESESSIONREQUEST 170
 
 /**
  * BrowsePathResult
@@ -16682,7 +16092,7 @@ typedef struct {
     UA_BrowsePathTarget *targets;
 } UA_BrowsePathResult;
 
-#define UA_TYPES_BROWSEPATHRESULT 213
+#define UA_TYPES_BROWSEPATHRESULT 171
 
 /**
  * AddNodesRequest
@@ -16694,7 +16104,7 @@ typedef struct {
     UA_AddNodesItem *nodesToAdd;
 } UA_AddNodesRequest;
 
-#define UA_TYPES_ADDNODESREQUEST 214
+#define UA_TYPES_ADDNODESREQUEST 172
 
 /**
  * BrowseRequest
@@ -16708,7 +16118,7 @@ typedef struct {
     UA_BrowseDescription *nodesToBrowse;
 } UA_BrowseRequest;
 
-#define UA_TYPES_BROWSEREQUEST 215
+#define UA_TYPES_BROWSEREQUEST 173
 
 /**
  * WriteRequest
@@ -16720,7 +16130,7 @@ typedef struct {
     UA_WriteValue *nodesToWrite;
 } UA_WriteRequest;
 
-#define UA_TYPES_WRITEREQUEST 216
+#define UA_TYPES_WRITEREQUEST 174
 
 /**
  * AddNodesResponse
@@ -16734,20 +16144,7 @@ typedef struct {
     UA_DiagnosticInfo *diagnosticInfos;
 } UA_AddNodesResponse;
 
-#define UA_TYPES_ADDNODESRESPONSE 217
-
-/**
- * RegisterServer2Request
- * ^^^^^^^^^^^^^^^^^^^^^^
- */
-typedef struct {
-    UA_RequestHeader requestHeader;
-    UA_RegisteredServer server;
-    size_t discoveryConfigurationSize;
-    UA_ExtensionObject *discoveryConfiguration;
-} UA_RegisterServer2Request;
-
-#define UA_TYPES_REGISTERSERVER2REQUEST 218
+#define UA_TYPES_ADDNODESRESPONSE 175
 
 /**
  * AttributeOperand
@@ -16761,7 +16158,7 @@ typedef struct {
     UA_String indexRange;
 } UA_AttributeOperand;
 
-#define UA_TYPES_ATTRIBUTEOPERAND 219
+#define UA_TYPES_ATTRIBUTEOPERAND 176
 
 /**
  * DataChangeFilter
@@ -16773,7 +16170,7 @@ typedef struct {
     UA_Double deadbandValue;
 } UA_DataChangeFilter;
 
-#define UA_TYPES_DATACHANGEFILTER 220
+#define UA_TYPES_DATACHANGEFILTER 177
 
 /**
  * EndpointDescription
@@ -16791,7 +16188,7 @@ typedef struct {
     UA_Byte securityLevel;
 } UA_EndpointDescription;
 
-#define UA_TYPES_ENDPOINTDESCRIPTION 221
+#define UA_TYPES_ENDPOINTDESCRIPTION 178
 
 /**
  * DeleteReferencesRequest
@@ -16803,17 +16200,7 @@ typedef struct {
     UA_DeleteReferencesItem *referencesToDelete;
 } UA_DeleteReferencesRequest;
 
-#define UA_TYPES_DELETEREFERENCESREQUEST 222
-
-/**
- * JsonWriterGroupMessageDataType
- * ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
- */
-typedef struct {
-    UA_JsonNetworkMessageContentMask networkMessageContentMask;
-} UA_JsonWriterGroupMessageDataType;
-
-#define UA_TYPES_JSONWRITERGROUPMESSAGEDATATYPE 223
+#define UA_TYPES_DELETEREFERENCESREQUEST 179
 
 /**
  * TranslateBrowsePathsToNodeIdsRequest
@@ -16825,18 +16212,7 @@ typedef struct {
     UA_BrowsePath *browsePaths;
 } UA_TranslateBrowsePathsToNodeIdsRequest;
 
-#define UA_TYPES_TRANSLATEBROWSEPATHSTONODEIDSREQUEST 224
-
-/**
- * JsonDataSetReaderMessageDataType
- * ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
- */
-typedef struct {
-    UA_JsonNetworkMessageContentMask networkMessageContentMask;
-    UA_JsonDataSetMessageContentMask dataSetMessageContentMask;
-} UA_JsonDataSetReaderMessageDataType;
-
-#define UA_TYPES_JSONDATASETREADERMESSAGEDATATYPE 225
+#define UA_TYPES_TRANSLATEBROWSEPATHSTONODEIDSREQUEST 180
 
 /**
  * FindServersResponse
@@ -16848,7 +16224,7 @@ typedef struct {
     UA_ApplicationDescription *servers;
 } UA_FindServersResponse;
 
-#define UA_TYPES_FINDSERVERSRESPONSE 226
+#define UA_TYPES_FINDSERVERSRESPONSE 181
 
 /**
  * CreateSessionRequest
@@ -16866,7 +16242,7 @@ typedef struct {
     UA_UInt32 maxResponseMessageSize;
 } UA_CreateSessionRequest;
 
-#define UA_TYPES_CREATESESSIONREQUEST 227
+#define UA_TYPES_CREATESESSIONREQUEST 182
 
 /**
  * ContentFilterElement
@@ -16878,54 +16254,7 @@ typedef struct {
     UA_ExtensionObject *filterOperands;
 } UA_ContentFilterElement;
 
-#define UA_TYPES_CONTENTFILTERELEMENT 228
-
-/**
- * UadpWriterGroupMessageDataType
- * ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
- */
-typedef struct {
-    UA_UInt32 groupVersion;
-    UA_DataSetOrderingType dataSetOrdering;
-    UA_UadpNetworkMessageContentMask networkMessageContentMask;
-    UA_Double samplingOffset;
-    size_t publishingOffsetSize;
-    UA_Double *publishingOffset;
-} UA_UadpWriterGroupMessageDataType;
-
-#define UA_TYPES_UADPWRITERGROUPMESSAGEDATATYPE 229
-
-/**
- * RegisterServerRequest
- * ^^^^^^^^^^^^^^^^^^^^^
- * Registers a server with the discovery server. */
-typedef struct {
-    UA_RequestHeader requestHeader;
-    UA_RegisteredServer server;
-} UA_RegisterServerRequest;
-
-#define UA_TYPES_REGISTERSERVERREQUEST 230
-
-/**
- * UABinaryFileDataType
- * ^^^^^^^^^^^^^^^^^^^^
- */
-typedef struct {
-    size_t namespacesSize;
-    UA_String *namespaces;
-    size_t structureDataTypesSize;
-    UA_StructureDescription *structureDataTypes;
-    size_t enumDataTypesSize;
-    UA_EnumDescription *enumDataTypes;
-    size_t simpleDataTypesSize;
-    UA_SimpleTypeDescription *simpleDataTypes;
-    UA_String schemaLocation;
-    size_t fileHeaderSize;
-    UA_KeyValuePair *fileHeader;
-    UA_Variant body;
-} UA_UABinaryFileDataType;
-
-#define UA_TYPES_UABINARYFILEDATATYPE 231
+#define UA_TYPES_CONTENTFILTERELEMENT 183
 
 /**
  * TranslateBrowsePathsToNodeIdsResponse
@@ -16939,7 +16268,7 @@ typedef struct {
     UA_DiagnosticInfo *diagnosticInfos;
 } UA_TranslateBrowsePathsToNodeIdsResponse;
 
-#define UA_TYPES_TRANSLATEBROWSEPATHSTONODEIDSRESPONSE 232
+#define UA_TYPES_TRANSLATEBROWSEPATHSTONODEIDSRESPONSE 184
 
 /**
  * BrowseResponse
@@ -16953,7 +16282,7 @@ typedef struct {
     UA_DiagnosticInfo *diagnosticInfos;
 } UA_BrowseResponse;
 
-#define UA_TYPES_BROWSERESPONSE 233
+#define UA_TYPES_BROWSERESPONSE 185
 
 /**
  * CreateSessionResponse
@@ -16974,30 +16303,7 @@ typedef struct {
     UA_UInt32 maxRequestMessageSize;
 } UA_CreateSessionResponse;
 
-#define UA_TYPES_CREATESESSIONRESPONSE 234
-
-/**
- * DataSetMetaDataType
- * ^^^^^^^^^^^^^^^^^^^
- */
-typedef struct {
-    size_t namespacesSize;
-    UA_String *namespaces;
-    size_t structureDataTypesSize;
-    UA_StructureDescription *structureDataTypes;
-    size_t enumDataTypesSize;
-    UA_EnumDescription *enumDataTypes;
-    size_t simpleDataTypesSize;
-    UA_SimpleTypeDescription *simpleDataTypes;
-    UA_String name;
-    UA_LocalizedText description;
-    size_t fieldsSize;
-    UA_FieldMetaData *fields;
-    UA_Guid dataSetClassId;
-    UA_ConfigurationVersionDataType configurationVersion;
-} UA_DataSetMetaDataType;
-
-#define UA_TYPES_DATASETMETADATATYPE 235
+#define UA_TYPES_CREATESESSIONRESPONSE 186
 
 /**
  * ContentFilter
@@ -17008,36 +16314,7 @@ typedef struct {
     UA_ContentFilterElement *elements;
 } UA_ContentFilter;
 
-#define UA_TYPES_CONTENTFILTER 236
-
-/**
- * WriterGroupDataType
- * ^^^^^^^^^^^^^^^^^^^
- */
-typedef struct {
-    UA_String name;
-    UA_Boolean enabled;
-    UA_MessageSecurityMode securityMode;
-    UA_String securityGroupId;
-    size_t securityKeyServicesSize;
-    UA_EndpointDescription *securityKeyServices;
-    UA_UInt32 maxNetworkMessageSize;
-    size_t groupPropertiesSize;
-    UA_KeyValuePair *groupProperties;
-    UA_UInt16 writerGroupId;
-    UA_Double publishingInterval;
-    UA_Double keepAliveTime;
-    UA_Byte priority;
-    size_t localeIdsSize;
-    UA_String *localeIds;
-    UA_String headerLayoutUri;
-    UA_ExtensionObject transportSettings;
-    UA_ExtensionObject messageSettings;
-    size_t dataSetWritersSize;
-    UA_DataSetWriterDataType *dataSetWriters;
-} UA_WriterGroupDataType;
-
-#define UA_TYPES_WRITERGROUPDATATYPE 237
+#define UA_TYPES_CONTENTFILTER 187
 
 /**
  * GetEndpointsResponse
@@ -17049,20 +16326,7 @@ typedef struct {
     UA_EndpointDescription *endpoints;
 } UA_GetEndpointsResponse;
 
-#define UA_TYPES_GETENDPOINTSRESPONSE 238
-
-/**
- * PublishedEventsDataType
- * ^^^^^^^^^^^^^^^^^^^^^^^
- */
-typedef struct {
-    UA_NodeId eventNotifier;
-    size_t selectedFieldsSize;
-    UA_SimpleAttributeOperand *selectedFields;
-    UA_ContentFilter filter;
-} UA_PublishedEventsDataType;
-
-#define UA_TYPES_PUBLISHEDEVENTSDATATYPE 239
+#define UA_TYPES_GETENDPOINTSRESPONSE 188
 
 /**
  * EventFilter
@@ -17074,108 +16338,7 @@ typedef struct {
     UA_ContentFilter whereClause;
 } UA_EventFilter;
 
-#define UA_TYPES_EVENTFILTER 240
-
-/**
- * DataSetReaderDataType
- * ^^^^^^^^^^^^^^^^^^^^^
- */
-typedef struct {
-    UA_String name;
-    UA_Boolean enabled;
-    UA_Variant publisherId;
-    UA_UInt16 writerGroupId;
-    UA_UInt16 dataSetWriterId;
-    UA_DataSetMetaDataType dataSetMetaData;
-    UA_DataSetFieldContentMask dataSetFieldContentMask;
-    UA_Double messageReceiveTimeout;
-    UA_UInt32 keyFrameCount;
-    UA_String headerLayoutUri;
-    UA_MessageSecurityMode securityMode;
-    UA_String securityGroupId;
-    size_t securityKeyServicesSize;
-    UA_EndpointDescription *securityKeyServices;
-    size_t dataSetReaderPropertiesSize;
-    UA_KeyValuePair *dataSetReaderProperties;
-    UA_ExtensionObject transportSettings;
-    UA_ExtensionObject messageSettings;
-    UA_ExtensionObject subscribedDataSet;
-} UA_DataSetReaderDataType;
-
-#define UA_TYPES_DATASETREADERDATATYPE 241
-
-/**
- * PublishedDataSetDataType
- * ^^^^^^^^^^^^^^^^^^^^^^^^
- */
-typedef struct {
-    UA_String name;
-    size_t dataSetFolderSize;
-    UA_String *dataSetFolder;
-    UA_DataSetMetaDataType dataSetMetaData;
-    size_t extensionFieldsSize;
-    UA_KeyValuePair *extensionFields;
-    UA_ExtensionObject dataSetSource;
-} UA_PublishedDataSetDataType;
-
-#define UA_TYPES_PUBLISHEDDATASETDATATYPE 242
-
-/**
- * ReaderGroupDataType
- * ^^^^^^^^^^^^^^^^^^^
- */
-typedef struct {
-    UA_String name;
-    UA_Boolean enabled;
-    UA_MessageSecurityMode securityMode;
-    UA_String securityGroupId;
-    size_t securityKeyServicesSize;
-    UA_EndpointDescription *securityKeyServices;
-    UA_UInt32 maxNetworkMessageSize;
-    size_t groupPropertiesSize;
-    UA_KeyValuePair *groupProperties;
-    UA_ExtensionObject transportSettings;
-    UA_ExtensionObject messageSettings;
-    size_t dataSetReadersSize;
-    UA_DataSetReaderDataType *dataSetReaders;
-} UA_ReaderGroupDataType;
-
-#define UA_TYPES_READERGROUPDATATYPE 243
-
-/**
- * PubSubConnectionDataType
- * ^^^^^^^^^^^^^^^^^^^^^^^^
- */
-typedef struct {
-    UA_String name;
-    UA_Boolean enabled;
-    UA_Variant publisherId;
-    UA_String transportProfileUri;
-    UA_ExtensionObject address;
-    size_t connectionPropertiesSize;
-    UA_KeyValuePair *connectionProperties;
-    UA_ExtensionObject transportSettings;
-    size_t writerGroupsSize;
-    UA_WriterGroupDataType *writerGroups;
-    size_t readerGroupsSize;
-    UA_ReaderGroupDataType *readerGroups;
-} UA_PubSubConnectionDataType;
-
-#define UA_TYPES_PUBSUBCONNECTIONDATATYPE 244
-
-/**
- * PubSubConfigurationDataType
- * ^^^^^^^^^^^^^^^^^^^^^^^^^^^
- */
-typedef struct {
-    size_t publishedDataSetsSize;
-    UA_PublishedDataSetDataType *publishedDataSets;
-    size_t connectionsSize;
-    UA_PubSubConnectionDataType *connections;
-    UA_Boolean enabled;
-} UA_PubSubConfigurationDataType;
-
-#define UA_TYPES_PUBSUBCONFIGURATIONDATATYPE 245
+#define UA_TYPES_EVENTFILTER 189
 
 
 _UA_END_DECLS
@@ -17184,7 +16347,7 @@ _UA_END_DECLS
 /*********************************** amalgamated original file "/home/sk/git/development/products/common/firmware/open62541/library/src_generated/open62541/types_generated_handling.h" ***********************************/
 
 /* Generated from Opc.Ua.Types.bsd with script /home/sk/git/development/products/common/firmware/open62541/tools/generate_datatypes.py
- * on host pc-49a83f by user sk at 2021-09-10 11:37:26 */
+ * on host pc-49a83f by user sk at 2021-09-10 12:17:57 */
 
 
 
@@ -18003,37 +17166,6 @@ UA_ViewAttributes_delete(UA_ViewAttributes *p) {
     UA_delete(p, &UA_TYPES[UA_TYPES_VIEWATTRIBUTES]);
 }
 
-/* UadpNetworkMessageContentMask */
-static UA_INLINE void
-UA_UadpNetworkMessageContentMask_init(UA_UadpNetworkMessageContentMask *p) {
-    memset(p, 0, sizeof(UA_UadpNetworkMessageContentMask));
-}
-
-static UA_INLINE UA_UadpNetworkMessageContentMask *
-UA_UadpNetworkMessageContentMask_new(void) {
-    return (UA_UadpNetworkMessageContentMask*)UA_new(&UA_TYPES[UA_TYPES_UADPNETWORKMESSAGECONTENTMASK]);
-}
-
-static UA_INLINE UA_StatusCode
-UA_UadpNetworkMessageContentMask_copy(const UA_UadpNetworkMessageContentMask *src, UA_UadpNetworkMessageContentMask *dst) {
-    return UA_copy(src, dst, &UA_TYPES[UA_TYPES_UADPNETWORKMESSAGECONTENTMASK]);
-}
-
-UA_DEPRECATED static UA_INLINE void
-UA_UadpNetworkMessageContentMask_deleteMembers(UA_UadpNetworkMessageContentMask *p) {
-    UA_clear(p, &UA_TYPES[UA_TYPES_UADPNETWORKMESSAGECONTENTMASK]);
-}
-
-static UA_INLINE void
-UA_UadpNetworkMessageContentMask_clear(UA_UadpNetworkMessageContentMask *p) {
-    UA_clear(p, &UA_TYPES[UA_TYPES_UADPNETWORKMESSAGECONTENTMASK]);
-}
-
-static UA_INLINE void
-UA_UadpNetworkMessageContentMask_delete(UA_UadpNetworkMessageContentMask *p) {
-    UA_delete(p, &UA_TYPES[UA_TYPES_UADPNETWORKMESSAGECONTENTMASK]);
-}
-
 /* XVType */
 static UA_INLINE void
 UA_XVType_init(UA_XVType *p) {
@@ -18156,37 +17288,6 @@ UA_EnumValueType_clear(UA_EnumValueType *p) {
 static UA_INLINE void
 UA_EnumValueType_delete(UA_EnumValueType *p) {
     UA_delete(p, &UA_TYPES[UA_TYPES_ENUMVALUETYPE]);
-}
-
-/* BrokerConnectionTransportDataType */
-static UA_INLINE void
-UA_BrokerConnectionTransportDataType_init(UA_BrokerConnectionTransportDataType *p) {
-    memset(p, 0, sizeof(UA_BrokerConnectionTransportDataType));
-}
-
-static UA_INLINE UA_BrokerConnectionTransportDataType *
-UA_BrokerConnectionTransportDataType_new(void) {
-    return (UA_BrokerConnectionTransportDataType*)UA_new(&UA_TYPES[UA_TYPES_BROKERCONNECTIONTRANSPORTDATATYPE]);
-}
-
-static UA_INLINE UA_StatusCode
-UA_BrokerConnectionTransportDataType_copy(const UA_BrokerConnectionTransportDataType *src, UA_BrokerConnectionTransportDataType *dst) {
-    return UA_copy(src, dst, &UA_TYPES[UA_TYPES_BROKERCONNECTIONTRANSPORTDATATYPE]);
-}
-
-UA_DEPRECATED static UA_INLINE void
-UA_BrokerConnectionTransportDataType_deleteMembers(UA_BrokerConnectionTransportDataType *p) {
-    UA_clear(p, &UA_TYPES[UA_TYPES_BROKERCONNECTIONTRANSPORTDATATYPE]);
-}
-
-static UA_INLINE void
-UA_BrokerConnectionTransportDataType_clear(UA_BrokerConnectionTransportDataType *p) {
-    UA_clear(p, &UA_TYPES[UA_TYPES_BROKERCONNECTIONTRANSPORTDATATYPE]);
-}
-
-static UA_INLINE void
-UA_BrokerConnectionTransportDataType_delete(UA_BrokerConnectionTransportDataType *p) {
-    UA_delete(p, &UA_TYPES[UA_TYPES_BROKERCONNECTIONTRANSPORTDATATYPE]);
 }
 
 /* EventFieldList */
@@ -18373,37 +17474,6 @@ UA_LiteralOperand_clear(UA_LiteralOperand *p) {
 static UA_INLINE void
 UA_LiteralOperand_delete(UA_LiteralOperand *p) {
     UA_delete(p, &UA_TYPES[UA_TYPES_LITERALOPERAND]);
-}
-
-/* UadpDataSetMessageContentMask */
-static UA_INLINE void
-UA_UadpDataSetMessageContentMask_init(UA_UadpDataSetMessageContentMask *p) {
-    memset(p, 0, sizeof(UA_UadpDataSetMessageContentMask));
-}
-
-static UA_INLINE UA_UadpDataSetMessageContentMask *
-UA_UadpDataSetMessageContentMask_new(void) {
-    return (UA_UadpDataSetMessageContentMask*)UA_new(&UA_TYPES[UA_TYPES_UADPDATASETMESSAGECONTENTMASK]);
-}
-
-static UA_INLINE UA_StatusCode
-UA_UadpDataSetMessageContentMask_copy(const UA_UadpDataSetMessageContentMask *src, UA_UadpDataSetMessageContentMask *dst) {
-    return UA_copy(src, dst, &UA_TYPES[UA_TYPES_UADPDATASETMESSAGECONTENTMASK]);
-}
-
-UA_DEPRECATED static UA_INLINE void
-UA_UadpDataSetMessageContentMask_deleteMembers(UA_UadpDataSetMessageContentMask *p) {
-    UA_clear(p, &UA_TYPES[UA_TYPES_UADPDATASETMESSAGECONTENTMASK]);
-}
-
-static UA_INLINE void
-UA_UadpDataSetMessageContentMask_clear(UA_UadpDataSetMessageContentMask *p) {
-    UA_clear(p, &UA_TYPES[UA_TYPES_UADPDATASETMESSAGECONTENTMASK]);
-}
-
-static UA_INLINE void
-UA_UadpDataSetMessageContentMask_delete(UA_UadpDataSetMessageContentMask *p) {
-    UA_delete(p, &UA_TYPES[UA_TYPES_UADPDATASETMESSAGECONTENTMASK]);
 }
 
 /* MessageSecurityMode */
@@ -18652,37 +17722,6 @@ UA_SignatureData_clear(UA_SignatureData *p) {
 static UA_INLINE void
 UA_SignatureData_delete(UA_SignatureData *p) {
     UA_delete(p, &UA_TYPES[UA_TYPES_SIGNATUREDATA]);
-}
-
-/* NetworkAddressUrlDataType */
-static UA_INLINE void
-UA_NetworkAddressUrlDataType_init(UA_NetworkAddressUrlDataType *p) {
-    memset(p, 0, sizeof(UA_NetworkAddressUrlDataType));
-}
-
-static UA_INLINE UA_NetworkAddressUrlDataType *
-UA_NetworkAddressUrlDataType_new(void) {
-    return (UA_NetworkAddressUrlDataType*)UA_new(&UA_TYPES[UA_TYPES_NETWORKADDRESSURLDATATYPE]);
-}
-
-static UA_INLINE UA_StatusCode
-UA_NetworkAddressUrlDataType_copy(const UA_NetworkAddressUrlDataType *src, UA_NetworkAddressUrlDataType *dst) {
-    return UA_copy(src, dst, &UA_TYPES[UA_TYPES_NETWORKADDRESSURLDATATYPE]);
-}
-
-UA_DEPRECATED static UA_INLINE void
-UA_NetworkAddressUrlDataType_deleteMembers(UA_NetworkAddressUrlDataType *p) {
-    UA_clear(p, &UA_TYPES[UA_TYPES_NETWORKADDRESSURLDATATYPE]);
-}
-
-static UA_INLINE void
-UA_NetworkAddressUrlDataType_clear(UA_NetworkAddressUrlDataType *p) {
-    UA_clear(p, &UA_TYPES[UA_TYPES_NETWORKADDRESSURLDATATYPE]);
-}
-
-static UA_INLINE void
-UA_NetworkAddressUrlDataType_delete(UA_NetworkAddressUrlDataType *p) {
-    UA_delete(p, &UA_TYPES[UA_TYPES_NETWORKADDRESSURLDATATYPE]);
 }
 
 /* ModifySubscriptionResponse */
@@ -19119,37 +18158,6 @@ UA_CreateSubscriptionResponse_delete(UA_CreateSubscriptionResponse *p) {
     UA_delete(p, &UA_TYPES[UA_TYPES_CREATESUBSCRIPTIONRESPONSE]);
 }
 
-/* BrokerTransportQualityOfService */
-static UA_INLINE void
-UA_BrokerTransportQualityOfService_init(UA_BrokerTransportQualityOfService *p) {
-    memset(p, 0, sizeof(UA_BrokerTransportQualityOfService));
-}
-
-static UA_INLINE UA_BrokerTransportQualityOfService *
-UA_BrokerTransportQualityOfService_new(void) {
-    return (UA_BrokerTransportQualityOfService*)UA_new(&UA_TYPES[UA_TYPES_BROKERTRANSPORTQUALITYOFSERVICE]);
-}
-
-static UA_INLINE UA_StatusCode
-UA_BrokerTransportQualityOfService_copy(const UA_BrokerTransportQualityOfService *src, UA_BrokerTransportQualityOfService *dst) {
-    return UA_copy(src, dst, &UA_TYPES[UA_TYPES_BROKERTRANSPORTQUALITYOFSERVICE]);
-}
-
-UA_DEPRECATED static UA_INLINE void
-UA_BrokerTransportQualityOfService_deleteMembers(UA_BrokerTransportQualityOfService *p) {
-    UA_clear(p, &UA_TYPES[UA_TYPES_BROKERTRANSPORTQUALITYOFSERVICE]);
-}
-
-static UA_INLINE void
-UA_BrokerTransportQualityOfService_clear(UA_BrokerTransportQualityOfService *p) {
-    UA_clear(p, &UA_TYPES[UA_TYPES_BROKERTRANSPORTQUALITYOFSERVICE]);
-}
-
-static UA_INLINE void
-UA_BrokerTransportQualityOfService_delete(UA_BrokerTransportQualityOfService *p) {
-    UA_delete(p, &UA_TYPES[UA_TYPES_BROKERTRANSPORTQUALITYOFSERVICE]);
-}
-
 /* EnumDefinition */
 static UA_INLINE void
 UA_EnumDefinition_init(UA_EnumDefinition *p) {
@@ -19179,37 +18187,6 @@ UA_EnumDefinition_clear(UA_EnumDefinition *p) {
 static UA_INLINE void
 UA_EnumDefinition_delete(UA_EnumDefinition *p) {
     UA_delete(p, &UA_TYPES[UA_TYPES_ENUMDEFINITION]);
-}
-
-/* MdnsDiscoveryConfiguration */
-static UA_INLINE void
-UA_MdnsDiscoveryConfiguration_init(UA_MdnsDiscoveryConfiguration *p) {
-    memset(p, 0, sizeof(UA_MdnsDiscoveryConfiguration));
-}
-
-static UA_INLINE UA_MdnsDiscoveryConfiguration *
-UA_MdnsDiscoveryConfiguration_new(void) {
-    return (UA_MdnsDiscoveryConfiguration*)UA_new(&UA_TYPES[UA_TYPES_MDNSDISCOVERYCONFIGURATION]);
-}
-
-static UA_INLINE UA_StatusCode
-UA_MdnsDiscoveryConfiguration_copy(const UA_MdnsDiscoveryConfiguration *src, UA_MdnsDiscoveryConfiguration *dst) {
-    return UA_copy(src, dst, &UA_TYPES[UA_TYPES_MDNSDISCOVERYCONFIGURATION]);
-}
-
-UA_DEPRECATED static UA_INLINE void
-UA_MdnsDiscoveryConfiguration_deleteMembers(UA_MdnsDiscoveryConfiguration *p) {
-    UA_clear(p, &UA_TYPES[UA_TYPES_MDNSDISCOVERYCONFIGURATION]);
-}
-
-static UA_INLINE void
-UA_MdnsDiscoveryConfiguration_clear(UA_MdnsDiscoveryConfiguration *p) {
-    UA_clear(p, &UA_TYPES[UA_TYPES_MDNSDISCOVERYCONFIGURATION]);
-}
-
-static UA_INLINE void
-UA_MdnsDiscoveryConfiguration_delete(UA_MdnsDiscoveryConfiguration *p) {
-    UA_delete(p, &UA_TYPES[UA_TYPES_MDNSDISCOVERYCONFIGURATION]);
 }
 
 /* AxisScaleEnumeration */
@@ -19334,37 +18311,6 @@ UA_ReadResponse_clear(UA_ReadResponse *p) {
 static UA_INLINE void
 UA_ReadResponse_delete(UA_ReadResponse *p) {
     UA_delete(p, &UA_TYPES[UA_TYPES_READRESPONSE]);
-}
-
-/* PermissionType */
-static UA_INLINE void
-UA_PermissionType_init(UA_PermissionType *p) {
-    memset(p, 0, sizeof(UA_PermissionType));
-}
-
-static UA_INLINE UA_PermissionType *
-UA_PermissionType_new(void) {
-    return (UA_PermissionType*)UA_new(&UA_TYPES[UA_TYPES_PERMISSIONTYPE]);
-}
-
-static UA_INLINE UA_StatusCode
-UA_PermissionType_copy(const UA_PermissionType *src, UA_PermissionType *dst) {
-    return UA_copy(src, dst, &UA_TYPES[UA_TYPES_PERMISSIONTYPE]);
-}
-
-UA_DEPRECATED static UA_INLINE void
-UA_PermissionType_deleteMembers(UA_PermissionType *p) {
-    UA_clear(p, &UA_TYPES[UA_TYPES_PERMISSIONTYPE]);
-}
-
-static UA_INLINE void
-UA_PermissionType_clear(UA_PermissionType *p) {
-    UA_clear(p, &UA_TYPES[UA_TYPES_PERMISSIONTYPE]);
-}
-
-static UA_INLINE void
-UA_PermissionType_delete(UA_PermissionType *p) {
-    UA_delete(p, &UA_TYPES[UA_TYPES_PERMISSIONTYPE]);
 }
 
 /* TimestampsToReturn */
@@ -19584,37 +18530,6 @@ UA_IssuedIdentityToken_delete(UA_IssuedIdentityToken *p) {
     UA_delete(p, &UA_TYPES[UA_TYPES_ISSUEDIDENTITYTOKEN]);
 }
 
-/* ServerOnNetwork */
-static UA_INLINE void
-UA_ServerOnNetwork_init(UA_ServerOnNetwork *p) {
-    memset(p, 0, sizeof(UA_ServerOnNetwork));
-}
-
-static UA_INLINE UA_ServerOnNetwork *
-UA_ServerOnNetwork_new(void) {
-    return (UA_ServerOnNetwork*)UA_new(&UA_TYPES[UA_TYPES_SERVERONNETWORK]);
-}
-
-static UA_INLINE UA_StatusCode
-UA_ServerOnNetwork_copy(const UA_ServerOnNetwork *src, UA_ServerOnNetwork *dst) {
-    return UA_copy(src, dst, &UA_TYPES[UA_TYPES_SERVERONNETWORK]);
-}
-
-UA_DEPRECATED static UA_INLINE void
-UA_ServerOnNetwork_deleteMembers(UA_ServerOnNetwork *p) {
-    UA_clear(p, &UA_TYPES[UA_TYPES_SERVERONNETWORK]);
-}
-
-static UA_INLINE void
-UA_ServerOnNetwork_clear(UA_ServerOnNetwork *p) {
-    UA_clear(p, &UA_TYPES[UA_TYPES_SERVERONNETWORK]);
-}
-
-static UA_INLINE void
-UA_ServerOnNetwork_delete(UA_ServerOnNetwork *p) {
-    UA_delete(p, &UA_TYPES[UA_TYPES_SERVERONNETWORK]);
-}
-
 /* DeleteMonitoredItemsResponse */
 static UA_INLINE void
 UA_DeleteMonitoredItemsResponse_init(UA_DeleteMonitoredItemsResponse *p) {
@@ -19646,37 +18561,6 @@ UA_DeleteMonitoredItemsResponse_delete(UA_DeleteMonitoredItemsResponse *p) {
     UA_delete(p, &UA_TYPES[UA_TYPES_DELETEMONITOREDITEMSRESPONSE]);
 }
 
-/* DatagramConnectionTransportDataType */
-static UA_INLINE void
-UA_DatagramConnectionTransportDataType_init(UA_DatagramConnectionTransportDataType *p) {
-    memset(p, 0, sizeof(UA_DatagramConnectionTransportDataType));
-}
-
-static UA_INLINE UA_DatagramConnectionTransportDataType *
-UA_DatagramConnectionTransportDataType_new(void) {
-    return (UA_DatagramConnectionTransportDataType*)UA_new(&UA_TYPES[UA_TYPES_DATAGRAMCONNECTIONTRANSPORTDATATYPE]);
-}
-
-static UA_INLINE UA_StatusCode
-UA_DatagramConnectionTransportDataType_copy(const UA_DatagramConnectionTransportDataType *src, UA_DatagramConnectionTransportDataType *dst) {
-    return UA_copy(src, dst, &UA_TYPES[UA_TYPES_DATAGRAMCONNECTIONTRANSPORTDATATYPE]);
-}
-
-UA_DEPRECATED static UA_INLINE void
-UA_DatagramConnectionTransportDataType_deleteMembers(UA_DatagramConnectionTransportDataType *p) {
-    UA_clear(p, &UA_TYPES[UA_TYPES_DATAGRAMCONNECTIONTRANSPORTDATATYPE]);
-}
-
-static UA_INLINE void
-UA_DatagramConnectionTransportDataType_clear(UA_DatagramConnectionTransportDataType *p) {
-    UA_clear(p, &UA_TYPES[UA_TYPES_DATAGRAMCONNECTIONTRANSPORTDATATYPE]);
-}
-
-static UA_INLINE void
-UA_DatagramConnectionTransportDataType_delete(UA_DatagramConnectionTransportDataType *p) {
-    UA_delete(p, &UA_TYPES[UA_TYPES_DATAGRAMCONNECTIONTRANSPORTDATATYPE]);
-}
-
 /* ApplicationType */
 static UA_INLINE void
 UA_ApplicationType_init(UA_ApplicationType *p) {
@@ -19706,37 +18590,6 @@ UA_ApplicationType_clear(UA_ApplicationType *p) {
 static UA_INLINE void
 UA_ApplicationType_delete(UA_ApplicationType *p) {
     UA_delete(p, &UA_TYPES[UA_TYPES_APPLICATIONTYPE]);
-}
-
-/* DiscoveryConfiguration */
-static UA_INLINE void
-UA_DiscoveryConfiguration_init(UA_DiscoveryConfiguration *p) {
-    memset(p, 0, sizeof(UA_DiscoveryConfiguration));
-}
-
-static UA_INLINE UA_DiscoveryConfiguration *
-UA_DiscoveryConfiguration_new(void) {
-    return (UA_DiscoveryConfiguration*)UA_new(&UA_TYPES[UA_TYPES_DISCOVERYCONFIGURATION]);
-}
-
-static UA_INLINE UA_StatusCode
-UA_DiscoveryConfiguration_copy(const UA_DiscoveryConfiguration *src, UA_DiscoveryConfiguration *dst) {
-    return UA_copy(src, dst, &UA_TYPES[UA_TYPES_DISCOVERYCONFIGURATION]);
-}
-
-UA_DEPRECATED static UA_INLINE void
-UA_DiscoveryConfiguration_deleteMembers(UA_DiscoveryConfiguration *p) {
-    UA_clear(p, &UA_TYPES[UA_TYPES_DISCOVERYCONFIGURATION]);
-}
-
-static UA_INLINE void
-UA_DiscoveryConfiguration_clear(UA_DiscoveryConfiguration *p) {
-    UA_clear(p, &UA_TYPES[UA_TYPES_DISCOVERYCONFIGURATION]);
-}
-
-static UA_INLINE void
-UA_DiscoveryConfiguration_delete(UA_DiscoveryConfiguration *p) {
-    UA_delete(p, &UA_TYPES[UA_TYPES_DISCOVERYCONFIGURATION]);
 }
 
 /* BrowseNextRequest */
@@ -19956,68 +18809,6 @@ UA_AddNodesResult_delete(UA_AddNodesResult *p) {
     UA_delete(p, &UA_TYPES[UA_TYPES_ADDNODESRESULT]);
 }
 
-/* UadpDataSetReaderMessageDataType */
-static UA_INLINE void
-UA_UadpDataSetReaderMessageDataType_init(UA_UadpDataSetReaderMessageDataType *p) {
-    memset(p, 0, sizeof(UA_UadpDataSetReaderMessageDataType));
-}
-
-static UA_INLINE UA_UadpDataSetReaderMessageDataType *
-UA_UadpDataSetReaderMessageDataType_new(void) {
-    return (UA_UadpDataSetReaderMessageDataType*)UA_new(&UA_TYPES[UA_TYPES_UADPDATASETREADERMESSAGEDATATYPE]);
-}
-
-static UA_INLINE UA_StatusCode
-UA_UadpDataSetReaderMessageDataType_copy(const UA_UadpDataSetReaderMessageDataType *src, UA_UadpDataSetReaderMessageDataType *dst) {
-    return UA_copy(src, dst, &UA_TYPES[UA_TYPES_UADPDATASETREADERMESSAGEDATATYPE]);
-}
-
-UA_DEPRECATED static UA_INLINE void
-UA_UadpDataSetReaderMessageDataType_deleteMembers(UA_UadpDataSetReaderMessageDataType *p) {
-    UA_clear(p, &UA_TYPES[UA_TYPES_UADPDATASETREADERMESSAGEDATATYPE]);
-}
-
-static UA_INLINE void
-UA_UadpDataSetReaderMessageDataType_clear(UA_UadpDataSetReaderMessageDataType *p) {
-    UA_clear(p, &UA_TYPES[UA_TYPES_UADPDATASETREADERMESSAGEDATATYPE]);
-}
-
-static UA_INLINE void
-UA_UadpDataSetReaderMessageDataType_delete(UA_UadpDataSetReaderMessageDataType *p) {
-    UA_delete(p, &UA_TYPES[UA_TYPES_UADPDATASETREADERMESSAGEDATATYPE]);
-}
-
-/* RegisterServerResponse */
-static UA_INLINE void
-UA_RegisterServerResponse_init(UA_RegisterServerResponse *p) {
-    memset(p, 0, sizeof(UA_RegisterServerResponse));
-}
-
-static UA_INLINE UA_RegisterServerResponse *
-UA_RegisterServerResponse_new(void) {
-    return (UA_RegisterServerResponse*)UA_new(&UA_TYPES[UA_TYPES_REGISTERSERVERRESPONSE]);
-}
-
-static UA_INLINE UA_StatusCode
-UA_RegisterServerResponse_copy(const UA_RegisterServerResponse *src, UA_RegisterServerResponse *dst) {
-    return UA_copy(src, dst, &UA_TYPES[UA_TYPES_REGISTERSERVERRESPONSE]);
-}
-
-UA_DEPRECATED static UA_INLINE void
-UA_RegisterServerResponse_deleteMembers(UA_RegisterServerResponse *p) {
-    UA_clear(p, &UA_TYPES[UA_TYPES_REGISTERSERVERRESPONSE]);
-}
-
-static UA_INLINE void
-UA_RegisterServerResponse_clear(UA_RegisterServerResponse *p) {
-    UA_clear(p, &UA_TYPES[UA_TYPES_REGISTERSERVERRESPONSE]);
-}
-
-static UA_INLINE void
-UA_RegisterServerResponse_delete(UA_RegisterServerResponse *p) {
-    UA_delete(p, &UA_TYPES[UA_TYPES_REGISTERSERVERRESPONSE]);
-}
-
 /* AddReferencesItem */
 static UA_INLINE void
 UA_AddReferencesItem_init(UA_AddReferencesItem *p) {
@@ -20047,37 +18838,6 @@ UA_AddReferencesItem_clear(UA_AddReferencesItem *p) {
 static UA_INLINE void
 UA_AddReferencesItem_delete(UA_AddReferencesItem *p) {
     UA_delete(p, &UA_TYPES[UA_TYPES_ADDREFERENCESITEM]);
-}
-
-/* RegisterServer2Response */
-static UA_INLINE void
-UA_RegisterServer2Response_init(UA_RegisterServer2Response *p) {
-    memset(p, 0, sizeof(UA_RegisterServer2Response));
-}
-
-static UA_INLINE UA_RegisterServer2Response *
-UA_RegisterServer2Response_new(void) {
-    return (UA_RegisterServer2Response*)UA_new(&UA_TYPES[UA_TYPES_REGISTERSERVER2RESPONSE]);
-}
-
-static UA_INLINE UA_StatusCode
-UA_RegisterServer2Response_copy(const UA_RegisterServer2Response *src, UA_RegisterServer2Response *dst) {
-    return UA_copy(src, dst, &UA_TYPES[UA_TYPES_REGISTERSERVER2RESPONSE]);
-}
-
-UA_DEPRECATED static UA_INLINE void
-UA_RegisterServer2Response_deleteMembers(UA_RegisterServer2Response *p) {
-    UA_clear(p, &UA_TYPES[UA_TYPES_REGISTERSERVER2RESPONSE]);
-}
-
-static UA_INLINE void
-UA_RegisterServer2Response_clear(UA_RegisterServer2Response *p) {
-    UA_clear(p, &UA_TYPES[UA_TYPES_REGISTERSERVER2RESPONSE]);
-}
-
-static UA_INLINE void
-UA_RegisterServer2Response_delete(UA_RegisterServer2Response *p) {
-    UA_delete(p, &UA_TYPES[UA_TYPES_REGISTERSERVER2RESPONSE]);
 }
 
 /* DeleteReferencesResponse */
@@ -20173,68 +18933,6 @@ UA_SubscriptionAcknowledgement_delete(UA_SubscriptionAcknowledgement *p) {
     UA_delete(p, &UA_TYPES[UA_TYPES_SUBSCRIPTIONACKNOWLEDGEMENT]);
 }
 
-/* ConfigurationVersionDataType */
-static UA_INLINE void
-UA_ConfigurationVersionDataType_init(UA_ConfigurationVersionDataType *p) {
-    memset(p, 0, sizeof(UA_ConfigurationVersionDataType));
-}
-
-static UA_INLINE UA_ConfigurationVersionDataType *
-UA_ConfigurationVersionDataType_new(void) {
-    return (UA_ConfigurationVersionDataType*)UA_new(&UA_TYPES[UA_TYPES_CONFIGURATIONVERSIONDATATYPE]);
-}
-
-static UA_INLINE UA_StatusCode
-UA_ConfigurationVersionDataType_copy(const UA_ConfigurationVersionDataType *src, UA_ConfigurationVersionDataType *dst) {
-    return UA_copy(src, dst, &UA_TYPES[UA_TYPES_CONFIGURATIONVERSIONDATATYPE]);
-}
-
-UA_DEPRECATED static UA_INLINE void
-UA_ConfigurationVersionDataType_deleteMembers(UA_ConfigurationVersionDataType *p) {
-    UA_clear(p, &UA_TYPES[UA_TYPES_CONFIGURATIONVERSIONDATATYPE]);
-}
-
-static UA_INLINE void
-UA_ConfigurationVersionDataType_clear(UA_ConfigurationVersionDataType *p) {
-    UA_clear(p, &UA_TYPES[UA_TYPES_CONFIGURATIONVERSIONDATATYPE]);
-}
-
-static UA_INLINE void
-UA_ConfigurationVersionDataType_delete(UA_ConfigurationVersionDataType *p) {
-    UA_delete(p, &UA_TYPES[UA_TYPES_CONFIGURATIONVERSIONDATATYPE]);
-}
-
-/* DataSetFieldContentMask */
-static UA_INLINE void
-UA_DataSetFieldContentMask_init(UA_DataSetFieldContentMask *p) {
-    memset(p, 0, sizeof(UA_DataSetFieldContentMask));
-}
-
-static UA_INLINE UA_DataSetFieldContentMask *
-UA_DataSetFieldContentMask_new(void) {
-    return (UA_DataSetFieldContentMask*)UA_new(&UA_TYPES[UA_TYPES_DATASETFIELDCONTENTMASK]);
-}
-
-static UA_INLINE UA_StatusCode
-UA_DataSetFieldContentMask_copy(const UA_DataSetFieldContentMask *src, UA_DataSetFieldContentMask *dst) {
-    return UA_copy(src, dst, &UA_TYPES[UA_TYPES_DATASETFIELDCONTENTMASK]);
-}
-
-UA_DEPRECATED static UA_INLINE void
-UA_DataSetFieldContentMask_deleteMembers(UA_DataSetFieldContentMask *p) {
-    UA_clear(p, &UA_TYPES[UA_TYPES_DATASETFIELDCONTENTMASK]);
-}
-
-static UA_INLINE void
-UA_DataSetFieldContentMask_clear(UA_DataSetFieldContentMask *p) {
-    UA_clear(p, &UA_TYPES[UA_TYPES_DATASETFIELDCONTENTMASK]);
-}
-
-static UA_INLINE void
-UA_DataSetFieldContentMask_delete(UA_DataSetFieldContentMask *p) {
-    UA_delete(p, &UA_TYPES[UA_TYPES_DATASETFIELDCONTENTMASK]);
-}
-
 /* TransferResult */
 static UA_INLINE void
 UA_TransferResult_init(UA_TransferResult *p) {
@@ -20266,37 +18964,6 @@ UA_TransferResult_delete(UA_TransferResult *p) {
     UA_delete(p, &UA_TYPES[UA_TYPES_TRANSFERRESULT]);
 }
 
-/* PublishedVariableDataType */
-static UA_INLINE void
-UA_PublishedVariableDataType_init(UA_PublishedVariableDataType *p) {
-    memset(p, 0, sizeof(UA_PublishedVariableDataType));
-}
-
-static UA_INLINE UA_PublishedVariableDataType *
-UA_PublishedVariableDataType_new(void) {
-    return (UA_PublishedVariableDataType*)UA_new(&UA_TYPES[UA_TYPES_PUBLISHEDVARIABLEDATATYPE]);
-}
-
-static UA_INLINE UA_StatusCode
-UA_PublishedVariableDataType_copy(const UA_PublishedVariableDataType *src, UA_PublishedVariableDataType *dst) {
-    return UA_copy(src, dst, &UA_TYPES[UA_TYPES_PUBLISHEDVARIABLEDATATYPE]);
-}
-
-UA_DEPRECATED static UA_INLINE void
-UA_PublishedVariableDataType_deleteMembers(UA_PublishedVariableDataType *p) {
-    UA_clear(p, &UA_TYPES[UA_TYPES_PUBLISHEDVARIABLEDATATYPE]);
-}
-
-static UA_INLINE void
-UA_PublishedVariableDataType_clear(UA_PublishedVariableDataType *p) {
-    UA_clear(p, &UA_TYPES[UA_TYPES_PUBLISHEDVARIABLEDATATYPE]);
-}
-
-static UA_INLINE void
-UA_PublishedVariableDataType_delete(UA_PublishedVariableDataType *p) {
-    UA_delete(p, &UA_TYPES[UA_TYPES_PUBLISHEDVARIABLEDATATYPE]);
-}
-
 /* CreateMonitoredItemsResponse */
 static UA_INLINE void
 UA_CreateMonitoredItemsResponse_init(UA_CreateMonitoredItemsResponse *p) {
@@ -20326,68 +18993,6 @@ UA_CreateMonitoredItemsResponse_clear(UA_CreateMonitoredItemsResponse *p) {
 static UA_INLINE void
 UA_CreateMonitoredItemsResponse_delete(UA_CreateMonitoredItemsResponse *p) {
     UA_delete(p, &UA_TYPES[UA_TYPES_CREATEMONITOREDITEMSRESPONSE]);
-}
-
-/* RolePermissionType */
-static UA_INLINE void
-UA_RolePermissionType_init(UA_RolePermissionType *p) {
-    memset(p, 0, sizeof(UA_RolePermissionType));
-}
-
-static UA_INLINE UA_RolePermissionType *
-UA_RolePermissionType_new(void) {
-    return (UA_RolePermissionType*)UA_new(&UA_TYPES[UA_TYPES_ROLEPERMISSIONTYPE]);
-}
-
-static UA_INLINE UA_StatusCode
-UA_RolePermissionType_copy(const UA_RolePermissionType *src, UA_RolePermissionType *dst) {
-    return UA_copy(src, dst, &UA_TYPES[UA_TYPES_ROLEPERMISSIONTYPE]);
-}
-
-UA_DEPRECATED static UA_INLINE void
-UA_RolePermissionType_deleteMembers(UA_RolePermissionType *p) {
-    UA_clear(p, &UA_TYPES[UA_TYPES_ROLEPERMISSIONTYPE]);
-}
-
-static UA_INLINE void
-UA_RolePermissionType_clear(UA_RolePermissionType *p) {
-    UA_clear(p, &UA_TYPES[UA_TYPES_ROLEPERMISSIONTYPE]);
-}
-
-static UA_INLINE void
-UA_RolePermissionType_delete(UA_RolePermissionType *p) {
-    UA_delete(p, &UA_TYPES[UA_TYPES_ROLEPERMISSIONTYPE]);
-}
-
-/* OverrideValueHandling */
-static UA_INLINE void
-UA_OverrideValueHandling_init(UA_OverrideValueHandling *p) {
-    memset(p, 0, sizeof(UA_OverrideValueHandling));
-}
-
-static UA_INLINE UA_OverrideValueHandling *
-UA_OverrideValueHandling_new(void) {
-    return (UA_OverrideValueHandling*)UA_new(&UA_TYPES[UA_TYPES_OVERRIDEVALUEHANDLING]);
-}
-
-static UA_INLINE UA_StatusCode
-UA_OverrideValueHandling_copy(const UA_OverrideValueHandling *src, UA_OverrideValueHandling *dst) {
-    return UA_copy(src, dst, &UA_TYPES[UA_TYPES_OVERRIDEVALUEHANDLING]);
-}
-
-UA_DEPRECATED static UA_INLINE void
-UA_OverrideValueHandling_deleteMembers(UA_OverrideValueHandling *p) {
-    UA_clear(p, &UA_TYPES[UA_TYPES_OVERRIDEVALUEHANDLING]);
-}
-
-static UA_INLINE void
-UA_OverrideValueHandling_clear(UA_OverrideValueHandling *p) {
-    UA_clear(p, &UA_TYPES[UA_TYPES_OVERRIDEVALUEHANDLING]);
-}
-
-static UA_INLINE void
-UA_OverrideValueHandling_delete(UA_OverrideValueHandling *p) {
-    UA_delete(p, &UA_TYPES[UA_TYPES_OVERRIDEVALUEHANDLING]);
 }
 
 /* DeleteReferencesItem */
@@ -20762,37 +19367,6 @@ UA_DeleteNodesItem_delete(UA_DeleteNodesItem *p) {
     UA_delete(p, &UA_TYPES[UA_TYPES_DELETENODESITEM]);
 }
 
-/* DatagramWriterGroupTransportDataType */
-static UA_INLINE void
-UA_DatagramWriterGroupTransportDataType_init(UA_DatagramWriterGroupTransportDataType *p) {
-    memset(p, 0, sizeof(UA_DatagramWriterGroupTransportDataType));
-}
-
-static UA_INLINE UA_DatagramWriterGroupTransportDataType *
-UA_DatagramWriterGroupTransportDataType_new(void) {
-    return (UA_DatagramWriterGroupTransportDataType*)UA_new(&UA_TYPES[UA_TYPES_DATAGRAMWRITERGROUPTRANSPORTDATATYPE]);
-}
-
-static UA_INLINE UA_StatusCode
-UA_DatagramWriterGroupTransportDataType_copy(const UA_DatagramWriterGroupTransportDataType *src, UA_DatagramWriterGroupTransportDataType *dst) {
-    return UA_copy(src, dst, &UA_TYPES[UA_TYPES_DATAGRAMWRITERGROUPTRANSPORTDATATYPE]);
-}
-
-UA_DEPRECATED static UA_INLINE void
-UA_DatagramWriterGroupTransportDataType_deleteMembers(UA_DatagramWriterGroupTransportDataType *p) {
-    UA_clear(p, &UA_TYPES[UA_TYPES_DATAGRAMWRITERGROUPTRANSPORTDATATYPE]);
-}
-
-static UA_INLINE void
-UA_DatagramWriterGroupTransportDataType_clear(UA_DatagramWriterGroupTransportDataType *p) {
-    UA_clear(p, &UA_TYPES[UA_TYPES_DATAGRAMWRITERGROUPTRANSPORTDATATYPE]);
-}
-
-static UA_INLINE void
-UA_DatagramWriterGroupTransportDataType_delete(UA_DatagramWriterGroupTransportDataType *p) {
-    UA_delete(p, &UA_TYPES[UA_TYPES_DATAGRAMWRITERGROUPTRANSPORTDATATYPE]);
-}
-
 /* ReadValueId */
 static UA_INLINE void
 UA_ReadValueId_init(UA_ReadValueId *p) {
@@ -20915,37 +19489,6 @@ UA_DeleteNodesRequest_clear(UA_DeleteNodesRequest *p) {
 static UA_INLINE void
 UA_DeleteNodesRequest_delete(UA_DeleteNodesRequest *p) {
     UA_delete(p, &UA_TYPES[UA_TYPES_DELETENODESREQUEST]);
-}
-
-/* BrokerDataSetWriterTransportDataType */
-static UA_INLINE void
-UA_BrokerDataSetWriterTransportDataType_init(UA_BrokerDataSetWriterTransportDataType *p) {
-    memset(p, 0, sizeof(UA_BrokerDataSetWriterTransportDataType));
-}
-
-static UA_INLINE UA_BrokerDataSetWriterTransportDataType *
-UA_BrokerDataSetWriterTransportDataType_new(void) {
-    return (UA_BrokerDataSetWriterTransportDataType*)UA_new(&UA_TYPES[UA_TYPES_BROKERDATASETWRITERTRANSPORTDATATYPE]);
-}
-
-static UA_INLINE UA_StatusCode
-UA_BrokerDataSetWriterTransportDataType_copy(const UA_BrokerDataSetWriterTransportDataType *src, UA_BrokerDataSetWriterTransportDataType *dst) {
-    return UA_copy(src, dst, &UA_TYPES[UA_TYPES_BROKERDATASETWRITERTRANSPORTDATATYPE]);
-}
-
-UA_DEPRECATED static UA_INLINE void
-UA_BrokerDataSetWriterTransportDataType_deleteMembers(UA_BrokerDataSetWriterTransportDataType *p) {
-    UA_clear(p, &UA_TYPES[UA_TYPES_BROKERDATASETWRITERTRANSPORTDATATYPE]);
-}
-
-static UA_INLINE void
-UA_BrokerDataSetWriterTransportDataType_clear(UA_BrokerDataSetWriterTransportDataType *p) {
-    UA_clear(p, &UA_TYPES[UA_TYPES_BROKERDATASETWRITERTRANSPORTDATATYPE]);
-}
-
-static UA_INLINE void
-UA_BrokerDataSetWriterTransportDataType_delete(UA_BrokerDataSetWriterTransportDataType *p) {
-    UA_delete(p, &UA_TYPES[UA_TYPES_BROKERDATASETWRITERTRANSPORTDATATYPE]);
 }
 
 /* MonitoredItemModifyRequest */
@@ -21134,37 +19677,6 @@ UA_ContentFilterResult_delete(UA_ContentFilterResult *p) {
     UA_delete(p, &UA_TYPES[UA_TYPES_CONTENTFILTERRESULT]);
 }
 
-/* SimpleTypeDescription */
-static UA_INLINE void
-UA_SimpleTypeDescription_init(UA_SimpleTypeDescription *p) {
-    memset(p, 0, sizeof(UA_SimpleTypeDescription));
-}
-
-static UA_INLINE UA_SimpleTypeDescription *
-UA_SimpleTypeDescription_new(void) {
-    return (UA_SimpleTypeDescription*)UA_new(&UA_TYPES[UA_TYPES_SIMPLETYPEDESCRIPTION]);
-}
-
-static UA_INLINE UA_StatusCode
-UA_SimpleTypeDescription_copy(const UA_SimpleTypeDescription *src, UA_SimpleTypeDescription *dst) {
-    return UA_copy(src, dst, &UA_TYPES[UA_TYPES_SIMPLETYPEDESCRIPTION]);
-}
-
-UA_DEPRECATED static UA_INLINE void
-UA_SimpleTypeDescription_deleteMembers(UA_SimpleTypeDescription *p) {
-    UA_clear(p, &UA_TYPES[UA_TYPES_SIMPLETYPEDESCRIPTION]);
-}
-
-static UA_INLINE void
-UA_SimpleTypeDescription_clear(UA_SimpleTypeDescription *p) {
-    UA_clear(p, &UA_TYPES[UA_TYPES_SIMPLETYPEDESCRIPTION]);
-}
-
-static UA_INLINE void
-UA_SimpleTypeDescription_delete(UA_SimpleTypeDescription *p) {
-    UA_delete(p, &UA_TYPES[UA_TYPES_SIMPLETYPEDESCRIPTION]);
-}
-
 /* UserTokenPolicy */
 static UA_INLINE void
 UA_UserTokenPolicy_init(UA_UserTokenPolicy *p) {
@@ -21320,37 +19832,6 @@ UA_ReferenceTypeAttributes_delete(UA_ReferenceTypeAttributes *p) {
     UA_delete(p, &UA_TYPES[UA_TYPES_REFERENCETYPEATTRIBUTES]);
 }
 
-/* DataSetFieldFlags */
-static UA_INLINE void
-UA_DataSetFieldFlags_init(UA_DataSetFieldFlags *p) {
-    memset(p, 0, sizeof(UA_DataSetFieldFlags));
-}
-
-static UA_INLINE UA_DataSetFieldFlags *
-UA_DataSetFieldFlags_new(void) {
-    return (UA_DataSetFieldFlags*)UA_new(&UA_TYPES[UA_TYPES_DATASETFIELDFLAGS]);
-}
-
-static UA_INLINE UA_StatusCode
-UA_DataSetFieldFlags_copy(const UA_DataSetFieldFlags *src, UA_DataSetFieldFlags *dst) {
-    return UA_copy(src, dst, &UA_TYPES[UA_TYPES_DATASETFIELDFLAGS]);
-}
-
-UA_DEPRECATED static UA_INLINE void
-UA_DataSetFieldFlags_deleteMembers(UA_DataSetFieldFlags *p) {
-    UA_clear(p, &UA_TYPES[UA_TYPES_DATASETFIELDFLAGS]);
-}
-
-static UA_INLINE void
-UA_DataSetFieldFlags_clear(UA_DataSetFieldFlags *p) {
-    UA_clear(p, &UA_TYPES[UA_TYPES_DATASETFIELDFLAGS]);
-}
-
-static UA_INLINE void
-UA_DataSetFieldFlags_delete(UA_DataSetFieldFlags *p) {
-    UA_delete(p, &UA_TYPES[UA_TYPES_DATASETFIELDFLAGS]);
-}
-
 /* GetEndpointsRequest */
 static UA_INLINE void
 UA_GetEndpointsRequest_init(UA_GetEndpointsRequest *p) {
@@ -21411,68 +19892,6 @@ UA_CloseSecureChannelResponse_clear(UA_CloseSecureChannelResponse *p) {
 static UA_INLINE void
 UA_CloseSecureChannelResponse_delete(UA_CloseSecureChannelResponse *p) {
     UA_delete(p, &UA_TYPES[UA_TYPES_CLOSESECURECHANNELRESPONSE]);
-}
-
-/* PublishedDataItemsDataType */
-static UA_INLINE void
-UA_PublishedDataItemsDataType_init(UA_PublishedDataItemsDataType *p) {
-    memset(p, 0, sizeof(UA_PublishedDataItemsDataType));
-}
-
-static UA_INLINE UA_PublishedDataItemsDataType *
-UA_PublishedDataItemsDataType_new(void) {
-    return (UA_PublishedDataItemsDataType*)UA_new(&UA_TYPES[UA_TYPES_PUBLISHEDDATAITEMSDATATYPE]);
-}
-
-static UA_INLINE UA_StatusCode
-UA_PublishedDataItemsDataType_copy(const UA_PublishedDataItemsDataType *src, UA_PublishedDataItemsDataType *dst) {
-    return UA_copy(src, dst, &UA_TYPES[UA_TYPES_PUBLISHEDDATAITEMSDATATYPE]);
-}
-
-UA_DEPRECATED static UA_INLINE void
-UA_PublishedDataItemsDataType_deleteMembers(UA_PublishedDataItemsDataType *p) {
-    UA_clear(p, &UA_TYPES[UA_TYPES_PUBLISHEDDATAITEMSDATATYPE]);
-}
-
-static UA_INLINE void
-UA_PublishedDataItemsDataType_clear(UA_PublishedDataItemsDataType *p) {
-    UA_clear(p, &UA_TYPES[UA_TYPES_PUBLISHEDDATAITEMSDATATYPE]);
-}
-
-static UA_INLINE void
-UA_PublishedDataItemsDataType_delete(UA_PublishedDataItemsDataType *p) {
-    UA_delete(p, &UA_TYPES[UA_TYPES_PUBLISHEDDATAITEMSDATATYPE]);
-}
-
-/* PubSubState */
-static UA_INLINE void
-UA_PubSubState_init(UA_PubSubState *p) {
-    memset(p, 0, sizeof(UA_PubSubState));
-}
-
-static UA_INLINE UA_PubSubState *
-UA_PubSubState_new(void) {
-    return (UA_PubSubState*)UA_new(&UA_TYPES[UA_TYPES_PUBSUBSTATE]);
-}
-
-static UA_INLINE UA_StatusCode
-UA_PubSubState_copy(const UA_PubSubState *src, UA_PubSubState *dst) {
-    return UA_copy(src, dst, &UA_TYPES[UA_TYPES_PUBSUBSTATE]);
-}
-
-UA_DEPRECATED static UA_INLINE void
-UA_PubSubState_deleteMembers(UA_PubSubState *p) {
-    UA_clear(p, &UA_TYPES[UA_TYPES_PUBSUBSTATE]);
-}
-
-static UA_INLINE void
-UA_PubSubState_clear(UA_PubSubState *p) {
-    UA_clear(p, &UA_TYPES[UA_TYPES_PUBSUBSTATE]);
-}
-
-static UA_INLINE void
-UA_PubSubState_delete(UA_PubSubState *p) {
-    UA_delete(p, &UA_TYPES[UA_TYPES_PUBSUBSTATE]);
 }
 
 /* ViewDescription */
@@ -21661,68 +20080,6 @@ UA_EventFilterResult_delete(UA_EventFilterResult *p) {
     UA_delete(p, &UA_TYPES[UA_TYPES_EVENTFILTERRESULT]);
 }
 
-/* BrokerWriterGroupTransportDataType */
-static UA_INLINE void
-UA_BrokerWriterGroupTransportDataType_init(UA_BrokerWriterGroupTransportDataType *p) {
-    memset(p, 0, sizeof(UA_BrokerWriterGroupTransportDataType));
-}
-
-static UA_INLINE UA_BrokerWriterGroupTransportDataType *
-UA_BrokerWriterGroupTransportDataType_new(void) {
-    return (UA_BrokerWriterGroupTransportDataType*)UA_new(&UA_TYPES[UA_TYPES_BROKERWRITERGROUPTRANSPORTDATATYPE]);
-}
-
-static UA_INLINE UA_StatusCode
-UA_BrokerWriterGroupTransportDataType_copy(const UA_BrokerWriterGroupTransportDataType *src, UA_BrokerWriterGroupTransportDataType *dst) {
-    return UA_copy(src, dst, &UA_TYPES[UA_TYPES_BROKERWRITERGROUPTRANSPORTDATATYPE]);
-}
-
-UA_DEPRECATED static UA_INLINE void
-UA_BrokerWriterGroupTransportDataType_deleteMembers(UA_BrokerWriterGroupTransportDataType *p) {
-    UA_clear(p, &UA_TYPES[UA_TYPES_BROKERWRITERGROUPTRANSPORTDATATYPE]);
-}
-
-static UA_INLINE void
-UA_BrokerWriterGroupTransportDataType_clear(UA_BrokerWriterGroupTransportDataType *p) {
-    UA_clear(p, &UA_TYPES[UA_TYPES_BROKERWRITERGROUPTRANSPORTDATATYPE]);
-}
-
-static UA_INLINE void
-UA_BrokerWriterGroupTransportDataType_delete(UA_BrokerWriterGroupTransportDataType *p) {
-    UA_delete(p, &UA_TYPES[UA_TYPES_BROKERWRITERGROUPTRANSPORTDATATYPE]);
-}
-
-/* KeyValuePair */
-static UA_INLINE void
-UA_KeyValuePair_init(UA_KeyValuePair *p) {
-    memset(p, 0, sizeof(UA_KeyValuePair));
-}
-
-static UA_INLINE UA_KeyValuePair *
-UA_KeyValuePair_new(void) {
-    return (UA_KeyValuePair*)UA_new(&UA_TYPES[UA_TYPES_KEYVALUEPAIR]);
-}
-
-static UA_INLINE UA_StatusCode
-UA_KeyValuePair_copy(const UA_KeyValuePair *src, UA_KeyValuePair *dst) {
-    return UA_copy(src, dst, &UA_TYPES[UA_TYPES_KEYVALUEPAIR]);
-}
-
-UA_DEPRECATED static UA_INLINE void
-UA_KeyValuePair_deleteMembers(UA_KeyValuePair *p) {
-    UA_clear(p, &UA_TYPES[UA_TYPES_KEYVALUEPAIR]);
-}
-
-static UA_INLINE void
-UA_KeyValuePair_clear(UA_KeyValuePair *p) {
-    UA_clear(p, &UA_TYPES[UA_TYPES_KEYVALUEPAIR]);
-}
-
-static UA_INLINE void
-UA_KeyValuePair_delete(UA_KeyValuePair *p) {
-    UA_delete(p, &UA_TYPES[UA_TYPES_KEYVALUEPAIR]);
-}
-
 /* MonitoredItemCreateRequest */
 static UA_INLINE void
 UA_MonitoredItemCreateRequest_init(UA_MonitoredItemCreateRequest *p) {
@@ -21876,37 +20233,6 @@ UA_Argument_clear(UA_Argument *p) {
 static UA_INLINE void
 UA_Argument_delete(UA_Argument *p) {
     UA_delete(p, &UA_TYPES[UA_TYPES_ARGUMENT]);
-}
-
-/* JsonDataSetMessageContentMask */
-static UA_INLINE void
-UA_JsonDataSetMessageContentMask_init(UA_JsonDataSetMessageContentMask *p) {
-    memset(p, 0, sizeof(UA_JsonDataSetMessageContentMask));
-}
-
-static UA_INLINE UA_JsonDataSetMessageContentMask *
-UA_JsonDataSetMessageContentMask_new(void) {
-    return (UA_JsonDataSetMessageContentMask*)UA_new(&UA_TYPES[UA_TYPES_JSONDATASETMESSAGECONTENTMASK]);
-}
-
-static UA_INLINE UA_StatusCode
-UA_JsonDataSetMessageContentMask_copy(const UA_JsonDataSetMessageContentMask *src, UA_JsonDataSetMessageContentMask *dst) {
-    return UA_copy(src, dst, &UA_TYPES[UA_TYPES_JSONDATASETMESSAGECONTENTMASK]);
-}
-
-UA_DEPRECATED static UA_INLINE void
-UA_JsonDataSetMessageContentMask_deleteMembers(UA_JsonDataSetMessageContentMask *p) {
-    UA_clear(p, &UA_TYPES[UA_TYPES_JSONDATASETMESSAGECONTENTMASK]);
-}
-
-static UA_INLINE void
-UA_JsonDataSetMessageContentMask_clear(UA_JsonDataSetMessageContentMask *p) {
-    UA_clear(p, &UA_TYPES[UA_TYPES_JSONDATASETMESSAGECONTENTMASK]);
-}
-
-static UA_INLINE void
-UA_JsonDataSetMessageContentMask_delete(UA_JsonDataSetMessageContentMask *p) {
-    UA_delete(p, &UA_TYPES[UA_TYPES_JSONDATASETMESSAGECONTENTMASK]);
 }
 
 /* TransferSubscriptionsRequest */
@@ -22343,37 +20669,6 @@ UA_UnregisterNodesRequest_delete(UA_UnregisterNodesRequest *p) {
     UA_delete(p, &UA_TYPES[UA_TYPES_UNREGISTERNODESREQUEST]);
 }
 
-/* DataSetOrderingType */
-static UA_INLINE void
-UA_DataSetOrderingType_init(UA_DataSetOrderingType *p) {
-    memset(p, 0, sizeof(UA_DataSetOrderingType));
-}
-
-static UA_INLINE UA_DataSetOrderingType *
-UA_DataSetOrderingType_new(void) {
-    return (UA_DataSetOrderingType*)UA_new(&UA_TYPES[UA_TYPES_DATASETORDERINGTYPE]);
-}
-
-static UA_INLINE UA_StatusCode
-UA_DataSetOrderingType_copy(const UA_DataSetOrderingType *src, UA_DataSetOrderingType *dst) {
-    return UA_copy(src, dst, &UA_TYPES[UA_TYPES_DATASETORDERINGTYPE]);
-}
-
-UA_DEPRECATED static UA_INLINE void
-UA_DataSetOrderingType_deleteMembers(UA_DataSetOrderingType *p) {
-    UA_clear(p, &UA_TYPES[UA_TYPES_DATASETORDERINGTYPE]);
-}
-
-static UA_INLINE void
-UA_DataSetOrderingType_clear(UA_DataSetOrderingType *p) {
-    UA_clear(p, &UA_TYPES[UA_TYPES_DATASETORDERINGTYPE]);
-}
-
-static UA_INLINE void
-UA_DataSetOrderingType_delete(UA_DataSetOrderingType *p) {
-    UA_delete(p, &UA_TYPES[UA_TYPES_DATASETORDERINGTYPE]);
-}
-
 /* OpenSecureChannelResponse */
 static UA_INLINE void
 UA_OpenSecureChannelResponse_init(UA_OpenSecureChannelResponse *p) {
@@ -22467,68 +20762,6 @@ UA_SimpleAttributeOperand_delete(UA_SimpleAttributeOperand *p) {
     UA_delete(p, &UA_TYPES[UA_TYPES_SIMPLEATTRIBUTEOPERAND]);
 }
 
-/* UadpDataSetWriterMessageDataType */
-static UA_INLINE void
-UA_UadpDataSetWriterMessageDataType_init(UA_UadpDataSetWriterMessageDataType *p) {
-    memset(p, 0, sizeof(UA_UadpDataSetWriterMessageDataType));
-}
-
-static UA_INLINE UA_UadpDataSetWriterMessageDataType *
-UA_UadpDataSetWriterMessageDataType_new(void) {
-    return (UA_UadpDataSetWriterMessageDataType*)UA_new(&UA_TYPES[UA_TYPES_UADPDATASETWRITERMESSAGEDATATYPE]);
-}
-
-static UA_INLINE UA_StatusCode
-UA_UadpDataSetWriterMessageDataType_copy(const UA_UadpDataSetWriterMessageDataType *src, UA_UadpDataSetWriterMessageDataType *dst) {
-    return UA_copy(src, dst, &UA_TYPES[UA_TYPES_UADPDATASETWRITERMESSAGEDATATYPE]);
-}
-
-UA_DEPRECATED static UA_INLINE void
-UA_UadpDataSetWriterMessageDataType_deleteMembers(UA_UadpDataSetWriterMessageDataType *p) {
-    UA_clear(p, &UA_TYPES[UA_TYPES_UADPDATASETWRITERMESSAGEDATATYPE]);
-}
-
-static UA_INLINE void
-UA_UadpDataSetWriterMessageDataType_clear(UA_UadpDataSetWriterMessageDataType *p) {
-    UA_clear(p, &UA_TYPES[UA_TYPES_UADPDATASETWRITERMESSAGEDATATYPE]);
-}
-
-static UA_INLINE void
-UA_UadpDataSetWriterMessageDataType_delete(UA_UadpDataSetWriterMessageDataType *p) {
-    UA_delete(p, &UA_TYPES[UA_TYPES_UADPDATASETWRITERMESSAGEDATATYPE]);
-}
-
-/* JsonNetworkMessageContentMask */
-static UA_INLINE void
-UA_JsonNetworkMessageContentMask_init(UA_JsonNetworkMessageContentMask *p) {
-    memset(p, 0, sizeof(UA_JsonNetworkMessageContentMask));
-}
-
-static UA_INLINE UA_JsonNetworkMessageContentMask *
-UA_JsonNetworkMessageContentMask_new(void) {
-    return (UA_JsonNetworkMessageContentMask*)UA_new(&UA_TYPES[UA_TYPES_JSONNETWORKMESSAGECONTENTMASK]);
-}
-
-static UA_INLINE UA_StatusCode
-UA_JsonNetworkMessageContentMask_copy(const UA_JsonNetworkMessageContentMask *src, UA_JsonNetworkMessageContentMask *dst) {
-    return UA_copy(src, dst, &UA_TYPES[UA_TYPES_JSONNETWORKMESSAGECONTENTMASK]);
-}
-
-UA_DEPRECATED static UA_INLINE void
-UA_JsonNetworkMessageContentMask_deleteMembers(UA_JsonNetworkMessageContentMask *p) {
-    UA_clear(p, &UA_TYPES[UA_TYPES_JSONNETWORKMESSAGECONTENTMASK]);
-}
-
-static UA_INLINE void
-UA_JsonNetworkMessageContentMask_clear(UA_JsonNetworkMessageContentMask *p) {
-    UA_clear(p, &UA_TYPES[UA_TYPES_JSONNETWORKMESSAGECONTENTMASK]);
-}
-
-static UA_INLINE void
-UA_JsonNetworkMessageContentMask_delete(UA_JsonNetworkMessageContentMask *p) {
-    UA_delete(p, &UA_TYPES[UA_TYPES_JSONNETWORKMESSAGECONTENTMASK]);
-}
-
 /* RepublishRequest */
 static UA_INLINE void
 UA_RepublishRequest_init(UA_RepublishRequest *p) {
@@ -22620,37 +20853,6 @@ UA_ModifyMonitoredItemsResponse_clear(UA_ModifyMonitoredItemsResponse *p) {
 static UA_INLINE void
 UA_ModifyMonitoredItemsResponse_delete(UA_ModifyMonitoredItemsResponse *p) {
     UA_delete(p, &UA_TYPES[UA_TYPES_MODIFYMONITOREDITEMSRESPONSE]);
-}
-
-/* FieldTargetDataType */
-static UA_INLINE void
-UA_FieldTargetDataType_init(UA_FieldTargetDataType *p) {
-    memset(p, 0, sizeof(UA_FieldTargetDataType));
-}
-
-static UA_INLINE UA_FieldTargetDataType *
-UA_FieldTargetDataType_new(void) {
-    return (UA_FieldTargetDataType*)UA_new(&UA_TYPES[UA_TYPES_FIELDTARGETDATATYPE]);
-}
-
-static UA_INLINE UA_StatusCode
-UA_FieldTargetDataType_copy(const UA_FieldTargetDataType *src, UA_FieldTargetDataType *dst) {
-    return UA_copy(src, dst, &UA_TYPES[UA_TYPES_FIELDTARGETDATATYPE]);
-}
-
-UA_DEPRECATED static UA_INLINE void
-UA_FieldTargetDataType_deleteMembers(UA_FieldTargetDataType *p) {
-    UA_clear(p, &UA_TYPES[UA_TYPES_FIELDTARGETDATATYPE]);
-}
-
-static UA_INLINE void
-UA_FieldTargetDataType_clear(UA_FieldTargetDataType *p) {
-    UA_clear(p, &UA_TYPES[UA_TYPES_FIELDTARGETDATATYPE]);
-}
-
-static UA_INLINE void
-UA_FieldTargetDataType_delete(UA_FieldTargetDataType *p) {
-    UA_delete(p, &UA_TYPES[UA_TYPES_FIELDTARGETDATATYPE]);
 }
 
 /* DeleteSubscriptionsRequest */
@@ -22839,99 +21041,6 @@ UA_FindServersRequest_delete(UA_FindServersRequest *p) {
     UA_delete(p, &UA_TYPES[UA_TYPES_FINDSERVERSREQUEST]);
 }
 
-/* JsonDataSetWriterMessageDataType */
-static UA_INLINE void
-UA_JsonDataSetWriterMessageDataType_init(UA_JsonDataSetWriterMessageDataType *p) {
-    memset(p, 0, sizeof(UA_JsonDataSetWriterMessageDataType));
-}
-
-static UA_INLINE UA_JsonDataSetWriterMessageDataType *
-UA_JsonDataSetWriterMessageDataType_new(void) {
-    return (UA_JsonDataSetWriterMessageDataType*)UA_new(&UA_TYPES[UA_TYPES_JSONDATASETWRITERMESSAGEDATATYPE]);
-}
-
-static UA_INLINE UA_StatusCode
-UA_JsonDataSetWriterMessageDataType_copy(const UA_JsonDataSetWriterMessageDataType *src, UA_JsonDataSetWriterMessageDataType *dst) {
-    return UA_copy(src, dst, &UA_TYPES[UA_TYPES_JSONDATASETWRITERMESSAGEDATATYPE]);
-}
-
-UA_DEPRECATED static UA_INLINE void
-UA_JsonDataSetWriterMessageDataType_deleteMembers(UA_JsonDataSetWriterMessageDataType *p) {
-    UA_clear(p, &UA_TYPES[UA_TYPES_JSONDATASETWRITERMESSAGEDATATYPE]);
-}
-
-static UA_INLINE void
-UA_JsonDataSetWriterMessageDataType_clear(UA_JsonDataSetWriterMessageDataType *p) {
-    UA_clear(p, &UA_TYPES[UA_TYPES_JSONDATASETWRITERMESSAGEDATATYPE]);
-}
-
-static UA_INLINE void
-UA_JsonDataSetWriterMessageDataType_delete(UA_JsonDataSetWriterMessageDataType *p) {
-    UA_delete(p, &UA_TYPES[UA_TYPES_JSONDATASETWRITERMESSAGEDATATYPE]);
-}
-
-/* FindServersOnNetworkResponse */
-static UA_INLINE void
-UA_FindServersOnNetworkResponse_init(UA_FindServersOnNetworkResponse *p) {
-    memset(p, 0, sizeof(UA_FindServersOnNetworkResponse));
-}
-
-static UA_INLINE UA_FindServersOnNetworkResponse *
-UA_FindServersOnNetworkResponse_new(void) {
-    return (UA_FindServersOnNetworkResponse*)UA_new(&UA_TYPES[UA_TYPES_FINDSERVERSONNETWORKRESPONSE]);
-}
-
-static UA_INLINE UA_StatusCode
-UA_FindServersOnNetworkResponse_copy(const UA_FindServersOnNetworkResponse *src, UA_FindServersOnNetworkResponse *dst) {
-    return UA_copy(src, dst, &UA_TYPES[UA_TYPES_FINDSERVERSONNETWORKRESPONSE]);
-}
-
-UA_DEPRECATED static UA_INLINE void
-UA_FindServersOnNetworkResponse_deleteMembers(UA_FindServersOnNetworkResponse *p) {
-    UA_clear(p, &UA_TYPES[UA_TYPES_FINDSERVERSONNETWORKRESPONSE]);
-}
-
-static UA_INLINE void
-UA_FindServersOnNetworkResponse_clear(UA_FindServersOnNetworkResponse *p) {
-    UA_clear(p, &UA_TYPES[UA_TYPES_FINDSERVERSONNETWORKRESPONSE]);
-}
-
-static UA_INLINE void
-UA_FindServersOnNetworkResponse_delete(UA_FindServersOnNetworkResponse *p) {
-    UA_delete(p, &UA_TYPES[UA_TYPES_FINDSERVERSONNETWORKRESPONSE]);
-}
-
-/* FieldMetaData */
-static UA_INLINE void
-UA_FieldMetaData_init(UA_FieldMetaData *p) {
-    memset(p, 0, sizeof(UA_FieldMetaData));
-}
-
-static UA_INLINE UA_FieldMetaData *
-UA_FieldMetaData_new(void) {
-    return (UA_FieldMetaData*)UA_new(&UA_TYPES[UA_TYPES_FIELDMETADATA]);
-}
-
-static UA_INLINE UA_StatusCode
-UA_FieldMetaData_copy(const UA_FieldMetaData *src, UA_FieldMetaData *dst) {
-    return UA_copy(src, dst, &UA_TYPES[UA_TYPES_FIELDMETADATA]);
-}
-
-UA_DEPRECATED static UA_INLINE void
-UA_FieldMetaData_deleteMembers(UA_FieldMetaData *p) {
-    UA_clear(p, &UA_TYPES[UA_TYPES_FIELDMETADATA]);
-}
-
-static UA_INLINE void
-UA_FieldMetaData_clear(UA_FieldMetaData *p) {
-    UA_clear(p, &UA_TYPES[UA_TYPES_FIELDMETADATA]);
-}
-
-static UA_INLINE void
-UA_FieldMetaData_delete(UA_FieldMetaData *p) {
-    UA_delete(p, &UA_TYPES[UA_TYPES_FIELDMETADATA]);
-}
-
 /* ReferenceDescription */
 static UA_INLINE void
 UA_ReferenceDescription_init(UA_ReferenceDescription *p) {
@@ -22963,68 +21072,6 @@ UA_ReferenceDescription_delete(UA_ReferenceDescription *p) {
     UA_delete(p, &UA_TYPES[UA_TYPES_REFERENCEDESCRIPTION]);
 }
 
-/* SubscribedDataSetMirrorDataType */
-static UA_INLINE void
-UA_SubscribedDataSetMirrorDataType_init(UA_SubscribedDataSetMirrorDataType *p) {
-    memset(p, 0, sizeof(UA_SubscribedDataSetMirrorDataType));
-}
-
-static UA_INLINE UA_SubscribedDataSetMirrorDataType *
-UA_SubscribedDataSetMirrorDataType_new(void) {
-    return (UA_SubscribedDataSetMirrorDataType*)UA_new(&UA_TYPES[UA_TYPES_SUBSCRIBEDDATASETMIRRORDATATYPE]);
-}
-
-static UA_INLINE UA_StatusCode
-UA_SubscribedDataSetMirrorDataType_copy(const UA_SubscribedDataSetMirrorDataType *src, UA_SubscribedDataSetMirrorDataType *dst) {
-    return UA_copy(src, dst, &UA_TYPES[UA_TYPES_SUBSCRIBEDDATASETMIRRORDATATYPE]);
-}
-
-UA_DEPRECATED static UA_INLINE void
-UA_SubscribedDataSetMirrorDataType_deleteMembers(UA_SubscribedDataSetMirrorDataType *p) {
-    UA_clear(p, &UA_TYPES[UA_TYPES_SUBSCRIBEDDATASETMIRRORDATATYPE]);
-}
-
-static UA_INLINE void
-UA_SubscribedDataSetMirrorDataType_clear(UA_SubscribedDataSetMirrorDataType *p) {
-    UA_clear(p, &UA_TYPES[UA_TYPES_SUBSCRIBEDDATASETMIRRORDATATYPE]);
-}
-
-static UA_INLINE void
-UA_SubscribedDataSetMirrorDataType_delete(UA_SubscribedDataSetMirrorDataType *p) {
-    UA_delete(p, &UA_TYPES[UA_TYPES_SUBSCRIBEDDATASETMIRRORDATATYPE]);
-}
-
-/* TargetVariablesDataType */
-static UA_INLINE void
-UA_TargetVariablesDataType_init(UA_TargetVariablesDataType *p) {
-    memset(p, 0, sizeof(UA_TargetVariablesDataType));
-}
-
-static UA_INLINE UA_TargetVariablesDataType *
-UA_TargetVariablesDataType_new(void) {
-    return (UA_TargetVariablesDataType*)UA_new(&UA_TYPES[UA_TYPES_TARGETVARIABLESDATATYPE]);
-}
-
-static UA_INLINE UA_StatusCode
-UA_TargetVariablesDataType_copy(const UA_TargetVariablesDataType *src, UA_TargetVariablesDataType *dst) {
-    return UA_copy(src, dst, &UA_TYPES[UA_TYPES_TARGETVARIABLESDATATYPE]);
-}
-
-UA_DEPRECATED static UA_INLINE void
-UA_TargetVariablesDataType_deleteMembers(UA_TargetVariablesDataType *p) {
-    UA_clear(p, &UA_TYPES[UA_TYPES_TARGETVARIABLESDATATYPE]);
-}
-
-static UA_INLINE void
-UA_TargetVariablesDataType_clear(UA_TargetVariablesDataType *p) {
-    UA_clear(p, &UA_TYPES[UA_TYPES_TARGETVARIABLESDATATYPE]);
-}
-
-static UA_INLINE void
-UA_TargetVariablesDataType_delete(UA_TargetVariablesDataType *p) {
-    UA_delete(p, &UA_TYPES[UA_TYPES_TARGETVARIABLESDATATYPE]);
-}
-
 /* CreateSubscriptionRequest */
 static UA_INLINE void
 UA_CreateSubscriptionRequest_init(UA_CreateSubscriptionRequest *p) {
@@ -23054,37 +21101,6 @@ UA_CreateSubscriptionRequest_clear(UA_CreateSubscriptionRequest *p) {
 static UA_INLINE void
 UA_CreateSubscriptionRequest_delete(UA_CreateSubscriptionRequest *p) {
     UA_delete(p, &UA_TYPES[UA_TYPES_CREATESUBSCRIPTIONREQUEST]);
-}
-
-/* FindServersOnNetworkRequest */
-static UA_INLINE void
-UA_FindServersOnNetworkRequest_init(UA_FindServersOnNetworkRequest *p) {
-    memset(p, 0, sizeof(UA_FindServersOnNetworkRequest));
-}
-
-static UA_INLINE UA_FindServersOnNetworkRequest *
-UA_FindServersOnNetworkRequest_new(void) {
-    return (UA_FindServersOnNetworkRequest*)UA_new(&UA_TYPES[UA_TYPES_FINDSERVERSONNETWORKREQUEST]);
-}
-
-static UA_INLINE UA_StatusCode
-UA_FindServersOnNetworkRequest_copy(const UA_FindServersOnNetworkRequest *src, UA_FindServersOnNetworkRequest *dst) {
-    return UA_copy(src, dst, &UA_TYPES[UA_TYPES_FINDSERVERSONNETWORKREQUEST]);
-}
-
-UA_DEPRECATED static UA_INLINE void
-UA_FindServersOnNetworkRequest_deleteMembers(UA_FindServersOnNetworkRequest *p) {
-    UA_clear(p, &UA_TYPES[UA_TYPES_FINDSERVERSONNETWORKREQUEST]);
-}
-
-static UA_INLINE void
-UA_FindServersOnNetworkRequest_clear(UA_FindServersOnNetworkRequest *p) {
-    UA_clear(p, &UA_TYPES[UA_TYPES_FINDSERVERSONNETWORKREQUEST]);
-}
-
-static UA_INLINE void
-UA_FindServersOnNetworkRequest_delete(UA_FindServersOnNetworkRequest *p) {
-    UA_delete(p, &UA_TYPES[UA_TYPES_FINDSERVERSONNETWORKREQUEST]);
 }
 
 /* CallResponse */
@@ -23147,37 +21163,6 @@ UA_DeleteNodesResponse_clear(UA_DeleteNodesResponse *p) {
 static UA_INLINE void
 UA_DeleteNodesResponse_delete(UA_DeleteNodesResponse *p) {
     UA_delete(p, &UA_TYPES[UA_TYPES_DELETENODESRESPONSE]);
-}
-
-/* BrokerDataSetReaderTransportDataType */
-static UA_INLINE void
-UA_BrokerDataSetReaderTransportDataType_init(UA_BrokerDataSetReaderTransportDataType *p) {
-    memset(p, 0, sizeof(UA_BrokerDataSetReaderTransportDataType));
-}
-
-static UA_INLINE UA_BrokerDataSetReaderTransportDataType *
-UA_BrokerDataSetReaderTransportDataType_new(void) {
-    return (UA_BrokerDataSetReaderTransportDataType*)UA_new(&UA_TYPES[UA_TYPES_BROKERDATASETREADERTRANSPORTDATATYPE]);
-}
-
-static UA_INLINE UA_StatusCode
-UA_BrokerDataSetReaderTransportDataType_copy(const UA_BrokerDataSetReaderTransportDataType *src, UA_BrokerDataSetReaderTransportDataType *dst) {
-    return UA_copy(src, dst, &UA_TYPES[UA_TYPES_BROKERDATASETREADERTRANSPORTDATATYPE]);
-}
-
-UA_DEPRECATED static UA_INLINE void
-UA_BrokerDataSetReaderTransportDataType_deleteMembers(UA_BrokerDataSetReaderTransportDataType *p) {
-    UA_clear(p, &UA_TYPES[UA_TYPES_BROKERDATASETREADERTRANSPORTDATATYPE]);
-}
-
-static UA_INLINE void
-UA_BrokerDataSetReaderTransportDataType_clear(UA_BrokerDataSetReaderTransportDataType *p) {
-    UA_clear(p, &UA_TYPES[UA_TYPES_BROKERDATASETREADERTRANSPORTDATATYPE]);
-}
-
-static UA_INLINE void
-UA_BrokerDataSetReaderTransportDataType_delete(UA_BrokerDataSetReaderTransportDataType *p) {
-    UA_delete(p, &UA_TYPES[UA_TYPES_BROKERDATASETREADERTRANSPORTDATATYPE]);
 }
 
 /* ModifyMonitoredItemsRequest */
@@ -23397,37 +21382,6 @@ UA_SetTriggeringRequest_delete(UA_SetTriggeringRequest *p) {
     UA_delete(p, &UA_TYPES[UA_TYPES_SETTRIGGERINGREQUEST]);
 }
 
-/* EnumDescription */
-static UA_INLINE void
-UA_EnumDescription_init(UA_EnumDescription *p) {
-    memset(p, 0, sizeof(UA_EnumDescription));
-}
-
-static UA_INLINE UA_EnumDescription *
-UA_EnumDescription_new(void) {
-    return (UA_EnumDescription*)UA_new(&UA_TYPES[UA_TYPES_ENUMDESCRIPTION]);
-}
-
-static UA_INLINE UA_StatusCode
-UA_EnumDescription_copy(const UA_EnumDescription *src, UA_EnumDescription *dst) {
-    return UA_copy(src, dst, &UA_TYPES[UA_TYPES_ENUMDESCRIPTION]);
-}
-
-UA_DEPRECATED static UA_INLINE void
-UA_EnumDescription_deleteMembers(UA_EnumDescription *p) {
-    UA_clear(p, &UA_TYPES[UA_TYPES_ENUMDESCRIPTION]);
-}
-
-static UA_INLINE void
-UA_EnumDescription_clear(UA_EnumDescription *p) {
-    UA_clear(p, &UA_TYPES[UA_TYPES_ENUMDESCRIPTION]);
-}
-
-static UA_INLINE void
-UA_EnumDescription_delete(UA_EnumDescription *p) {
-    UA_delete(p, &UA_TYPES[UA_TYPES_ENUMDESCRIPTION]);
-}
-
 /* BrowseResult */
 static UA_INLINE void
 UA_BrowseResult_init(UA_BrowseResult *p) {
@@ -23614,37 +21568,6 @@ UA_AxisInformation_delete(UA_AxisInformation *p) {
     UA_delete(p, &UA_TYPES[UA_TYPES_AXISINFORMATION]);
 }
 
-/* RegisteredServer */
-static UA_INLINE void
-UA_RegisteredServer_init(UA_RegisteredServer *p) {
-    memset(p, 0, sizeof(UA_RegisteredServer));
-}
-
-static UA_INLINE UA_RegisteredServer *
-UA_RegisteredServer_new(void) {
-    return (UA_RegisteredServer*)UA_new(&UA_TYPES[UA_TYPES_REGISTEREDSERVER]);
-}
-
-static UA_INLINE UA_StatusCode
-UA_RegisteredServer_copy(const UA_RegisteredServer *src, UA_RegisteredServer *dst) {
-    return UA_copy(src, dst, &UA_TYPES[UA_TYPES_REGISTEREDSERVER]);
-}
-
-UA_DEPRECATED static UA_INLINE void
-UA_RegisteredServer_deleteMembers(UA_RegisteredServer *p) {
-    UA_clear(p, &UA_TYPES[UA_TYPES_REGISTEREDSERVER]);
-}
-
-static UA_INLINE void
-UA_RegisteredServer_clear(UA_RegisteredServer *p) {
-    UA_clear(p, &UA_TYPES[UA_TYPES_REGISTEREDSERVER]);
-}
-
-static UA_INLINE void
-UA_RegisteredServer_delete(UA_RegisteredServer *p) {
-    UA_delete(p, &UA_TYPES[UA_TYPES_REGISTEREDSERVER]);
-}
-
 /* ApplicationDescription */
 static UA_INLINE void
 UA_ApplicationDescription_init(UA_ApplicationDescription *p) {
@@ -23676,37 +21599,6 @@ UA_ApplicationDescription_delete(UA_ApplicationDescription *p) {
     UA_delete(p, &UA_TYPES[UA_TYPES_APPLICATIONDESCRIPTION]);
 }
 
-/* StructureDescription */
-static UA_INLINE void
-UA_StructureDescription_init(UA_StructureDescription *p) {
-    memset(p, 0, sizeof(UA_StructureDescription));
-}
-
-static UA_INLINE UA_StructureDescription *
-UA_StructureDescription_new(void) {
-    return (UA_StructureDescription*)UA_new(&UA_TYPES[UA_TYPES_STRUCTUREDESCRIPTION]);
-}
-
-static UA_INLINE UA_StatusCode
-UA_StructureDescription_copy(const UA_StructureDescription *src, UA_StructureDescription *dst) {
-    return UA_copy(src, dst, &UA_TYPES[UA_TYPES_STRUCTUREDESCRIPTION]);
-}
-
-UA_DEPRECATED static UA_INLINE void
-UA_StructureDescription_deleteMembers(UA_StructureDescription *p) {
-    UA_clear(p, &UA_TYPES[UA_TYPES_STRUCTUREDESCRIPTION]);
-}
-
-static UA_INLINE void
-UA_StructureDescription_clear(UA_StructureDescription *p) {
-    UA_clear(p, &UA_TYPES[UA_TYPES_STRUCTUREDESCRIPTION]);
-}
-
-static UA_INLINE void
-UA_StructureDescription_delete(UA_StructureDescription *p) {
-    UA_delete(p, &UA_TYPES[UA_TYPES_STRUCTUREDESCRIPTION]);
-}
-
 /* ReadRequest */
 static UA_INLINE void
 UA_ReadRequest_init(UA_ReadRequest *p) {
@@ -23736,37 +21628,6 @@ UA_ReadRequest_clear(UA_ReadRequest *p) {
 static UA_INLINE void
 UA_ReadRequest_delete(UA_ReadRequest *p) {
     UA_delete(p, &UA_TYPES[UA_TYPES_READREQUEST]);
-}
-
-/* DataSetWriterDataType */
-static UA_INLINE void
-UA_DataSetWriterDataType_init(UA_DataSetWriterDataType *p) {
-    memset(p, 0, sizeof(UA_DataSetWriterDataType));
-}
-
-static UA_INLINE UA_DataSetWriterDataType *
-UA_DataSetWriterDataType_new(void) {
-    return (UA_DataSetWriterDataType*)UA_new(&UA_TYPES[UA_TYPES_DATASETWRITERDATATYPE]);
-}
-
-static UA_INLINE UA_StatusCode
-UA_DataSetWriterDataType_copy(const UA_DataSetWriterDataType *src, UA_DataSetWriterDataType *dst) {
-    return UA_copy(src, dst, &UA_TYPES[UA_TYPES_DATASETWRITERDATATYPE]);
-}
-
-UA_DEPRECATED static UA_INLINE void
-UA_DataSetWriterDataType_deleteMembers(UA_DataSetWriterDataType *p) {
-    UA_clear(p, &UA_TYPES[UA_TYPES_DATASETWRITERDATATYPE]);
-}
-
-static UA_INLINE void
-UA_DataSetWriterDataType_clear(UA_DataSetWriterDataType *p) {
-    UA_clear(p, &UA_TYPES[UA_TYPES_DATASETWRITERDATATYPE]);
-}
-
-static UA_INLINE void
-UA_DataSetWriterDataType_delete(UA_DataSetWriterDataType *p) {
-    UA_delete(p, &UA_TYPES[UA_TYPES_DATASETWRITERDATATYPE]);
 }
 
 /* ActivateSessionRequest */
@@ -23955,37 +21816,6 @@ UA_AddNodesResponse_delete(UA_AddNodesResponse *p) {
     UA_delete(p, &UA_TYPES[UA_TYPES_ADDNODESRESPONSE]);
 }
 
-/* RegisterServer2Request */
-static UA_INLINE void
-UA_RegisterServer2Request_init(UA_RegisterServer2Request *p) {
-    memset(p, 0, sizeof(UA_RegisterServer2Request));
-}
-
-static UA_INLINE UA_RegisterServer2Request *
-UA_RegisterServer2Request_new(void) {
-    return (UA_RegisterServer2Request*)UA_new(&UA_TYPES[UA_TYPES_REGISTERSERVER2REQUEST]);
-}
-
-static UA_INLINE UA_StatusCode
-UA_RegisterServer2Request_copy(const UA_RegisterServer2Request *src, UA_RegisterServer2Request *dst) {
-    return UA_copy(src, dst, &UA_TYPES[UA_TYPES_REGISTERSERVER2REQUEST]);
-}
-
-UA_DEPRECATED static UA_INLINE void
-UA_RegisterServer2Request_deleteMembers(UA_RegisterServer2Request *p) {
-    UA_clear(p, &UA_TYPES[UA_TYPES_REGISTERSERVER2REQUEST]);
-}
-
-static UA_INLINE void
-UA_RegisterServer2Request_clear(UA_RegisterServer2Request *p) {
-    UA_clear(p, &UA_TYPES[UA_TYPES_REGISTERSERVER2REQUEST]);
-}
-
-static UA_INLINE void
-UA_RegisterServer2Request_delete(UA_RegisterServer2Request *p) {
-    UA_delete(p, &UA_TYPES[UA_TYPES_REGISTERSERVER2REQUEST]);
-}
-
 /* AttributeOperand */
 static UA_INLINE void
 UA_AttributeOperand_init(UA_AttributeOperand *p) {
@@ -24110,37 +21940,6 @@ UA_DeleteReferencesRequest_delete(UA_DeleteReferencesRequest *p) {
     UA_delete(p, &UA_TYPES[UA_TYPES_DELETEREFERENCESREQUEST]);
 }
 
-/* JsonWriterGroupMessageDataType */
-static UA_INLINE void
-UA_JsonWriterGroupMessageDataType_init(UA_JsonWriterGroupMessageDataType *p) {
-    memset(p, 0, sizeof(UA_JsonWriterGroupMessageDataType));
-}
-
-static UA_INLINE UA_JsonWriterGroupMessageDataType *
-UA_JsonWriterGroupMessageDataType_new(void) {
-    return (UA_JsonWriterGroupMessageDataType*)UA_new(&UA_TYPES[UA_TYPES_JSONWRITERGROUPMESSAGEDATATYPE]);
-}
-
-static UA_INLINE UA_StatusCode
-UA_JsonWriterGroupMessageDataType_copy(const UA_JsonWriterGroupMessageDataType *src, UA_JsonWriterGroupMessageDataType *dst) {
-    return UA_copy(src, dst, &UA_TYPES[UA_TYPES_JSONWRITERGROUPMESSAGEDATATYPE]);
-}
-
-UA_DEPRECATED static UA_INLINE void
-UA_JsonWriterGroupMessageDataType_deleteMembers(UA_JsonWriterGroupMessageDataType *p) {
-    UA_clear(p, &UA_TYPES[UA_TYPES_JSONWRITERGROUPMESSAGEDATATYPE]);
-}
-
-static UA_INLINE void
-UA_JsonWriterGroupMessageDataType_clear(UA_JsonWriterGroupMessageDataType *p) {
-    UA_clear(p, &UA_TYPES[UA_TYPES_JSONWRITERGROUPMESSAGEDATATYPE]);
-}
-
-static UA_INLINE void
-UA_JsonWriterGroupMessageDataType_delete(UA_JsonWriterGroupMessageDataType *p) {
-    UA_delete(p, &UA_TYPES[UA_TYPES_JSONWRITERGROUPMESSAGEDATATYPE]);
-}
-
 /* TranslateBrowsePathsToNodeIdsRequest */
 static UA_INLINE void
 UA_TranslateBrowsePathsToNodeIdsRequest_init(UA_TranslateBrowsePathsToNodeIdsRequest *p) {
@@ -24170,37 +21969,6 @@ UA_TranslateBrowsePathsToNodeIdsRequest_clear(UA_TranslateBrowsePathsToNodeIdsRe
 static UA_INLINE void
 UA_TranslateBrowsePathsToNodeIdsRequest_delete(UA_TranslateBrowsePathsToNodeIdsRequest *p) {
     UA_delete(p, &UA_TYPES[UA_TYPES_TRANSLATEBROWSEPATHSTONODEIDSREQUEST]);
-}
-
-/* JsonDataSetReaderMessageDataType */
-static UA_INLINE void
-UA_JsonDataSetReaderMessageDataType_init(UA_JsonDataSetReaderMessageDataType *p) {
-    memset(p, 0, sizeof(UA_JsonDataSetReaderMessageDataType));
-}
-
-static UA_INLINE UA_JsonDataSetReaderMessageDataType *
-UA_JsonDataSetReaderMessageDataType_new(void) {
-    return (UA_JsonDataSetReaderMessageDataType*)UA_new(&UA_TYPES[UA_TYPES_JSONDATASETREADERMESSAGEDATATYPE]);
-}
-
-static UA_INLINE UA_StatusCode
-UA_JsonDataSetReaderMessageDataType_copy(const UA_JsonDataSetReaderMessageDataType *src, UA_JsonDataSetReaderMessageDataType *dst) {
-    return UA_copy(src, dst, &UA_TYPES[UA_TYPES_JSONDATASETREADERMESSAGEDATATYPE]);
-}
-
-UA_DEPRECATED static UA_INLINE void
-UA_JsonDataSetReaderMessageDataType_deleteMembers(UA_JsonDataSetReaderMessageDataType *p) {
-    UA_clear(p, &UA_TYPES[UA_TYPES_JSONDATASETREADERMESSAGEDATATYPE]);
-}
-
-static UA_INLINE void
-UA_JsonDataSetReaderMessageDataType_clear(UA_JsonDataSetReaderMessageDataType *p) {
-    UA_clear(p, &UA_TYPES[UA_TYPES_JSONDATASETREADERMESSAGEDATATYPE]);
-}
-
-static UA_INLINE void
-UA_JsonDataSetReaderMessageDataType_delete(UA_JsonDataSetReaderMessageDataType *p) {
-    UA_delete(p, &UA_TYPES[UA_TYPES_JSONDATASETREADERMESSAGEDATATYPE]);
 }
 
 /* FindServersResponse */
@@ -24296,99 +22064,6 @@ UA_ContentFilterElement_delete(UA_ContentFilterElement *p) {
     UA_delete(p, &UA_TYPES[UA_TYPES_CONTENTFILTERELEMENT]);
 }
 
-/* UadpWriterGroupMessageDataType */
-static UA_INLINE void
-UA_UadpWriterGroupMessageDataType_init(UA_UadpWriterGroupMessageDataType *p) {
-    memset(p, 0, sizeof(UA_UadpWriterGroupMessageDataType));
-}
-
-static UA_INLINE UA_UadpWriterGroupMessageDataType *
-UA_UadpWriterGroupMessageDataType_new(void) {
-    return (UA_UadpWriterGroupMessageDataType*)UA_new(&UA_TYPES[UA_TYPES_UADPWRITERGROUPMESSAGEDATATYPE]);
-}
-
-static UA_INLINE UA_StatusCode
-UA_UadpWriterGroupMessageDataType_copy(const UA_UadpWriterGroupMessageDataType *src, UA_UadpWriterGroupMessageDataType *dst) {
-    return UA_copy(src, dst, &UA_TYPES[UA_TYPES_UADPWRITERGROUPMESSAGEDATATYPE]);
-}
-
-UA_DEPRECATED static UA_INLINE void
-UA_UadpWriterGroupMessageDataType_deleteMembers(UA_UadpWriterGroupMessageDataType *p) {
-    UA_clear(p, &UA_TYPES[UA_TYPES_UADPWRITERGROUPMESSAGEDATATYPE]);
-}
-
-static UA_INLINE void
-UA_UadpWriterGroupMessageDataType_clear(UA_UadpWriterGroupMessageDataType *p) {
-    UA_clear(p, &UA_TYPES[UA_TYPES_UADPWRITERGROUPMESSAGEDATATYPE]);
-}
-
-static UA_INLINE void
-UA_UadpWriterGroupMessageDataType_delete(UA_UadpWriterGroupMessageDataType *p) {
-    UA_delete(p, &UA_TYPES[UA_TYPES_UADPWRITERGROUPMESSAGEDATATYPE]);
-}
-
-/* RegisterServerRequest */
-static UA_INLINE void
-UA_RegisterServerRequest_init(UA_RegisterServerRequest *p) {
-    memset(p, 0, sizeof(UA_RegisterServerRequest));
-}
-
-static UA_INLINE UA_RegisterServerRequest *
-UA_RegisterServerRequest_new(void) {
-    return (UA_RegisterServerRequest*)UA_new(&UA_TYPES[UA_TYPES_REGISTERSERVERREQUEST]);
-}
-
-static UA_INLINE UA_StatusCode
-UA_RegisterServerRequest_copy(const UA_RegisterServerRequest *src, UA_RegisterServerRequest *dst) {
-    return UA_copy(src, dst, &UA_TYPES[UA_TYPES_REGISTERSERVERREQUEST]);
-}
-
-UA_DEPRECATED static UA_INLINE void
-UA_RegisterServerRequest_deleteMembers(UA_RegisterServerRequest *p) {
-    UA_clear(p, &UA_TYPES[UA_TYPES_REGISTERSERVERREQUEST]);
-}
-
-static UA_INLINE void
-UA_RegisterServerRequest_clear(UA_RegisterServerRequest *p) {
-    UA_clear(p, &UA_TYPES[UA_TYPES_REGISTERSERVERREQUEST]);
-}
-
-static UA_INLINE void
-UA_RegisterServerRequest_delete(UA_RegisterServerRequest *p) {
-    UA_delete(p, &UA_TYPES[UA_TYPES_REGISTERSERVERREQUEST]);
-}
-
-/* UABinaryFileDataType */
-static UA_INLINE void
-UA_UABinaryFileDataType_init(UA_UABinaryFileDataType *p) {
-    memset(p, 0, sizeof(UA_UABinaryFileDataType));
-}
-
-static UA_INLINE UA_UABinaryFileDataType *
-UA_UABinaryFileDataType_new(void) {
-    return (UA_UABinaryFileDataType*)UA_new(&UA_TYPES[UA_TYPES_UABINARYFILEDATATYPE]);
-}
-
-static UA_INLINE UA_StatusCode
-UA_UABinaryFileDataType_copy(const UA_UABinaryFileDataType *src, UA_UABinaryFileDataType *dst) {
-    return UA_copy(src, dst, &UA_TYPES[UA_TYPES_UABINARYFILEDATATYPE]);
-}
-
-UA_DEPRECATED static UA_INLINE void
-UA_UABinaryFileDataType_deleteMembers(UA_UABinaryFileDataType *p) {
-    UA_clear(p, &UA_TYPES[UA_TYPES_UABINARYFILEDATATYPE]);
-}
-
-static UA_INLINE void
-UA_UABinaryFileDataType_clear(UA_UABinaryFileDataType *p) {
-    UA_clear(p, &UA_TYPES[UA_TYPES_UABINARYFILEDATATYPE]);
-}
-
-static UA_INLINE void
-UA_UABinaryFileDataType_delete(UA_UABinaryFileDataType *p) {
-    UA_delete(p, &UA_TYPES[UA_TYPES_UABINARYFILEDATATYPE]);
-}
-
 /* TranslateBrowsePathsToNodeIdsResponse */
 static UA_INLINE void
 UA_TranslateBrowsePathsToNodeIdsResponse_init(UA_TranslateBrowsePathsToNodeIdsResponse *p) {
@@ -24482,37 +22157,6 @@ UA_CreateSessionResponse_delete(UA_CreateSessionResponse *p) {
     UA_delete(p, &UA_TYPES[UA_TYPES_CREATESESSIONRESPONSE]);
 }
 
-/* DataSetMetaDataType */
-static UA_INLINE void
-UA_DataSetMetaDataType_init(UA_DataSetMetaDataType *p) {
-    memset(p, 0, sizeof(UA_DataSetMetaDataType));
-}
-
-static UA_INLINE UA_DataSetMetaDataType *
-UA_DataSetMetaDataType_new(void) {
-    return (UA_DataSetMetaDataType*)UA_new(&UA_TYPES[UA_TYPES_DATASETMETADATATYPE]);
-}
-
-static UA_INLINE UA_StatusCode
-UA_DataSetMetaDataType_copy(const UA_DataSetMetaDataType *src, UA_DataSetMetaDataType *dst) {
-    return UA_copy(src, dst, &UA_TYPES[UA_TYPES_DATASETMETADATATYPE]);
-}
-
-UA_DEPRECATED static UA_INLINE void
-UA_DataSetMetaDataType_deleteMembers(UA_DataSetMetaDataType *p) {
-    UA_clear(p, &UA_TYPES[UA_TYPES_DATASETMETADATATYPE]);
-}
-
-static UA_INLINE void
-UA_DataSetMetaDataType_clear(UA_DataSetMetaDataType *p) {
-    UA_clear(p, &UA_TYPES[UA_TYPES_DATASETMETADATATYPE]);
-}
-
-static UA_INLINE void
-UA_DataSetMetaDataType_delete(UA_DataSetMetaDataType *p) {
-    UA_delete(p, &UA_TYPES[UA_TYPES_DATASETMETADATATYPE]);
-}
-
 /* ContentFilter */
 static UA_INLINE void
 UA_ContentFilter_init(UA_ContentFilter *p) {
@@ -24542,37 +22186,6 @@ UA_ContentFilter_clear(UA_ContentFilter *p) {
 static UA_INLINE void
 UA_ContentFilter_delete(UA_ContentFilter *p) {
     UA_delete(p, &UA_TYPES[UA_TYPES_CONTENTFILTER]);
-}
-
-/* WriterGroupDataType */
-static UA_INLINE void
-UA_WriterGroupDataType_init(UA_WriterGroupDataType *p) {
-    memset(p, 0, sizeof(UA_WriterGroupDataType));
-}
-
-static UA_INLINE UA_WriterGroupDataType *
-UA_WriterGroupDataType_new(void) {
-    return (UA_WriterGroupDataType*)UA_new(&UA_TYPES[UA_TYPES_WRITERGROUPDATATYPE]);
-}
-
-static UA_INLINE UA_StatusCode
-UA_WriterGroupDataType_copy(const UA_WriterGroupDataType *src, UA_WriterGroupDataType *dst) {
-    return UA_copy(src, dst, &UA_TYPES[UA_TYPES_WRITERGROUPDATATYPE]);
-}
-
-UA_DEPRECATED static UA_INLINE void
-UA_WriterGroupDataType_deleteMembers(UA_WriterGroupDataType *p) {
-    UA_clear(p, &UA_TYPES[UA_TYPES_WRITERGROUPDATATYPE]);
-}
-
-static UA_INLINE void
-UA_WriterGroupDataType_clear(UA_WriterGroupDataType *p) {
-    UA_clear(p, &UA_TYPES[UA_TYPES_WRITERGROUPDATATYPE]);
-}
-
-static UA_INLINE void
-UA_WriterGroupDataType_delete(UA_WriterGroupDataType *p) {
-    UA_delete(p, &UA_TYPES[UA_TYPES_WRITERGROUPDATATYPE]);
 }
 
 /* GetEndpointsResponse */
@@ -24606,37 +22219,6 @@ UA_GetEndpointsResponse_delete(UA_GetEndpointsResponse *p) {
     UA_delete(p, &UA_TYPES[UA_TYPES_GETENDPOINTSRESPONSE]);
 }
 
-/* PublishedEventsDataType */
-static UA_INLINE void
-UA_PublishedEventsDataType_init(UA_PublishedEventsDataType *p) {
-    memset(p, 0, sizeof(UA_PublishedEventsDataType));
-}
-
-static UA_INLINE UA_PublishedEventsDataType *
-UA_PublishedEventsDataType_new(void) {
-    return (UA_PublishedEventsDataType*)UA_new(&UA_TYPES[UA_TYPES_PUBLISHEDEVENTSDATATYPE]);
-}
-
-static UA_INLINE UA_StatusCode
-UA_PublishedEventsDataType_copy(const UA_PublishedEventsDataType *src, UA_PublishedEventsDataType *dst) {
-    return UA_copy(src, dst, &UA_TYPES[UA_TYPES_PUBLISHEDEVENTSDATATYPE]);
-}
-
-UA_DEPRECATED static UA_INLINE void
-UA_PublishedEventsDataType_deleteMembers(UA_PublishedEventsDataType *p) {
-    UA_clear(p, &UA_TYPES[UA_TYPES_PUBLISHEDEVENTSDATATYPE]);
-}
-
-static UA_INLINE void
-UA_PublishedEventsDataType_clear(UA_PublishedEventsDataType *p) {
-    UA_clear(p, &UA_TYPES[UA_TYPES_PUBLISHEDEVENTSDATATYPE]);
-}
-
-static UA_INLINE void
-UA_PublishedEventsDataType_delete(UA_PublishedEventsDataType *p) {
-    UA_delete(p, &UA_TYPES[UA_TYPES_PUBLISHEDEVENTSDATATYPE]);
-}
-
 /* EventFilter */
 static UA_INLINE void
 UA_EventFilter_init(UA_EventFilter *p) {
@@ -24666,161 +22248,6 @@ UA_EventFilter_clear(UA_EventFilter *p) {
 static UA_INLINE void
 UA_EventFilter_delete(UA_EventFilter *p) {
     UA_delete(p, &UA_TYPES[UA_TYPES_EVENTFILTER]);
-}
-
-/* DataSetReaderDataType */
-static UA_INLINE void
-UA_DataSetReaderDataType_init(UA_DataSetReaderDataType *p) {
-    memset(p, 0, sizeof(UA_DataSetReaderDataType));
-}
-
-static UA_INLINE UA_DataSetReaderDataType *
-UA_DataSetReaderDataType_new(void) {
-    return (UA_DataSetReaderDataType*)UA_new(&UA_TYPES[UA_TYPES_DATASETREADERDATATYPE]);
-}
-
-static UA_INLINE UA_StatusCode
-UA_DataSetReaderDataType_copy(const UA_DataSetReaderDataType *src, UA_DataSetReaderDataType *dst) {
-    return UA_copy(src, dst, &UA_TYPES[UA_TYPES_DATASETREADERDATATYPE]);
-}
-
-UA_DEPRECATED static UA_INLINE void
-UA_DataSetReaderDataType_deleteMembers(UA_DataSetReaderDataType *p) {
-    UA_clear(p, &UA_TYPES[UA_TYPES_DATASETREADERDATATYPE]);
-}
-
-static UA_INLINE void
-UA_DataSetReaderDataType_clear(UA_DataSetReaderDataType *p) {
-    UA_clear(p, &UA_TYPES[UA_TYPES_DATASETREADERDATATYPE]);
-}
-
-static UA_INLINE void
-UA_DataSetReaderDataType_delete(UA_DataSetReaderDataType *p) {
-    UA_delete(p, &UA_TYPES[UA_TYPES_DATASETREADERDATATYPE]);
-}
-
-/* PublishedDataSetDataType */
-static UA_INLINE void
-UA_PublishedDataSetDataType_init(UA_PublishedDataSetDataType *p) {
-    memset(p, 0, sizeof(UA_PublishedDataSetDataType));
-}
-
-static UA_INLINE UA_PublishedDataSetDataType *
-UA_PublishedDataSetDataType_new(void) {
-    return (UA_PublishedDataSetDataType*)UA_new(&UA_TYPES[UA_TYPES_PUBLISHEDDATASETDATATYPE]);
-}
-
-static UA_INLINE UA_StatusCode
-UA_PublishedDataSetDataType_copy(const UA_PublishedDataSetDataType *src, UA_PublishedDataSetDataType *dst) {
-    return UA_copy(src, dst, &UA_TYPES[UA_TYPES_PUBLISHEDDATASETDATATYPE]);
-}
-
-UA_DEPRECATED static UA_INLINE void
-UA_PublishedDataSetDataType_deleteMembers(UA_PublishedDataSetDataType *p) {
-    UA_clear(p, &UA_TYPES[UA_TYPES_PUBLISHEDDATASETDATATYPE]);
-}
-
-static UA_INLINE void
-UA_PublishedDataSetDataType_clear(UA_PublishedDataSetDataType *p) {
-    UA_clear(p, &UA_TYPES[UA_TYPES_PUBLISHEDDATASETDATATYPE]);
-}
-
-static UA_INLINE void
-UA_PublishedDataSetDataType_delete(UA_PublishedDataSetDataType *p) {
-    UA_delete(p, &UA_TYPES[UA_TYPES_PUBLISHEDDATASETDATATYPE]);
-}
-
-/* ReaderGroupDataType */
-static UA_INLINE void
-UA_ReaderGroupDataType_init(UA_ReaderGroupDataType *p) {
-    memset(p, 0, sizeof(UA_ReaderGroupDataType));
-}
-
-static UA_INLINE UA_ReaderGroupDataType *
-UA_ReaderGroupDataType_new(void) {
-    return (UA_ReaderGroupDataType*)UA_new(&UA_TYPES[UA_TYPES_READERGROUPDATATYPE]);
-}
-
-static UA_INLINE UA_StatusCode
-UA_ReaderGroupDataType_copy(const UA_ReaderGroupDataType *src, UA_ReaderGroupDataType *dst) {
-    return UA_copy(src, dst, &UA_TYPES[UA_TYPES_READERGROUPDATATYPE]);
-}
-
-UA_DEPRECATED static UA_INLINE void
-UA_ReaderGroupDataType_deleteMembers(UA_ReaderGroupDataType *p) {
-    UA_clear(p, &UA_TYPES[UA_TYPES_READERGROUPDATATYPE]);
-}
-
-static UA_INLINE void
-UA_ReaderGroupDataType_clear(UA_ReaderGroupDataType *p) {
-    UA_clear(p, &UA_TYPES[UA_TYPES_READERGROUPDATATYPE]);
-}
-
-static UA_INLINE void
-UA_ReaderGroupDataType_delete(UA_ReaderGroupDataType *p) {
-    UA_delete(p, &UA_TYPES[UA_TYPES_READERGROUPDATATYPE]);
-}
-
-/* PubSubConnectionDataType */
-static UA_INLINE void
-UA_PubSubConnectionDataType_init(UA_PubSubConnectionDataType *p) {
-    memset(p, 0, sizeof(UA_PubSubConnectionDataType));
-}
-
-static UA_INLINE UA_PubSubConnectionDataType *
-UA_PubSubConnectionDataType_new(void) {
-    return (UA_PubSubConnectionDataType*)UA_new(&UA_TYPES[UA_TYPES_PUBSUBCONNECTIONDATATYPE]);
-}
-
-static UA_INLINE UA_StatusCode
-UA_PubSubConnectionDataType_copy(const UA_PubSubConnectionDataType *src, UA_PubSubConnectionDataType *dst) {
-    return UA_copy(src, dst, &UA_TYPES[UA_TYPES_PUBSUBCONNECTIONDATATYPE]);
-}
-
-UA_DEPRECATED static UA_INLINE void
-UA_PubSubConnectionDataType_deleteMembers(UA_PubSubConnectionDataType *p) {
-    UA_clear(p, &UA_TYPES[UA_TYPES_PUBSUBCONNECTIONDATATYPE]);
-}
-
-static UA_INLINE void
-UA_PubSubConnectionDataType_clear(UA_PubSubConnectionDataType *p) {
-    UA_clear(p, &UA_TYPES[UA_TYPES_PUBSUBCONNECTIONDATATYPE]);
-}
-
-static UA_INLINE void
-UA_PubSubConnectionDataType_delete(UA_PubSubConnectionDataType *p) {
-    UA_delete(p, &UA_TYPES[UA_TYPES_PUBSUBCONNECTIONDATATYPE]);
-}
-
-/* PubSubConfigurationDataType */
-static UA_INLINE void
-UA_PubSubConfigurationDataType_init(UA_PubSubConfigurationDataType *p) {
-    memset(p, 0, sizeof(UA_PubSubConfigurationDataType));
-}
-
-static UA_INLINE UA_PubSubConfigurationDataType *
-UA_PubSubConfigurationDataType_new(void) {
-    return (UA_PubSubConfigurationDataType*)UA_new(&UA_TYPES[UA_TYPES_PUBSUBCONFIGURATIONDATATYPE]);
-}
-
-static UA_INLINE UA_StatusCode
-UA_PubSubConfigurationDataType_copy(const UA_PubSubConfigurationDataType *src, UA_PubSubConfigurationDataType *dst) {
-    return UA_copy(src, dst, &UA_TYPES[UA_TYPES_PUBSUBCONFIGURATIONDATATYPE]);
-}
-
-UA_DEPRECATED static UA_INLINE void
-UA_PubSubConfigurationDataType_deleteMembers(UA_PubSubConfigurationDataType *p) {
-    UA_clear(p, &UA_TYPES[UA_TYPES_PUBSUBCONFIGURATIONDATATYPE]);
-}
-
-static UA_INLINE void
-UA_PubSubConfigurationDataType_clear(UA_PubSubConfigurationDataType *p) {
-    UA_clear(p, &UA_TYPES[UA_TYPES_PUBSUBCONFIGURATIONDATATYPE]);
-}
-
-static UA_INLINE void
-UA_PubSubConfigurationDataType_delete(UA_PubSubConfigurationDataType *p) {
-    UA_delete(p, &UA_TYPES[UA_TYPES_PUBSUBCONFIGURATIONDATATYPE]);
 }
 
 #if defined(__GNUC__) && __GNUC__ >= 4 && __GNUC_MINOR__ >= 6
@@ -32558,1807 +29985,6 @@ UA_Log_Syslog(void);
 #endif
 
 _UA_END_DECLS
-
-
-/*********************************** amalgamated original file "/home/sk/git/development/products/common/firmware/open62541/plugins/include/open62541/plugin/pubsub_udp.h" ***********************************/
-
-/* This work is licensed under a Creative Commons CCZero 1.0 Universal License.
- * See http://creativecommons.org/publicdomain/zero/1.0/ for more information.
- *
- *    Copyright 2017-2018 (c) Fraunhofer IOSB (Author: Andreas Ebner)
- */
-
-
-
-_UA_BEGIN_DECLS
-
-UA_PubSubTransportLayer UA_EXPORT
-UA_PubSubTransportLayerUDPMP(void);
-
-_UA_END_DECLS
-
-
-/*********************************** amalgamated original file "/home/sk/git/development/products/common/firmware/open62541/plugins/include/open62541/plugin/pubsub_ethernet.h" ***********************************/
-
-/* This work is licensed under a Creative Commons CCZero 1.0 Universal License.
- * See http://creativecommons.org/publicdomain/zero/1.0/ for more information.
- *
- *   Copyright 2018 (c) Kontron Europe GmbH (Author: Rudolf Hoyler)
- */
-
-
-
-_UA_BEGIN_DECLS
-
-UA_PubSubTransportLayer UA_EXPORT
-UA_PubSubTransportLayerEthernet(void);
-
-_UA_END_DECLS
-
-
-/*********************************** amalgamated original file "/home/sk/git/development/products/common/firmware/open62541/deps/mqtt-c/mqtt_pal.h" ***********************************/
-
-
-/**
- * Copyright (c) 2019 Kalycito Infotech Private Limited
- * @file
- * @brief Includes/supports the types/calls required by the MQTT-C client.
- * 
- * @note This is the \em only file included in mqtt.h, and mqtt.c. It is therefore 
- *       responsible for including/supporting all the required types and calls. 
- * 
- * @defgroup pal Platform abstraction layer
- * @brief Documentation of the types and calls required to port MQTT-C to a new platform.
- * 
- * mqtt_pal.h is the \em only header file included in mqtt.c. Therefore, to port MQTT-C to a 
- * new platform the following types, functions, constants, and macros must be defined in 
- * mqtt_pal.h:
- *  - Types:
- *      - \c size_t, \c ssize_t
- *      - \c uint8_t, \c uint16_t, \c uint32_t
- *      - \c va_list
- *      - \c mqtt_pal_time_t : return type of \c MQTT_PAL_TIME() 
- *      - \c mqtt_pal_mutex_t : type of the argument that is passed to \c MQTT_PAL_MUTEX_LOCK and 
- *        \c MQTT_PAL_MUTEX_RELEASE
- *  - Functions:
- *      - \c memcpy, \c strlen
- *      - \c va_start, \c va_arg, \c va_end
- *  - Constants:
- *      - \c INT_MIN
- * 
- * Additionally, three macro's are required:
- *  - \c MQTT_PAL_HTONS(s) : host-to-network endian conversion for uint16_t.
- *  - \c MQTT_PAL_NTOHS(s) : network-to-host endian conversion for uint16_t.
- *  - \c MQTT_PAL_TIME()   : returns [type: \c mqtt_pal_time_t] current time in seconds. 
- *  - \c MQTT_PAL_MUTEX_LOCK(mtx_pointer) : macro that locks the mutex pointed to by \c mtx_pointer.
- *  - \c MQTT_PAL_MUTEX_RELEASE(mtx_pointer) : macro that unlocks the mutex pointed to by 
- *    \c mtx_pointer.
- * 
- * Lastly, \ref mqtt_pal_sendall and \ref mqtt_pal_recvall, must be implemented in mqtt_pal.c 
- * for sending and receiving data using the platforms socket calls.
- */
-
-
-/* UNIX-like platform support */
-#ifdef __unix__
-    #include <limits.h>
-    #include <string.h>
-    #include <stdarg.h>
-    #include <time.h>
-    #include <arpa/inet.h>
-    #include <pthread.h>
-
-    /*#ifdef MQTT_USE_BIO
-        #include <openssl/bio.h>
-        typedef BIO* mqtt_pal_socket_handle;
-    #else
-        typedef int mqtt_pal_socket_handle;
-    #endif*/
-#endif
-
-#ifdef __MINGW32__
-    #include <pthread.h>
-#endif
-
-
-    #define MQTT_PAL_HTONS(s) htons(s)
-    #define MQTT_PAL_NTOHS(s) ntohs(s)
-
-    #define MQTT_PAL_TIME() time(NULL)
-
-    typedef time_t mqtt_pal_time_t;
-    typedef pthread_mutex_t mqtt_pal_mutex_t;
-
-    #define MQTT_PAL_MUTEX_INIT(mtx_ptr) pthread_mutex_init(mtx_ptr, NULL)
-    #define MQTT_PAL_MUTEX_LOCK(mtx_ptr) pthread_mutex_lock(mtx_ptr)
-    #define MQTT_PAL_MUTEX_UNLOCK(mtx_ptr) pthread_mutex_unlock(mtx_ptr)
-
-    struct my_custom_socket_handle {
-        void* client;
-        void* connection;
-        uint16_t timeout;
-    };
-    
-    typedef struct my_custom_socket_handle* mqtt_pal_socket_handle;
-/**
- * @brief Sends all the bytes in a buffer.
- * @ingroup pal
- * 
- * @param[in] fd The file-descriptor (or handle) of the socket.
- * @param[in] buf A pointer to the first byte in the buffer to send.
- * @param[in] len The number of bytes to send (starting at \p buf).
- * @param[in] flags Flags which are passed to the underlying socket.
- * 
- * @returns The number of bytes sent if successful, an \ref MQTTErrors otherwise.
- */
-ssize_t mqtt_pal_sendall(mqtt_pal_socket_handle fd, const void* buf, size_t len, int flags);
-
-/**
- * @brief Non-blocking receive all the byte available.
- * @ingroup pal
- * 
- * @param[in] fd The file-descriptor (or handle) of the socket.
- * @param[in] buf A pointer to the receive buffer.
- * @param[in] bufsz The max number of bytes that can be put into \p buf.
- * @param[in] flags Flags which are passed to the underlying socket.
- * 
- * @returns The number of bytes received if successful, an \ref MQTTErrors otherwise.
- */
-ssize_t mqtt_pal_recvall(mqtt_pal_socket_handle fd, void* buf, size_t bufsz, int flags);
-
-
-/*********************************** amalgamated original file "/home/sk/git/development/products/common/firmware/open62541/deps/mqtt-c/mqtt.h" ***********************************/
-
-
-/*
-MIT License
-
-Copyright(c) 2018 Liam Bindle
-
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files(the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions :
-
-The above copyright notice and this permission notice shall be included in all
-copies or substantial portions of the Software.
-
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-SOFTWARE.
-*/
-
-
-#ifdef __MINGW32__
-    #include <pthread.h>
-#endif
-/**
- * @file
- * @brief Declares all the MQTT-C functions and datastructures.
- * 
- * @note You should <code>\#include <mqtt.h></code>.
- * 
- * @example simple_publisher.c
- * A simple program to that publishes the current time whenever ENTER is pressed. 
- * 
- * Usage:
- * \code{.sh}
- * ./bin/simple_publisher [address [port [topic]]]
- * \endcode     
- * 
- * Where \c address is the address of the MQTT broker, \c port is the port number the 
- * MQTT broker is running on, and \c topic is the name of the topic to publish with. Note
- * that all these arguments are optional and the defaults are \c address = \c "test.mosquitto.org",
- * \c port = \c "1883", and \c topic = "datetime".
- * 
- * @example simple_subscriber.c
- * A simple program that subscribes to a single topic and prints all updates that are received.
- * 
- * Usage:
- * \code{.sh}
- * ./bin/simple_subscriber [address [port [topic]]]
- * \endcode   
- * 
- * Where \c address is the address of the MQTT broker, \c port is the port number the 
- * MQTT broker is running on, and \c topic is the name of the topic subscribe to. Note
- * that all these arguments are optional and the defaults are \c address = \c "test.mosquitto.org",
- * \c port = \c "1883", and \c topic = "datetime".  
- * 
- * @example reconnect_subscriber.c
- * Same program as \ref simple_subscriber.c, but using the automatic reconnect functionality. 
- * 
- * @example bio_publisher.c
- * Same program as \ref simple_publisher.c, but uses a unencrypted BIO socket.
- *
- * @example openssl_publisher.c
- * Same program as \ref simple_publisher.c, but over an encrypted connection using OpenSSL.
- * 
- * Usage:
- * \code{.sh}
- * ./bin/openssl_publisher ca_file [address [port [topic]]]
- * \endcode   
- * 
- * 
- * @defgroup api API
- * @brief Documentation of everything you need to know to use the MQTT-C client.
- * 
- * This module contains everything you need to know to use MQTT-C in your application.
- * For usage examples see:
- *     - @ref simple_publisher.c
- *     - @ref simple_subscriber.c
- *     - @ref reconnect_subscriber.c
- *     - @ref bio_publisher.c
- *     - @ref openssl_publisher.c
- * 
- * @note MQTT-C can be used in both single-threaded and multi-threaded applications. All 
- *       the functions in \ref api are thread-safe.
- * 
- * @defgroup packers Control Packet Serialization
- * @brief Developer documentation of the functions and datastructures used for serializing MQTT 
- *        control packets.
- * 
- * @defgroup unpackers Control Packet Deserialization
- * @brief Developer documentation of the functions and datastructures used for deserializing MQTT 
- *        control packets.
- * 
- * @defgroup details Utilities
- * @brief Developer documentation for the utilities used to implement the MQTT-C client.
- *
- * @note To deserialize a packet from a buffer use \ref mqtt_unpack_response (it's the only 
- *       function you need).
- */
-
-
- /**
-  * @brief An enumeration of the MQTT control packet types. 
-  * @ingroup unpackers
-  *
-  * @see <a href="http://docs.oasis-open.org/mqtt/mqtt/v3.1.1/os/mqtt-v3.1.1-os.html#_Toc398718021">
-  * MQTT v3.1.1: MQTT Control Packet Types
-  * </a>
-  */
-  enum MQTTControlPacketType {
-    MQTT_CONTROL_CONNECT=1u,
-    MQTT_CONTROL_CONNACK=2u,
-    MQTT_CONTROL_PUBLISH=3u,
-    MQTT_CONTROL_PUBACK=4u,
-    MQTT_CONTROL_PUBREC=5u,
-    MQTT_CONTROL_PUBREL=6u,
-    MQTT_CONTROL_PUBCOMP=7u,
-    MQTT_CONTROL_SUBSCRIBE=8u,
-    MQTT_CONTROL_SUBACK=9u,
-    MQTT_CONTROL_UNSUBSCRIBE=10u,
-    MQTT_CONTROL_UNSUBACK=11u,
-    MQTT_CONTROL_PINGREQ=12u,
-    MQTT_CONTROL_PINGRESP=13u,
-    MQTT_CONTROL_DISCONNECT=14u
-};
-
-/**
- * @brief The fixed header of an MQTT control packet.
- * @ingroup unpackers
- * 
- * @see <a href="http://docs.oasis-open.org/mqtt/mqtt/v3.1.1/os/mqtt-v3.1.1-os.html#_Toc398718020">
- * MQTT v3.1.1: Fixed Header
- * </a>
- */
-struct mqtt_fixed_header {
-    /** The type of packet. */
-    enum MQTTControlPacketType control_type;
-
-    /** The packets control flags.*/
-    uint32_t  control_flags: 4;
-
-    /** The remaining size of the packet in bytes (i.e. the size of variable header and payload).*/
-    uint32_t remaining_length;
-};
-
-/**
- * @brief The protocol identifier for MQTT v3.1.1.
- * @ingroup packers
- * 
- * @see <a href="http://docs.oasis-open.org/mqtt/mqtt/v3.1.1/os/mqtt-v3.1.1-os.html#_Toc398718030">
- * MQTT v3.1.1: CONNECT Variable Header.
- * </a>  
- */
-#define MQTT_PROTOCOL_LEVEL 0x04
-
-/** 
- * @brief A macro used to declare the enum MQTTErrors and associated 
- *        error messages (the members of the num) at the same time.
- */
-#define __ALL_MQTT_ERRORS(MQTT_ERROR)                    \
-    MQTT_ERROR(MQTT_ERROR_NULLPTR)                       \
-    MQTT_ERROR(MQTT_ERROR_CONTROL_FORBIDDEN_TYPE)        \
-    MQTT_ERROR(MQTT_ERROR_CONTROL_INVALID_FLAGS)         \
-    MQTT_ERROR(MQTT_ERROR_CONTROL_WRONG_TYPE)            \
-    MQTT_ERROR(MQTT_ERROR_CONNECT_CLIENT_ID_REFUSED)     \
-    MQTT_ERROR(MQTT_ERROR_CONNECT_NULL_WILL_MESSAGE)     \
-    MQTT_ERROR(MQTT_ERROR_CONNECT_FORBIDDEN_WILL_QOS)    \
-    MQTT_ERROR(MQTT_ERROR_CONNACK_FORBIDDEN_FLAGS)       \
-    MQTT_ERROR(MQTT_ERROR_CONNACK_FORBIDDEN_CODE)        \
-    MQTT_ERROR(MQTT_ERROR_PUBLISH_FORBIDDEN_QOS)         \
-    MQTT_ERROR(MQTT_ERROR_SUBSCRIBE_TOO_MANY_TOPICS)     \
-    MQTT_ERROR(MQTT_ERROR_MALFORMED_RESPONSE)            \
-    MQTT_ERROR(MQTT_ERROR_UNSUBSCRIBE_TOO_MANY_TOPICS)   \
-    MQTT_ERROR(MQTT_ERROR_RESPONSE_INVALID_CONTROL_TYPE) \
-    MQTT_ERROR(MQTT_ERROR_CONNECT_NOT_CALLED)          \
-    MQTT_ERROR(MQTT_ERROR_SEND_BUFFER_IS_FULL)           \
-    MQTT_ERROR(MQTT_ERROR_SOCKET_ERROR)                  \
-    MQTT_ERROR(MQTT_ERROR_MALFORMED_REQUEST)             \
-    MQTT_ERROR(MQTT_ERROR_RECV_BUFFER_TOO_SMALL)         \
-    MQTT_ERROR(MQTT_ERROR_ACK_OF_UNKNOWN)                \
-    MQTT_ERROR(MQTT_ERROR_NOT_IMPLEMENTED)               \
-    MQTT_ERROR(MQTT_ERROR_CONNECTION_REFUSED)            \
-    MQTT_ERROR(MQTT_ERROR_SUBSCRIBE_FAILED)              \
-    MQTT_ERROR(MQTT_ERROR_CONNECTION_CLOSED)             \
-    MQTT_ERROR(MQTT_ERROR_INITIAL_RECONNECT)             \
-    MQTT_ERROR(MQTT_ERROR_INVALID_REMAINING_LENGTH)      \
-    MQTT_ERROR(MQTT_ERROR_CLEAN_SESSION_IS_REQUIRED)
-
-/* todo: add more connection refused errors */
-
-/** 
- * @brief A macro used to generate the enum MQTTErrors from 
- *        \ref __ALL_MQTT_ERRORS
- * @see __ALL_MQTT_ERRORS
-*/
-#define GENERATE_ENUM(ENUM) ENUM,
-
-/** 
- * @brief A macro used to generate the error messages associated with 
- *        MQTTErrors from \ref __ALL_MQTT_ERRORS
- * @see __ALL_MQTT_ERRORS
-*/
-#define GENERATE_STRING(STRING) #STRING,
-
-
-/** 
- * @brief An enumeration of error codes. Error messages can be retrieved by calling \ref mqtt_error_str.
- * @ingroup api
- * 
- * @see mqtt_error_str
- */
-enum MQTTErrors {
-    MQTT_ERROR_UNKNOWN=INT_MIN,
-    __ALL_MQTT_ERRORS(GENERATE_ENUM)
-    MQTT_OK = 1
-};
-
-/** 
- * @brief Returns an error message for error code, \p error.
- * @ingroup api
- * 
- * @param[in] error the error code.
- * 
- * @returns The associated error message.
- */
-const char* mqtt_error_str(enum MQTTErrors error);
-
-/**
- * @brief Pack a MQTT 16 bit integer, given a native 16 bit integer .
- * 
- * @param[out] buf the buffer that the MQTT integer will be written to.
- * @param[in] integer the native integer to be written to \p buf.
- * 
- * @warning This function provides no error checking.
- * 
- * @returns 2
-*/
-ssize_t __mqtt_pack_uint16(uint8_t *buf, uint16_t integer);
-
-/**
- * @brief Unpack a MQTT 16 bit integer to a native 16 bit integer.
- * 
- * @param[in] buf the buffer that the MQTT integer will be read from.
- * 
- * @warning This function provides no error checking and does not modify \p buf.
- * 
- * @returns The native integer
-*/
-uint16_t __mqtt_unpack_uint16(const uint8_t *buf);
-
-/**
- * @brief Pack a MQTT string, given a c-string \p str.
- * 
- * @param[out] buf the buffer that the MQTT string will be written to.
- * @param[in] str the c-string to be written to \p buf.
- * 
- * @warning This function provides no error checking.
- * 
- * @returns strlen(str) + 2
-*/
-ssize_t __mqtt_pack_str(uint8_t *buf, const char* str);
-
-/** @brief A macro to get the MQTT string length from a c-string. */
-#define __mqtt_packed_cstrlen(x) (2 + (unsigned int) strlen(x))
-
-/* RESPONSES */
-
-/**
- * @brief An enumeration of the return codes returned in a CONNACK packet.
- * @ingroup unpackers
- * 
- * @see <a href="http://docs.oasis-open.org/mqtt/mqtt/v3.1.1/os/mqtt-v3.1.1-os.html#_Table_3.1_-">
- * MQTT v3.1.1: CONNACK return codes.
- * </a> 
- */
-enum MQTTConnackReturnCode {
-    MQTT_CONNACK_ACCEPTED = 0u,
-    MQTT_CONNACK_REFUSED_PROTOCOL_VERSION = 1u,
-    MQTT_CONNACK_REFUSED_IDENTIFIER_REJECTED = 2u,
-    MQTT_CONNACK_REFUSED_SERVER_UNAVAILABLE = 3u,
-    MQTT_CONNACK_REFUSED_BAD_USER_NAME_OR_PASSWORD = 4u,
-    MQTT_CONNACK_REFUSED_NOT_AUTHORIZED = 5u
-};
-
-/**
- * @brief A connection response datastructure.
- * @ingroup unpackers
- * 
- * @see <a href="http://docs.oasis-open.org/mqtt/mqtt/v3.1.1/os/mqtt-v3.1.1-os.html#_Toc398718033">
- * MQTT v3.1.1: CONNACK - Acknowledgement connection response.
- * </a>
- */
-struct mqtt_response_connack {
-    /** 
-     * @brief Allows client and broker to check if they have a consistent view about whether there is
-     * already a stored session state.
-    */
-    uint8_t session_present_flag;
-
-    /** 
-     * @brief The return code of the connection request. 
-     * 
-     * @see MQTTConnackReturnCode
-     */
-    enum MQTTConnackReturnCode return_code;
-};
-
- /**
-  * @brief A publish packet received from the broker.
-  * @ingroup unpackers
-  * 
-  * A publish packet is received from the broker when a client publishes to a topic that the 
-  * \em {local client} is subscribed to.
-  *
-  * @see <a href="http://docs.oasis-open.org/mqtt/mqtt/v3.1.1/os/mqtt-v3.1.1-os.html#_Toc398718037"> 
-  * MQTT v3.1.1: PUBLISH - Publish Message.
-  * </a> 
-  */
-struct mqtt_response_publish {
-    /** 
-     * @brief The DUP flag. DUP flag is 0 if its the first attempt to send this publish packet. A DUP flag
-     * of 1 means that this might be a re-delivery of the packet.
-     */
-    uint8_t dup_flag;
-
-    /** 
-     * @brief The quality of service level.
-     * 
-     * @see <a href="http://docs.oasis-open.org/mqtt/mqtt/v3.1.1/os/mqtt-v3.1.1-os.html#_Table_3.11_-">
-     * MQTT v3.1.1: QoS Definitions
-     * </a>
-     */
-    uint8_t qos_level;
-
-    /** @brief The retain flag of this publish message. */
-    uint8_t retain_flag;
-
-    /** @brief Size of the topic name (number of characters). */
-    uint16_t topic_name_size;
-
-    /** 
-     * @brief The topic name. 
-     * @note topic_name is not null terminated. Therefore topic_name_size must be used to get the 
-     *       string length.
-     */
-    const void* topic_name;
-
-    /** @brief The publish message's packet ID. */
-    uint16_t packet_id;
-
-    /** @brief The publish message's application message.*/
-    const void* application_message;
-
-    /** @brief The size of the application message in bytes. */
-    size_t application_message_size;
-};
-
-/**
- * @brief A publish acknowledgement for messages that were published with QoS level 1.
- * @ingroup unpackers
- * 
- * @see <a href="http://docs.oasis-open.org/mqtt/mqtt/v3.1.1/os/mqtt-v3.1.1-os.html#_Toc398718043">
- * MQTT v3.1.1: PUBACK - Publish Acknowledgement.
- * </a> 
- *
- */
-struct mqtt_response_puback {
-    /** @brief The published messages packet ID. */
-    uint16_t packet_id;
-};
-
-/**
- * @brief The response packet to a PUBLISH packet with QoS level 2.
- * @ingroup unpackers
- * 
- * @see <a href="http://docs.oasis-open.org/mqtt/mqtt/v3.1.1/os/mqtt-v3.1.1-os.html#_Toc398718048">
- * MQTT v3.1.1: PUBREC - Publish Received.
- * </a> 
- *
- */
-struct mqtt_response_pubrec {
-    /** @brief The published messages packet ID. */
-    uint16_t packet_id;
-};
-
-/**
- * @brief The response to a PUBREC packet.
- * @ingroup unpackers
- * 
- * @see <a href="http://docs.oasis-open.org/mqtt/mqtt/v3.1.1/os/mqtt-v3.1.1-os.html#_Toc398718053">
- * MQTT v3.1.1: PUBREL - Publish Release.
- * </a> 
- *
- */
-struct mqtt_response_pubrel {
-    /** @brief The published messages packet ID. */
-    uint16_t packet_id;
-};
-
-/**
- * @brief The response to a PUBREL packet.
- * @ingroup unpackers
- * 
- * @see <a href="http://docs.oasis-open.org/mqtt/mqtt/v3.1.1/os/mqtt-v3.1.1-os.html#_Toc398718058">
- * MQTT v3.1.1: PUBCOMP - Publish Complete.
- * </a> 
- *
- */
-struct mqtt_response_pubcomp {
-    /** T@brief he published messages packet ID. */
-    uint16_t packet_id;
-};
-
-/**
- * @brief An enumeration of subscription acknowledgement return codes.
- * @ingroup unpackers
- * 
- * @see <a href="http://docs.oasis-open.org/mqtt/mqtt/v3.1.1/os/mqtt-v3.1.1-os.html#_Figure_3.26_-">
- * MQTT v3.1.1: SUBACK Return Codes.
- * </a> 
- */
-enum MQTTSubackReturnCodes {
-    MQTT_SUBACK_SUCCESS_MAX_QOS_0 = 0u,
-    MQTT_SUBACK_SUCCESS_MAX_QOS_1 = 1u,
-    MQTT_SUBACK_SUCCESS_MAX_QOS_2 = 2u,
-    MQTT_SUBACK_FAILURE           = 128u
-};
-
-/**
- * @brief The response to a subscription request.
- * @ingroup unpackers
- * 
- * @see <a href="http://docs.oasis-open.org/mqtt/mqtt/v3.1.1/os/mqtt-v3.1.1-os.html#_Toc398718068">
- * MQTT v3.1.1: SUBACK - Subscription Acknowledgement.
- * </a> 
- */
-struct mqtt_response_suback {
-    /** @brief The published messages packet ID. */
-    uint16_t packet_id;
-
-    /** 
-     * Array of return codes corresponding to the requested subscribe topics.
-     * 
-     * @see MQTTSubackReturnCodes
-     */
-    const uint8_t *return_codes;
-
-    /** The number of return codes. */
-    size_t num_return_codes;
-};
-
-/**
- * @brief The brokers response to a UNSUBSCRIBE request.
- * @ingroup unpackers
- * 
- * @see <a href="http://docs.oasis-open.org/mqtt/mqtt/v3.1.1/os/mqtt-v3.1.1-os.html#_Toc398718077">
- * MQTT v3.1.1: UNSUBACK - Unsubscribe Acknowledgement.
- * </a> 
- */
-struct mqtt_response_unsuback {
-    /** @brief The published messages packet ID. */
-    uint16_t packet_id;
-};
-
-/**
- * @brief The response to a ping request.
- * @ingroup unpackers
- * 
- * @note This response contains no members.
- * 
- * @see <a href="http://docs.oasis-open.org/mqtt/mqtt/v3.1.1/os/mqtt-v3.1.1-os.html#_Toc398718086">
- * MQTT v3.1.1: PINGRESP - Ping Response.
- * </a> 
- */
-struct mqtt_response_pingresp {
-  int dummy;
-};
-
-/**
- * @brief A struct used to deserialize/interpret an incoming packet from the broker.
- * @ingroup unpackers
- */
-struct mqtt_response {
-    /** @brief The mqtt_fixed_header of the deserialized packet. */
-    struct mqtt_fixed_header fixed_header;
-
-    /**
-     * @brief A union of the possible responses from the broker.
-     * 
-     * @note The fixed_header contains the control type. This control type corresponds to the
-     *       member of this union that should be accessed. For example if 
-     *       fixed_header#control_type == \c MQTT_CONTROL_PUBLISH then 
-     *       decoded#publish should be accessed.
-     */
-    union {
-        struct mqtt_response_connack  connack;
-        struct mqtt_response_publish  publish;
-        struct mqtt_response_puback   puback;
-        struct mqtt_response_pubrec   pubrec;
-        struct mqtt_response_pubrel   pubrel;
-        struct mqtt_response_pubcomp  pubcomp;
-        struct mqtt_response_suback   suback;
-        struct mqtt_response_unsuback unsuback;
-        struct mqtt_response_pingresp pingresp;
-    } decoded;
-};
-
-/**
- * @brief Deserialize the contents of \p buf into an mqtt_fixed_header object.
- * @ingroup unpackers
- * 
- * @note This function performs complete error checking and a positive return value
- *       means the entire mqtt_response can be deserialized from \p buf.
- * 
- * @param[out] response the response who's \ref mqtt_response.fixed_header will be initialized.
- * @param[in] buf the buffer.
- * @param[in] bufsz the total number of bytes in the buffer.
- * 
- * @returns The number of bytes that were consumed, or 0 if the buffer does not contain enough 
- *          bytes to parse the packet, or a negative value if there was a protocol violation.
- */
-ssize_t mqtt_unpack_fixed_header(struct mqtt_response *response, const uint8_t *buf, size_t bufsz);
-
-/**
- * @brief Deserialize a CONNACK response from \p buf.
- * @ingroup unpackers
- * 
- * @pre \ref mqtt_unpack_fixed_header must have returned a positive value and the control packet type
- *      must be \c MQTT_CONTROL_CONNACK.
- * 
- * @param[out] mqtt_response the mqtt_response that will be initialized.
- * @param[in] buf the buffer that contains the variable header and payload of the packet. The 
- *                first byte of \p buf should be the first byte of the variable header.
- * 
- * @relates mqtt_response_connack 
- * 
- * @returns The number of bytes that were consumed, or 0 if the buffer does not contain enough 
- *          bytes to parse the packet, or a negative value if there was a protocol violation.
- */
-ssize_t mqtt_unpack_connack_response (struct mqtt_response *mqtt_response, const uint8_t *buf);
-
-/**
- * @brief Deserialize a publish response from \p buf.
- * @ingroup unpackers
- * 
- * @pre \ref mqtt_unpack_fixed_header must have returned a positive value and the mqtt_response must
- *      have a control type of \c MQTT_CONTROL_PUBLISH.
- * 
- * @param[out] mqtt_response the response that is initialized from the contents of \p buf.
- * @param[in] buf the buffer with the incoming data.
- * 
- * @relates mqtt_response_publish 
- * 
- * @returns The number of bytes that were consumed, or 0 if the buffer does not contain enough 
- *          bytes to parse the packet, or a negative value if there was a protocol violation.
- */
-ssize_t mqtt_unpack_publish_response (struct mqtt_response *mqtt_response, const uint8_t *buf);
-
-/**
- * @brief Deserialize a PUBACK/PUBREC/PUBREL/PUBCOMP packet from \p buf.
- * @ingroup unpackers
- * 
- * @pre \ref mqtt_unpack_fixed_header must have returned a positive value and the mqtt_response must
- *      have a control type of \c MQTT_CONTROL_PUBACK, \c MQTT_CONTROL_PUBREC, \c MQTT_CONTROL_PUBREL
- *      or \c MQTT_CONTROL_PUBCOMP.
- * 
- * @param[out] mqtt_response the response that is initialized from the contents of \p buf.
- * @param[in] buf the buffer with the incoming data.
- *
- * @relates mqtt_response_puback mqtt_response_pubrec mqtt_response_pubrel mqtt_response_pubcomp
- * 
- * @returns The number of bytes that were consumed, or 0 if the buffer does not contain enough 
- *          bytes to parse the packet, or a negative value if there was a protocol violation.
- */
-ssize_t mqtt_unpack_pubxxx_response(struct mqtt_response *mqtt_response, const uint8_t *buf);
-
-/**
- * @brief Deserialize a SUBACK packet from \p buf.
- * @ingroup unpacker
- *  
- * @pre \ref mqtt_unpack_fixed_header must have returned a positive value and the mqtt_response must
- *      have a control type of \c MQTT_CONTROL_SUBACK.
- * 
- * @param[out] mqtt_response the response that is initialized from the contents of \p buf.
- * @param[in] buf the buffer with the incoming data.
- *
- * @relates mqtt_response_suback
- * 
- * @returns The number of bytes that were consumed, or 0 if the buffer does not contain enough 
- *          bytes to parse the packet, or a negative value if there was a protocol violation.
- */
-ssize_t mqtt_unpack_suback_response(struct mqtt_response *mqtt_response, const uint8_t *buf);
-
-/**
- * @brief Deserialize an UNSUBACK packet from \p buf.
- * @ingroup unpacker
- *  
- * @pre \ref mqtt_unpack_fixed_header must have returned a positive value and the mqtt_response must
- *      have a control type of \c MQTT_CONTROL_UNSUBACK.
- * 
- * @param[out] mqtt_response the response that is initialized from the contents of \p buf.
- * @param[in] buf the buffer with the incoming data.
- *
- * @relates mqtt_response_unsuback
- * 
- * @returns The number of bytes that were consumed, or 0 if the buffer does not contain enough 
- *          bytes to parse the packet, or a negative value if there was a protocol violation.
- */  
-ssize_t mqtt_unpack_unsuback_response(struct mqtt_response *mqtt_response, const uint8_t *buf);
-
-/**
- * @brief Deserialize a packet from the broker.
- * @ingroup unpackers
- * 
- * @param[out] response the mqtt_response that will be initialize from \p buf.
- * @param[in] buf the incoming data buffer.
- * @param[in] bufsz the number of bytes available in the buffer.
- * 
- * @relates mqtt_response
- * 
- * @returns The number of bytes consumed on success, zero \p buf does not contain enough bytes
- *          to deserialize the packet, a negative value if a protocol violation was encountered.  
- */
-ssize_t mqtt_unpack_response(struct mqtt_response* response, const uint8_t *buf, size_t bufsz);
-
-/* REQUESTS */
-
- /**
- * @brief Serialize an mqtt_fixed_header and write it to \p buf.
- * @ingroup packers
- * 
- * @note This function performs complete error checking and a positive return value
- *       guarantees the entire packet will fit into the given buffer.
- * 
- * @param[out] buf the buffer to write to.
- * @param[in] bufsz the maximum number of bytes that can be put in to \p buf.
- * @param[in] fixed_header the fixed header that will be serialized.
- * 
- * @returns The number of bytes written to \p buf, or 0 if \p buf is too small, or a 
- *          negative value if there was a protocol violation.
- */
-ssize_t mqtt_pack_fixed_header(uint8_t *buf, size_t bufsz, const struct mqtt_fixed_header *fixed_header);
-
-/**
- * @brief An enumeration of CONNECT packet flags.
- * @ingroup packers
- * 
- * @see <a href="http://docs.oasis-open.org/mqtt/mqtt/v3.1.1/os/mqtt-v3.1.1-os.html#_Toc398718030">
- * MQTT v3.1.1: CONNECT Variable Header.
- * </a> 
- */
-enum MQTTConnectFlags {
-    MQTT_CONNECT_RESERVED = 1u,
-    MQTT_CONNECT_CLEAN_SESSION = 2u,
-    MQTT_CONNECT_WILL_FLAG = 4u,
-    MQTT_CONNECT_WILL_QOS_0 = (0u & 0x03) << 3,
-    MQTT_CONNECT_WILL_QOS_1 = (1u & 0x03) << 3,
-    MQTT_CONNECT_WILL_QOS_2 = (2u & 0x03) << 3,
-    MQTT_CONNECT_WILL_RETAIN = 32u,
-    MQTT_CONNECT_PASSWORD = 64u,
-    MQTT_CONNECT_USER_NAME = 128u
-};
-
-/**
- * @brief Serialize a connection request into a buffer. 
- * @ingroup packers
- * 
- * @param[out] buf the buffer to pack the connection request packet into.
- * @param[in] bufsz the number of bytes left in \p buf.
- * @param[in] client_id the ID that identifies the local client. \p client_id can be NULL or an empty
- *                      string for Anonymous clients.
- * @param[in] will_topic the topic under which the local client's will message will be published.
- *                       Set to \c NULL for no will message. If \p will_topic is not \c NULL a
- *                       \p will_message must also be provided.
- * @param[in] will_message the will message to be published upon a unsuccessful disconnection of
- *                         the local client. Set to \c NULL if \p will_topic is \c NULL. 
- *                         \p will_message must \em not be \c NULL if \p will_topic is not 
- *                         \c NULL.
- * @param[in] will_message_size The size of \p will_message in bytes.
- * @param[in] user_name the username to be used to connect to the broker with. Set to \c NULL if 
- *                      no username is required.
- * @param[in] password the password to be used to connect to the broker with. Set to \c NULL if
- *                     no password is required.
- * @param[in] connect_flags additional MQTTConnectFlags to be set. The only flags that need to be
- *                          set manually are \c MQTT_CONNECT_CLEAN_SESSION,
- *                          \c MQTT_CONNECT_WILL_QOS_X (for \c X &isin; {0, 1, 2}), and 
- *                          \c MQTT_CONNECT_WILL_RETAIN. Set to 0 if no additional flags are 
- *                          required.
- * @param[in] keep_alive the keep alive time in seconds. It is the responsibility of the clinet 
- *                       to ensure packets are sent to the server \em {at least} this frequently.
- * 
- * @note If there is a \p will_topic and no additional \p connect_flags are given, then by 
- *       default \p will_message will be published at QoS level 0.
- * 
- * @see <a href="http://docs.oasis-open.org/mqtt/mqtt/v3.1.1/os/mqtt-v3.1.1-os.html#_Toc398718028">
- * MQTT v3.1.1: CONNECT - Client Requests a Connection to a Server.
- * </a>
- * 
- * @returns The number of bytes put into \p buf, 0 if \p buf is too small to fit the CONNECT 
- *          packet, a negative value if there was a protocol violation.
- */
-ssize_t mqtt_pack_connection_request(uint8_t* buf, size_t bufsz, 
-                                     const char* client_id,
-                                     const char* will_topic,
-                                     const void* will_message,
-                                     size_t will_message_size,
-                                     const char* user_name,
-                                     const char* password,
-                                     uint8_t connect_flags,
-                                     uint16_t keep_alive);
-
-/**
- * @brief An enumeration of the PUBLISH flags.
- * @ingroup packers
- * 
- * @see <a href="http://docs.oasis-open.org/mqtt/mqtt/v3.1.1/os/mqtt-v3.1.1-os.html#_Toc398718037">
- * MQTT v3.1.1: PUBLISH - Publish Message.
- * </a>
- */
-enum MQTTPublishFlags {
-    MQTT_PUBLISH_DUP = 8u,
-    MQTT_PUBLISH_QOS_0 = ((0u << 1) & 0x06),
-    MQTT_PUBLISH_QOS_1 = ((1u << 1) & 0x06),
-    MQTT_PUBLISH_QOS_2 = ((2u << 1) & 0x06),
-    MQTT_PUBLISH_QOS_MASK = ((3u << 1) & 0x06),
-    MQTT_PUBLISH_RETAIN = 0x01
-};
-
-/**
- * @brief Serialize a PUBLISH request and put it in \p buf.
- * @ingroup packers
- * 
- * @param[out] buf the buffer to put the PUBLISH packet in.
- * @param[in] bufsz the maximum number of bytes that can be put into \p buf.
- * @param[in] topic_name the topic to publish \p application_message under.
- * @param[in] packet_id this packets packet ID.
- * @param[in] application_message the application message to be published.
- * @param[in] application_message_size the size of \p application_message in bytes.
- * @param[in] publish_flags The flags to publish \p application_message with. These include
- *                          the \c MQTT_PUBLISH_DUP flag, \c MQTT_PUBLISH_QOS_X (\c X &isin; 
- *                          {0, 1, 2}), and \c MQTT_PUBLISH_RETAIN flag.
- * 
- * @note The default QoS is level 0.
- * 
- * @see <a href="http://docs.oasis-open.org/mqtt/mqtt/v3.1.1/os/mqtt-v3.1.1-os.html#_Toc398718037">
- * MQTT v3.1.1: PUBLISH - Publish Message.
- * </a>
- * 
- * @returns The number of bytes put into \p buf, 0 if \p buf is too small to fit the PUBLISH 
- *          packet, a negative value if there was a protocol violation.
- */
-ssize_t mqtt_pack_publish_request(uint8_t *buf, size_t bufsz,
-                                  const char* topic_name,
-                                  uint16_t packet_id,
-                                  void* application_message,
-                                  size_t application_message_size,
-                                  uint8_t publish_flags);
-
-/**
- * @brief Serialize a PUBACK, PUBREC, PUBREL, or PUBCOMP packet and put it in \p buf.
- * @ingroup packers
- * 
- * @param[out] buf the buffer to put the PUBXXX packet in.
- * @param[in] bufsz the maximum number of bytes that can be put into \p buf.
- * @param[in] control_type the type of packet. Must be one of: \c MQTT_CONTROL_PUBACK, 
- *                         \c MQTT_CONTROL_PUBREC, \c MQTT_CONTROL_PUBREL, 
- *                         or \c MQTT_CONTROL_PUBCOMP.
- * @param[in] packet_id the packet ID of the packet being acknowledged.
- * 
- * 
- * @see <a href="http://docs.oasis-open.org/mqtt/mqtt/v3.1.1/os/mqtt-v3.1.1-os.html#_Toc398718043">
- * MQTT v3.1.1: PUBACK - Publish Acknowledgement.
- * </a>
- * @see <a href="http://docs.oasis-open.org/mqtt/mqtt/v3.1.1/os/mqtt-v3.1.1-os.html#_Toc398718048">
- * MQTT v3.1.1: PUBREC - Publish Received.
- * </a>
- * @see <a href="http://docs.oasis-open.org/mqtt/mqtt/v3.1.1/os/mqtt-v3.1.1-os.html#_Toc398718053">
- * MQTT v3.1.1: PUBREL - Publish Released.
- * </a>
- * @see <a href="http://docs.oasis-open.org/mqtt/mqtt/v3.1.1/os/mqtt-v3.1.1-os.html#_Toc398718058">
- * MQTT v3.1.1: PUBCOMP - Publish Complete.
- * </a>
- * 
- * @returns The number of bytes put into \p buf, 0 if \p buf is too small to fit the PUBXXX 
- *          packet, a negative value if there was a protocol violation.
- */
-ssize_t mqtt_pack_pubxxx_request(uint8_t *buf, size_t bufsz, 
-                                 enum MQTTControlPacketType control_type,
-                                 uint16_t packet_id);
-
-/** 
- * @brief The maximum number topics that can be subscribed to in a single call to 
- *         mqtt_pack_subscribe_request.
- * @ingroup packers
- * 
- * @see mqtt_pack_subscribe_request
- */
-#define MQTT_SUBSCRIBE_REQUEST_MAX_NUM_TOPICS 8
-
-/** 
- * @brief Serialize a SUBSCRIBE packet and put it in \p buf.
- * @ingroup packers
- * 
- * @param[out] buf the buffer to put the SUBSCRIBE packet in.
- * @param[in] bufsz the maximum number of bytes that can be put into \p buf.
- * @param[in] packet_id the packet ID to be used.
- * @param[in] ... \c NULL terminated list of (\c {const char *topic_name}, \c {int max_qos_level})
- *                pairs.
- * 
- * @note The variadic arguments, \p ..., \em must be followed by a \c NULL. For example:
- * @code
- * ssize_t n = mqtt_pack_subscribe_request(buf, bufsz, 1234, "topic_1", 0, "topic_2", 2, NULL);
- * @endcode
- * 
- * @see <a href="http://docs.oasis-open.org/mqtt/mqtt/v3.1.1/os/mqtt-v3.1.1-os.html#_Toc398718063">
- * MQTT v3.1.1: SUBSCRIBE - Subscribe to Topics.
- * </a>
- * 
- * @returns The number of bytes put into \p buf, 0 if \p buf is too small to fit the SUBSCRIBE 
- *          packet, a negative value if there was a protocol violation.
- */
-ssize_t mqtt_pack_subscribe_request(uint8_t *buf, size_t bufsz, 
-                                    unsigned int packet_id, 
-                                    ...); /* null terminated */
-
-/** 
- * @brief The maximum number topics that can be subscribed to in a single call to 
- *         mqtt_pack_unsubscribe_request.
- * @ingroup packers
- * 
- * @see mqtt_pack_unsubscribe_request
- */
-#define MQTT_UNSUBSCRIBE_REQUEST_MAX_NUM_TOPICS 8
-
-/** 
- * @brief Serialize a UNSUBSCRIBE packet and put it in \p buf.
- * @ingroup packers
- * 
- * @param[out] buf the buffer to put the UNSUBSCRIBE packet in.
- * @param[in] bufsz the maximum number of bytes that can be put into \p buf.
- * @param[in] packet_id the packet ID to be used.
- * @param[in] ... \c NULL terminated list of \c {const char *topic_name}'s to unsubscribe from.
- * 
- * @note The variadic arguments, \p ..., \em must be followed by a \c NULL. For example:
- * @code
- * ssize_t n = mqtt_pack_unsubscribe_request(buf, bufsz, 4321, "topic_1", "topic_2", NULL);
- * @endcode
- * 
- * @see <a href="http://docs.oasis-open.org/mqtt/mqtt/v3.1.1/os/mqtt-v3.1.1-os.html#_Toc398718072">
- * MQTT v3.1.1: UNSUBSCRIBE - Unsubscribe from Topics.
- * </a>
- * 
- * @returns The number of bytes put into \p buf, 0 if \p buf is too small to fit the UNSUBSCRIBE 
- *          packet, a negative value if there was a protocol violation.
- */
-ssize_t mqtt_pack_unsubscribe_request(uint8_t *buf, size_t bufsz, 
-                                      unsigned int packet_id, 
-                                      ...); /* null terminated */
-
-/**
- * @brief Serialize a PINGREQ and put it into \p buf.
- * @ingroup packers
- * 
- * @param[out] buf the buffer to put the PINGREQ packet in.
- * @param[in] bufsz the maximum number of bytes that can be put into \p buf.
- * 
- * @see <a href="http://docs.oasis-open.org/mqtt/mqtt/v3.1.1/os/mqtt-v3.1.1-os.html#_Toc398718081">
- * MQTT v3.1.1: PINGREQ - Ping Request.
- * </a>
- * 
- * @returns The number of bytes put into \p buf, 0 if \p buf is too small to fit the PINGREQ
- *          packet, a negative value if there was a protocol violation.
- */
-ssize_t mqtt_pack_ping_request(uint8_t *buf, size_t bufsz);
-
-/**
- * @brief Serialize a DISCONNECT and put it into \p buf.
- * @ingroup packers
- * 
- * @param[out] buf the buffer to put the DISCONNECT packet in.
- * @param[in] bufsz the maximum number of bytes that can be put into \p buf.
- * 
- * @see <a href="http://docs.oasis-open.org/mqtt/mqtt/v3.1.1/os/mqtt-v3.1.1-os.html#_Toc398718090">
- * MQTT v3.1.1: DISCONNECT - Disconnect Notification.
- * </a>
- * 
- * @returns The number of bytes put into \p buf, 0 if \p buf is too small to fit the DISCONNECT 
- *          packet, a negative value if there was a protocol violation.
- */
-ssize_t mqtt_pack_disconnect(uint8_t *buf, size_t bufsz);
-
-
-/**
- * @brief An enumeration of queued message states. 
- * @ingroup details
- */
-enum MQTTQueuedMessageState {
-    MQTT_QUEUED_UNSENT,
-    MQTT_QUEUED_AWAITING_ACK,
-    MQTT_QUEUED_COMPLETE
-};
-
-/**
- * @brief A message in a mqtt_message_queue.
- * @ingroup details
- */
-struct mqtt_queued_message {
-    /** @brief A pointer to the start of the message. */
-    uint8_t *start;
-
-    /** @brief The number of bytes in the message. */
-    size_t size;
-
-
-    /** @brief The state of the message. */
-    enum MQTTQueuedMessageState state;
-
-    /** 
-     * @brief The time at which the message was sent..
-     * 
-     * @note A timeout will only occur if the message is in
-     *       the MQTT_QUEUED_AWAITING_ACK \c state.
-     */
-    mqtt_pal_time_t time_sent;
-
-    /**
-     * @brief The control type of the message.
-     */
-    enum MQTTControlPacketType control_type;
-
-    /** 
-     * @brief The packet id of the message.
-     * 
-     * @note This field is only used if the associate \c control_type has a 
-     *       \c packet_id field.
-     */
-    uint16_t packet_id;
-};
-
-/**
- * @brief A message queue.
- * @ingroup details
- * 
- * @note This struct is used internally to manage sending messages.
- * @note The only members the user should use are \c curr and \c curr_sz. 
- */
-struct mqtt_message_queue {
-    /** 
-     * @brief The start of the message queue's memory block. 
-     * 
-     * @warning This member should \em not be manually changed.
-     */
-    void *mem_start;
-
-    /** @brief The end of the message queue's memory block. */
-    void *mem_end;
-
-    /**
-     * @brief A pointer to the position in the buffer you can pack bytes at.
-     * 
-     * @note Immediately after packing bytes at \c curr you \em must call
-     *       mqtt_mq_register.
-     */
-    uint8_t *curr;
-
-    /**
-     * @brief The number of bytes that can be written to \c curr.
-     * 
-     * @note curr_sz will decrease by more than the number of bytes you write to 
-     *       \c curr. This is because the mqtt_queued_message structs share the 
-     *       same memory (and thus, a mqtt_queued_message must be allocated in 
-     *       the message queue's memory whenever a new message is registered).  
-     */
-    size_t curr_sz;
-    
-    /**
-     * @brief The tail of the array of mqtt_queued_messages's.
-     * 
-     * @note This member should not be used manually.
-     */
-    struct mqtt_queued_message *queue_tail;
-};
-
-/**
- * @brief Initialize a message queue.
- * @ingroup details
- * 
- * @param[out] mq The message queue to initialize.
- * @param[in] buf The buffer for this message queue.
- * @param[in] bufsz The number of bytes in the buffer. 
- * 
- * @relates mqtt_message_queue
- */
-void mqtt_mq_init(struct mqtt_message_queue *mq, void *buf, size_t bufsz);
-
-/**
- * @brief Clear as many messages from the front of the queue as possible.
- * @ingroup details
- * 
- * @note Calls to this function are the \em only way to remove messages from the queue.
- * 
- * @param mq The message queue.
- * 
- * @relates mqtt_message_queue
- */
-void mqtt_mq_clean(struct mqtt_message_queue *mq);
-
-/**
- * @brief Register a message that was just added to the buffer.
- * @ingroup details
- * 
- * @note This function should be called immediately following a call to a packer function
- *       that returned a positive value. The positive value (number of bytes packed) should
- *       be passed to this function.
- * 
- * @param mq The message queue.
- * @param[in] nbytes The number of bytes that were just packed.
- * 
- * @note This function will step mqtt_message_queue::curr and update mqtt_message_queue::curr_sz.
- * @relates mqtt_message_queue
- * 
- * @returns The newly added struct mqtt_queued_message.
- */
-struct mqtt_queued_message* mqtt_mq_register(struct mqtt_message_queue *mq, size_t nbytes);
-
-/**
- * @brief Find a message in the message queue.
- * @ingroup details
- * 
- * @param mq The message queue.
- * @param[in] control_type The control type of the message you want to find.
- * @param[in] packet_id The packet ID of the message you want to find. Set to \c NULL if you 
- *            don't want to specify a packet ID.
- * 
- * @relates mqtt_message_queue
- * @returns The found message. \c NULL if the message was not found.
- */
-struct mqtt_queued_message* mqtt_mq_find(struct mqtt_message_queue *mq, enum MQTTControlPacketType control_type, uint16_t *packet_id);
-
-/**
- * @brief Returns the mqtt_queued_message at \p index.
- * @ingroup details
- * 
- * @param mq_ptr A pointer to the message queue.
- * @param index The index of the message. 
- *
- * @returns The mqtt_queued_message at \p index.
- */
-#define mqtt_mq_get(mq_ptr, index) (((struct mqtt_queued_message*) ((mq_ptr)->mem_end)) - 1 - index)
-
-/**
- * @brief Returns the number of messages in the message queue, \p mq_ptr.
- * @ingroup details
- */
-#define mqtt_mq_length(mq_ptr) (((struct mqtt_queued_message*) ((mq_ptr)->mem_end)) - (mq_ptr)->queue_tail)
-
-/**
- * @brief Used internally to recalculate the \c curr_sz.
- * @ingroup details
- */
-#define mqtt_mq_currsz(mq_ptr) (mq_ptr->curr >= (uint8_t*) ((mq_ptr)->queue_tail - 1)) ? 0 : ((uint8_t*) ((mq_ptr)->queue_tail - 1)) - (mq_ptr)->curr
-
-/* CLIENT */
-
-/**
- * @brief An MQTT client. 
- * @ingroup details
- * 
- * @note All members can be manipulated via the related functions.
- */
-struct mqtt_client {
-    /** @brief The socket connecting to the MQTT broker. */
-    mqtt_pal_socket_handle socketfd;
-
-    /** @brief The LFSR state used to generate packet ID's. */
-    uint16_t pid_lfsr;
-
-    /** @brief The keep-alive time in seconds. */
-    uint16_t keep_alive;
-
-    /** 
-     * @brief A counter counting pings that have been sent to keep the connection alive. 
-     * @see keep_alive
-     */
-    int number_of_keep_alives;
-
-    /**
-     * @brief The current sent offset.
-     *
-     * This is used to allow partial send commands.
-     */
-    size_t send_offset;
-
-    /** 
-     * @brief The timestamp of the last message sent to the buffer.
-     * 
-     * This is used to detect the need for keep-alive pings.
-     * 
-     * @see keep_alive
-    */
-    mqtt_pal_time_t time_of_last_send;
-
-    /** 
-     * @brief The error state of the client. 
-     * 
-     * error should be MQTT_OK for the entirety of the connection.
-     * 
-     * @note The error state will be MQTT_ERROR_CONNECT_NOT_CALLED until
-     *       you call mqtt_connect.
-     */
-    enum MQTTErrors error;
-
-    /** 
-     * @brief The timeout period in seconds.
-     * 
-     * If the broker doesn't return an ACK within response_timeout seconds a timeout
-     * will occur and the message will be retransmitted. 
-     * 
-     * @note The default value is 30 [seconds] but you can change it at any time.
-     */
-    int response_timeout;
-
-    /** @brief A counter counting the number of timeouts that have occurred. */
-    int number_of_timeouts;
-
-    /**
-     * @brief Approximately much time it has typically taken to receive responses from the 
-     *        broker.
-     * 
-     * @note This is tracked using a exponential-averaging.
-     */
-    double typical_response_time;
-
-    /**
-     * @brief The callback that is called whenever a publish is received from the broker.
-     * 
-     * Any topics that you have subscribed to will be returned from the broker as 
-     * mqtt_response_publish messages. All the publishes received from the broker will 
-     * be passed to this function.
-     * 
-     * @note A pointer to publish_response_callback_state is always passed to the callback.
-     *       Use publish_response_callback_state to keep track of any state information you 
-     *       need.
-     */
-    void (*publish_response_callback)(void** state, struct mqtt_response_publish *publish);
-
-    /**
-     * @brief A pointer to any publish_response_callback state information you need.
-     * 
-     * @note A pointer to this pointer will always be publish_response_callback upon 
-     *       receiving a publish message from the broker.
-     */
-    void* publish_response_callback_state;
-
-    /**
-     * @brief A user-specified callback, triggered on each \ref mqtt_sync, allowing
-     *        the user to perform state inspections (and custom socket error detection)
-     *        on the client.
-     * 
-     * This callback is triggered on each call to \ref mqtt_sync. If it returns MQTT_OK
-     * then \ref mqtt_sync will continue normally (performing reads and writes). If it
-     * returns an error then \ref mqtt_sync will not call reads and writes.
-     * 
-     * This callback can be used to perform custom error detection, namely platform
-     * specific socket error detection, and force the client into an error state.
-     * 
-     * This member is always initialized to NULL but it can be manually set at any 
-     * time.
-     */
-    enum MQTTErrors (*inspector_callback)(struct mqtt_client*);
-
-    /**
-     * @brief A callback that is called whenever the client is in an error state.
-     * 
-     * This callback is responsible for: application level error handling, closing
-     * previous sockets, and reestabilishing the connection to the broker and 
-     * session configurations (i.e. subscriptions).  
-     */
-    void (*reconnect_callback)(struct mqtt_client*, void**);
-
-    /**
-     * @brief A pointer to some state. A pointer to this member is passed to 
-     *        \ref mqtt_client.reconnect_callback.
-     */
-    void* reconnect_state;
-
-    /**
-     * @brief The buffer where ingress data is temporarily stored.
-     */
-    struct {
-        /** @brief The start of the receive buffer's memory. */
-        uint8_t *mem_start;
-
-        /** @brief The size of the receive buffer's memory. */
-        size_t mem_size;
-
-        /** @brief A pointer to the next writtable location in the receive buffer. */
-        uint8_t *curr;
-
-        /** @brief The number of bytes that are still writable at curr. */
-        size_t curr_sz;
-    } recv_buffer;
-
-    /** 
-     * @brief A variable passed to support thread-safety.
-     * 
-     * A pointer to this variable is passed to \c MQTT_PAL_MUTEX_LOCK, and
-     * \c MQTT_PAL_MUTEX_UNLOCK.
-     */
-    mqtt_pal_mutex_t mutex;
-
-    /** @brief The sending message queue. */
-    struct mqtt_message_queue mq;
-};
-
-/**
- * @brief Generate a new next packet ID.
- * @ingroup details
- * 
- * Packet ID's are generated using a max-length LFSR.
- * 
- * @param client The MQTT client.
- * 
- * @returns The new packet ID that should be used.
- */
-uint16_t __mqtt_next_pid(struct mqtt_client *client);
-
-/**
- * @brief Handles egress client traffic.
- * @ingroup details
- * 
- * @param client The MQTT client.
- * 
- * @returns MQTT_OK upon success, an \ref MQTTErrors otherwise. 
- */
-ssize_t __mqtt_send(struct mqtt_client *client);
-
-/**
- * @brief Handles ingress client traffic.
- * @ingroup details
- * 
- * @param client The MQTT client.
- * 
- * @returns MQTT_OK upon success, an \ref MQTTErrors otherwise. 
- */
-ssize_t __mqtt_recv(struct mqtt_client *client);
-
-/**
- * @brief Function that does the actual sending and receiving of 
- *        traffic from the network.
- * @ingroup api
- * 
- * All the other functions in the @ref api simply stage messages for
- * being sent to the broker. This function does the actual sending of
- * those messages. Additionally this function receives traffic (responses and 
- * acknowledgements) from the broker and responds to that traffic accordingly.
- * Lastly this function also calls the \c publish_response_callback when
- * any \c MQTT_CONTROL_PUBLISH messages are received.
- * 
- * @pre mqtt_init must have been called.
- * 
- * @param[in,out] client The MQTT client.
- * 
- * @attention It is the responsibility of the application programmer to 
- *            call this function periodically. All functions in the @ref api are
- *            thread-safe so it is perfectly reasonable to have a thread dedicated
- *            to calling this function every 200 ms or so. MQTT-C can be used in single
- *            threaded application though by simply calling this functino periodically 
- *            inside your main thread. See @ref simple_publisher.c and @ref simple_subscriber.c
- *            for examples (specifically the \c client_refresher functions).
- * 
- * @returns MQTT_OK upon success, an \ref MQTTErrors otherwise. 
- */
-enum MQTTErrors mqtt_sync(struct mqtt_client *client);
-
-/**
- * @brief Initializes an MQTT client.
- * @ingroup api
- * 
- * This function \em must be called before any other API function calls.
- * 
- * @pre None.
- * 
- * @param[out] client The MQTT client.
- * @param[in] sockfd The socket file descriptor (or equivalent socket handle, e.g. BIO pointer 
- *            for OpenSSL sockets) connected to the MQTT broker.
- * @param[in] sendbuf A buffer that will be used for sending messages to the broker.
- * @param[in] sendbufsz The size of \p sendbuf in bytes.
- * @param[in] recvbuf A buffer that will be used for receiving messages from the broker.
- * @param[in] recvbufsz The size of \p recvbuf in bytes.
- * @param[in] publish_response_callback The callback to call whenever application messages
- *            are received from the broker. 
- * 
- * @post mqtt_connect must be called.
- * 
- * @note \p sockfd is a non-blocking TCP connection.
- * @note If \p sendbuf fills up completely during runtime a \c MQTT_ERROR_SEND_BUFFER_IS_FULL
- *       error will be set. Similarly if \p recvbuf is ever to small to receive a message from
- *       the broker an MQTT_ERROR_RECV_BUFFER_TOO_SMALL error will be set.
- * @note A pointer to \ref mqtt_client.publish_response_callback_state is always passed as the 
- *       \c state argument to \p publish_response_callback. Note that the second argument is 
- *       the mqtt_response_publish that was received from the broker.
- * 
- * @attention Only initialize an MQTT client once (i.e. don't call \ref mqtt_init or 
- *            \ref mqtt_init_reconnect more than once per client).
- * 
- * @returns \c MQTT_OK upon success, an \ref MQTTErrors otherwise.
- */
-enum MQTTErrors mqtt_init(struct mqtt_client *client,
-                          mqtt_pal_socket_handle sockfd,
-                          uint8_t *sendbuf, size_t sendbufsz,
-                          uint8_t *recvbuf, size_t recvbufsz,
-                          void (*publish_response_callback)(void** state, struct mqtt_response_publish *publish));
-
-/**
- * @brief Initializes an MQTT client and enables automatic reconnections.
- * @ingroup api
- * 
- * An alternative to \ref mqtt_init that allows the client to automatically reconnect to the 
- * broker after an error occurs (e.g. socket error or internal buffer overflows).
- * 
- * This is accomplished by calling the \p reconnect_callback whenever the client enters an error 
- * state. The job of the \p reconnect_callback is to: (1) perform error handling/logging, 
- * (2) clean up the old connection (i.e. close client->socketfd), (3) \ref mqtt_reinit the 
- * client, and (4) reconfigure the MQTT session by calling \ref mqtt_connect followed by other 
- * API calls such as \ref mqtt_subscribe.
- * 
- * The first argument to the \p reconnect_callback is the client (which will be in an error 
- * state) and the second argument is a pointer to a void pointer where you can store some state
- * information. Internally, MQTT-C calls the reconnect callback like so: 
- * 
- * \code 
- *     client->reconnect_callback(client, &client->reconnect_state)
- * \endcode
- * 
- * Note that the \p reconnect_callback is also called to setup the initial session. After
- * calling \ref mqtt_init_reconnect the client will be in the error state 
- * \c MQTT_ERROR_INITIAL_RECONNECT.
- * 
- * @pre None.
- * 
- * @param[in,out] client The MQTT client that will be initialized.
- * @param[in] reconnect_callback The callback that will be called to connect/reconnect the 
- *            client to the broker and perform application level error handling. 
- * @param[in] reconnect_state A pointer to some state data for your \p reconnect_callback.
- *            If your \p reconnect_callback does not require any state information set this
- *            to NULL. A pointer to the memory address where the client stores a copy of this
- *            pointer is passed as the second argumnet to \p reconnect_callback. 
- * @param[in] publish_response_callback The callback to call whenever application messages
- *            are received from the broker. 
- * 
- * @post Call \p reconnect_callback yourself, or call \ref mqtt_sync 
- *       (which will trigger the call to \p reconnect_callback).
- * 
- * @attention Only initialize an MQTT client once (i.e. don't call \ref mqtt_init or 
- *            \ref mqtt_init_reconnect more than once per client).
- *
- */
-void mqtt_init_reconnect(struct mqtt_client *client,
-                         void (*reconnect_callback)(struct mqtt_client *client, void** state),
-                         void *reconnect_state,
-                         void (*publish_response_callback)(void** state, struct mqtt_response_publish *publish));
-
-/**
- * @brief Safely assign/reassign a socket and buffers to an new/existing client.
- * @ingroup api
- * 
- * This function also clears the \p client error state. Upon exiting this function
- * \c client->error will be \c MQTT_ERROR_CONNECT_NOT_CALLED (which will be cleared)
- * as soon as \ref mqtt_connect is called.
- * 
- * @pre This function must be called BEFORE \ref mqtt_connect. 
- * 
- * @param[in,out] client The MQTT client.
- * @param[in] socketfd The new socket connected to the broker. 
- * @param[in] sendbuf The buffer that will be used to buffer egress traffic to the broker.
- * @param[in] sendbufsz The size of \p sendbuf in bytes.
- * @param[in] recvbuf The buffer that will be used to buffer ingress traffic from the broker.
- * @param[in] recvbufsz The size of \p recvbuf in bytes.
- * 
- * @post Call \ref mqtt_connect.
- * 
- * @attention This function should be used in conjunction with clients that have been 
- *            initialzed with \ref mqtt_init_reconnect.  
- */
-void mqtt_reinit(struct mqtt_client* client,
-                 mqtt_pal_socket_handle socketfd,
-                 uint8_t *sendbuf, size_t sendbufsz,
-                 uint8_t *recvbuf, size_t recvbufsz);
-
-/**
- * @brief Establishes a session with the MQTT broker.
- * @ingroup api
- * 
- * @pre mqtt_init must have been called.
- * 
- * @param[in,out] client The MQTT client.
- * @param[in] client_id The unique name identifying the client. (or NULL)
- * @param[in] will_topic The topic name of client's \p will_message. If no will message is 
- *            desired set to \c NULL.
- * @param[in] will_message The application message (data) to be published in the event the 
- *            client ungracefully disconnects. Set to \c NULL if \p will_topic is \c NULL.
- * @param[in] will_message_size The size of \p will_message in bytes.
- * @param[in] user_name The username to use when establishing the session with the MQTT broker.
- *            Set to \c NULL if a username is not required.
- * @param[in] password The password to use when establishing the session with the MQTT broker.
- *            Set to \c NULL if a password is not required.
- * @param[in] connect_flags Additional \ref MQTTConnectFlags to use when establishing the connection. 
- *            These flags are for forcing the session to start clean, 
- *            \c MQTT_CONNECT_CLEAN_SESSION, the QOS level to publish the \p will_message with 
- *            (provided \c will_message != \c NULL), MQTT_CONNECT_WILL_QOS_[0,1,2], and whether 
- *            or not the broker should retain the \c will_message, MQTT_CONNECT_WILL_RETAIN.
- * @param[in] keep_alive The keep-alive time in seconds. A reasonable value for this is 400 [seconds]. 
- * 
- * @returns \c MQTT_OK upon success, an \ref MQTTErrors otherwise.
- */
-enum MQTTErrors mqtt_connect(struct mqtt_client *client,
-                             const char* client_id,
-                             const char* will_topic,
-                             const void* will_message,
-                             size_t will_message_size,
-                             const char* user_name,
-                             const char* password,
-                             uint8_t connect_flags,
-                             uint16_t keep_alive);
-
-/* 
-    todo: will_message should be a void*
-*/
-
-/**
- * @brief Publish an application message.
- * @ingroup api
- * 
- * Publishes an application message to the MQTT broker.
- * 
- * @pre mqtt_connect must have been called.
- * 
- * @param[in,out] client The MQTT client.
- * @param[in] topic_name The name of the topic.
- * @param[in] application_message The data to be published.
- * @param[in] application_message_size The size of \p application_message in bytes.
- * @param[in] publish_flags \ref MQTTPublishFlags to be used, namely the QOS level to 
- *            publish at (MQTT_PUBLISH_QOS_[0,1,2]) or whether or not the broker should 
- *            retain the publish (MQTT_PUBLISH_RETAIN).
- * 
- * @returns \c MQTT_OK upon success, an \ref MQTTErrors otherwise.
- */
-enum MQTTErrors mqtt_publish(struct mqtt_client *client,
-                             const char* topic_name,
-                             void* application_message,
-                             size_t application_message_size,
-                             uint8_t publish_flags);
-
-/**
- * @brief Acknowledge an ingree publish with QOS==1.
- * @ingroup details
- *
- * @param[in,out] client The MQTT client.
- * @param[in] packet_id The packet ID of the ingress publish being acknowledged.
- * 
- * @returns \c MQTT_OK upon success, an \ref MQTTErrors otherwise. 
- */
-ssize_t __mqtt_puback(struct mqtt_client *client, uint16_t packet_id);
-
-/**
- * @brief Acknowledge an ingree publish with QOS==2.
- * @ingroup details
- *
- * @param[in,out] client The MQTT client.
- * @param[in] packet_id The packet ID of the ingress publish being acknowledged.
- * 
- * @returns \c MQTT_OK upon success, an \ref MQTTErrors otherwise. 
- */
-ssize_t __mqtt_pubrec(struct mqtt_client *client, uint16_t packet_id);
-
-/**
- * @brief Acknowledge an ingree PUBREC packet.
- * @ingroup details
- *
- * @param[in,out] client The MQTT client.
- * @param[in] packet_id The packet ID of the ingress PUBREC being acknowledged.
- * 
- * @returns \c MQTT_OK upon success, an \ref MQTTErrors otherwise. 
- */
-ssize_t __mqtt_pubrel(struct mqtt_client *client, uint16_t packet_id);
-
-/**
- * @brief Acknowledge an ingree PUBREL packet.
- * @ingroup details
- *
- * @param[in,out] client The MQTT client.
- * @param[in] packet_id The packet ID of the ingress PUBREL being acknowledged.
- * 
- * @returns \c MQTT_OK upon success, an \ref MQTTErrors otherwise. 
- */
-ssize_t __mqtt_pubcomp(struct mqtt_client *client, uint16_t packet_id);
-
-
-/**
- * @brief Subscribe to a topic.
- * @ingroup api
- * 
- * @pre mqtt_connect must have been called.
- * 
- * @param[in,out] client The MQTT client.
- * @param[in] topic_name The name of the topic to subscribe to.
- * @param[in] max_qos_level The maximum QOS level with which the broker can send application
- *            messages for this topic.
- * 
- * @returns \c MQTT_OK upon success, an \ref MQTTErrors otherwise. 
- */
-enum MQTTErrors mqtt_subscribe(struct mqtt_client *client,
-                               const char* topic_name,
-                               int max_qos_level);
-
-/**
- * @brief Unsubscribe from a topic.
- * @ingroup api
- * 
- * @pre mqtt_connect must have been called.
- * 
- * @param[in,out] client The MQTT client.
- * @param[in] topic_name The name of the topic to unsubscribe from.
- * 
- * @returns \c MQTT_OK upon success, an \ref MQTTErrors otherwise. 
- */
-enum MQTTErrors mqtt_unsubscribe(struct mqtt_client *client,
-                                 const char* topic_name);
-
-/**
- * @brief Ping the broker. 
- * @ingroup api
- * 
- * @pre mqtt_connect must have been called.
- * 
- * @param[in,out] client The MQTT client.
- * 
- * @returns \c MQTT_OK upon success, an \ref MQTTErrors otherwise.
- */
-enum MQTTErrors mqtt_ping(struct mqtt_client *client);
-
-/**
- * @brief Ping the broker without locking/unlocking the mutex. 
- * @see mqtt_ping
- */
-enum MQTTErrors __mqtt_ping(struct mqtt_client *client);
-
-/**
- * @brief Terminate the session with the MQTT broker. 
- * @ingroup api
- * 
- * @pre mqtt_connect must have been called.
- * 
- * @param[in,out] client The MQTT client.
- * 
- * @note To re-establish the session, mqtt_connect must be called.
- * 
- * @returns \c MQTT_OK upon success, an \ref MQTTErrors otherwise.
- */
-enum MQTTErrors mqtt_disconnect(struct mqtt_client *client);
-
-#endif
-
-/*********************************** amalgamated original file "/home/sk/git/development/products/common/firmware/open62541/plugins/ua_network_pubsub_mqtt.h" ***********************************/
-
-/* This work is licensed under a Creative Commons CCZero 1.0 Universal License.
- * See http://creativecommons.org/publicdomain/zero/1.0/ for more information.
- * 
- *    Copyright 2018 (c) Fraunhofer IOSB (Author: Lukas Meling)
- */
-
-
-#ifdef __cplusplus
-extern "C" {
-#endif
-
-
-/* mqtt network layer specific internal data */
-typedef struct {
-    UA_NetworkAddressUrlDataType address;
-    UA_UInt32 mqttRecvBufferSize;
-    UA_UInt32 mqttSendBufferSize;
-    uint8_t *mqttSendBuffer; 
-    uint8_t *mqttRecvBuffer; 
-    UA_String *mqttClientId;
-    UA_Connection *connection;
-    void * mqttClient;
-    void (*callback)(UA_ByteString *encodedBuffer, UA_ByteString *topic);
-    UA_String mqttUsername;
-    UA_String mqttPassword;
-} UA_PubSubChannelDataMQTT;
-/* TODO:
- * will topic,
- * will message,
- * keep alive
- * ssl: cert, flag
- */    
-
-
-UA_PubSubTransportLayer
-UA_PubSubTransportLayerMQTT(void);
-
-
-#ifdef __cplusplus
-} // extern "C"
-#endif
-
-
-/*********************************** amalgamated original file "/home/sk/git/development/products/common/firmware/open62541/plugins/mqtt/ua_mqtt_adapter.h" ***********************************/
-
-/* This Source Code Form is subject to the terms of the Mozilla Public
- * License, v. 2.0. If a copy of the MPL was not distributed with this
- * file, You can obtain one at http://mozilla.org/MPL/2.0/.
- *
- * Copyright (c) 2018 Fraunhofer IOSB (Author: Lukas Meling)
- */
-
-
-#ifdef __cplusplus
-extern "C" {
-#endif
-
-
-UA_StatusCode
-connectMqtt(UA_PubSubChannelDataMQTT*);
-
-UA_StatusCode
-disconnectMqtt(UA_PubSubChannelDataMQTT*);
-
-UA_StatusCode
-unSubscribeMqtt(UA_PubSubChannelDataMQTT*, UA_String topic);
-
-UA_StatusCode
-publishMqtt(UA_PubSubChannelDataMQTT*, UA_String topic, const UA_ByteString *buf, UA_Byte qos);
-
-UA_StatusCode
-subscribeMqtt(UA_PubSubChannelDataMQTT*, UA_String topic, UA_Byte qos);
-
-UA_StatusCode
-yieldMqtt(UA_PubSubChannelDataMQTT*, UA_UInt16 timeout);
-    
-#ifdef __cplusplus
-} // extern "C"
-#endif
 
 
 /*********************************** amalgamated original file "/home/sk/git/development/products/common/firmware/open62541/include/open62541/network_tcp.h" ***********************************/
