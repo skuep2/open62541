@@ -1,6 +1,6 @@
 /* THIS IS A SINGLE-FILE DISTRIBUTION CONCATENATED FROM THE OPEN62541 SOURCES
  * visit http://open62541.org/ for information about this software
- * Git-Revision: v1.2.2-freertos-2-gc9bf122b-dirty
+ * Git-Revision: v1.2.2-freertos-1-g9fc6a600-dirty
  */
 
 /*
@@ -31,8 +31,8 @@
 #define UA_OPEN62541_VER_MAJOR 1
 #define UA_OPEN62541_VER_MINOR 2
 #define UA_OPEN62541_VER_PATCH 2
-#define UA_OPEN62541_VER_LABEL "-freertos-2-gc9bf122b-dirty" /* Release candidate label, etc. */
-#define UA_OPEN62541_VER_COMMIT "v1.2.2-freertos-2-gc9bf122b-dirty"
+#define UA_OPEN62541_VER_LABEL "-freertos-1-g9fc6a600-dirty" /* Release candidate label, etc. */
+#define UA_OPEN62541_VER_COMMIT "v1.2.2-freertos-1-g9fc6a600-dirty"
 
 /**
  * Feature Options
@@ -13891,7 +13891,7 @@ _UA_END_DECLS
 
 /*********************************** amalgamated original file "/home/sk/git/development/products/tahiti/tahiti-firmware/tahiti-fw-be-synce-usbhs/3rd-party/open62541/library/src_generated/open62541/types_generated.h" ***********************************/
 
-/* Generated from Opc.Ua.Types.bsd with script /home/sk/git/development/products/tahiti/tahiti-firmware/tahiti-fw-be-synce-usbhs/3rd-party/open62541/tools/generate_datatypes.py * on host pc-49a83f by user sk at 2021-09-21 04:11:36 */
+/* Generated from Opc.Ua.Types.bsd with script /home/sk/git/development/products/tahiti/tahiti-firmware/tahiti-fw-be-synce-usbhs/3rd-party/open62541/tools/generate_datatypes.py * on host pc-49a83f by user sk at 2021-09-21 04:52:42 */
 
 
 #ifdef UA_ENABLE_AMALGAMATION
@@ -16347,7 +16347,7 @@ _UA_END_DECLS
 /*********************************** amalgamated original file "/home/sk/git/development/products/tahiti/tahiti-firmware/tahiti-fw-be-synce-usbhs/3rd-party/open62541/library/src_generated/open62541/types_generated_handling.h" ***********************************/
 
 /* Generated from Opc.Ua.Types.bsd with script /home/sk/git/development/products/tahiti/tahiti-firmware/tahiti-fw-be-synce-usbhs/3rd-party/open62541/tools/generate_datatypes.py
- * on host pc-49a83f by user sk at 2021-09-21 04:11:36 */
+ * on host pc-49a83f by user sk at 2021-09-21 04:52:42 */
 
 
 
