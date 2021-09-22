@@ -1,6 +1,6 @@
 /* THIS IS A SINGLE-FILE DISTRIBUTION CONCATENATED FROM THE OPEN62541 SOURCES
  * visit http://open62541.org/ for information about this software
- * Git-Revision: v1.2.2-freertos-6-gb25328da
+ * Git-Revision: v1.2.2-freertos-1-g51a3469f
  */
 
 /*
@@ -31,8 +31,8 @@
 #define UA_OPEN62541_VER_MAJOR 1
 #define UA_OPEN62541_VER_MINOR 2
 #define UA_OPEN62541_VER_PATCH 2
-#define UA_OPEN62541_VER_LABEL "-freertos-6-gb25328da" /* Release candidate label, etc. */
-#define UA_OPEN62541_VER_COMMIT "v1.2.2-freertos-6-gb25328da"
+#define UA_OPEN62541_VER_LABEL "-freertos-1-g51a3469f" /* Release candidate label, etc. */
+#define UA_OPEN62541_VER_COMMIT "v1.2.2-freertos-1-g51a3469f"
 
 /**
  * Feature Options
@@ -17573,7 +17573,7 @@ _UA_END_DECLS
 
 /*********************************** amalgamated original file "/home/sk/git/development/products/common/firmware/open62541/library/src_generated/open62541/types_generated.h" ***********************************/
 
-/* Generated from Opc.Ua.Types.bsd with script /home/sk/git/development/products/common/firmware/open62541/tools/generate_datatypes.py * on host pc-49a83f by user sk at 2021-09-22 01:19:15 */
+/* Generated from Opc.Ua.Types.bsd with script /home/sk/git/development/products/common/firmware/open62541/tools/generate_datatypes.py * on host pc-49a83f by user sk at 2021-09-22 01:27:05 */
 
 
 #ifdef UA_ENABLE_AMALGAMATION
@@ -22499,7 +22499,7 @@ _UA_END_DECLS
 /*********************************** amalgamated original file "/home/sk/git/development/products/common/firmware/open62541/library/src_generated/open62541/types_generated_handling.h" ***********************************/
 
 /* Generated from Opc.Ua.Types.bsd with script /home/sk/git/development/products/common/firmware/open62541/tools/generate_datatypes.py
- * on host pc-49a83f by user sk at 2021-09-22 01:19:15 */
+ * on host pc-49a83f by user sk at 2021-09-22 01:27:05 */
 
 
 
