@@ -1,6 +1,6 @@
 /* THIS IS A SINGLE-FILE DISTRIBUTION CONCATENATED FROM THE OPEN62541 SOURCES
  * visit http://open62541.org/ for information about this software
- * Git-Revision: v1.2.2-freertos-1-g9fc6a600
+ * Git-Revision: v1.2.2-freertos-6-gb25328da
  */
 
 /*
@@ -27,7 +27,7 @@
 
 #include "open62541.h"
 
-/*********************************** amalgamated original file "/home/sk/git/development/products/tahiti/tahiti-firmware/tahiti-fw-be-synce-usbhs/3rd-party/open62541/deps/open62541_queue.h" ***********************************/
+/*********************************** amalgamated original file "/home/sk/git/development/products/common/firmware/open62541/deps/open62541_queue.h" ***********************************/
 
 /*	$OpenBSD: queue.h,v 1.38 2013/07/03 15:05:21 fgsch Exp $	*/
 /*	$NetBSD: queue.h,v 1.11 1996/05/16 05:17:14 mycroft Exp $	*/
@@ -675,7 +675,7 @@ struct {								\
 } while (0)
 
 
-/*********************************** amalgamated original file "/home/sk/git/development/products/tahiti/tahiti-firmware/tahiti-fw-be-synce-usbhs/3rd-party/open62541/deps/pcg_basic.h" ***********************************/
+/*********************************** amalgamated original file "/home/sk/git/development/products/common/firmware/open62541/deps/pcg_basic.h" ***********************************/
 
 /*
  * PCG Random Number Generation for C.
@@ -722,7 +722,7 @@ uint32_t pcg32_random_r(pcg32_random_t* rng);
 #endif
 
 
-/*********************************** amalgamated original file "/home/sk/git/development/products/tahiti/tahiti-firmware/tahiti-fw-be-synce-usbhs/3rd-party/open62541/deps/libc_time.h" ***********************************/
+/*********************************** amalgamated original file "/home/sk/git/development/products/common/firmware/open62541/deps/libc_time.h" ***********************************/
 
 
 struct mytm {
@@ -738,7 +738,7 @@ int __secs_to_tm(long long t, struct mytm *tm);
 long long __tm_to_secs(const struct mytm *tm);
 
 
-/*********************************** amalgamated original file "/home/sk/git/development/products/tahiti/tahiti-firmware/tahiti-fw-be-synce-usbhs/3rd-party/open62541/deps/base64.h" ***********************************/
+/*********************************** amalgamated original file "/home/sk/git/development/products/common/firmware/open62541/deps/base64.h" ***********************************/
 
 #ifndef UA_BASE64_H_
 #define UA_BASE64_H_
@@ -772,7 +772,7 @@ _UA_END_DECLS
 
 #endif /* UA_BASE64_H_ */
 
-/*********************************** amalgamated original file "/home/sk/git/development/products/tahiti/tahiti-firmware/tahiti-fw-be-synce-usbhs/3rd-party/open62541/src/ua_util_internal.h" ***********************************/
+/*********************************** amalgamated original file "/home/sk/git/development/products/common/firmware/open62541/src/ua_util_internal.h" ***********************************/
 
 /* This Source Code Form is subject to the terms of the Mozilla Public
  * License, v. 2.0. If a copy of the MPL was not distributed with this
@@ -979,7 +979,7 @@ UA_String_equal_ignorecase(const UA_String *s1, const UA_String *s2);
 _UA_END_DECLS
 
 
-/*********************************** amalgamated original file "/home/sk/git/development/products/tahiti/tahiti-firmware/tahiti-fw-be-synce-usbhs/3rd-party/open62541/src/ua_types_encoding_binary.h" ***********************************/
+/*********************************** amalgamated original file "/home/sk/git/development/products/common/firmware/open62541/src/ua_types_encoding_binary.h" ***********************************/
 
 /* This Source Code Form is subject to the terms of the Mozilla Public
  * License, v. 2.0. If a copy of the MPL was not distributed with this
@@ -1057,10 +1057,10 @@ UA_findDataTypeByBinary(const UA_NodeId *typeId);
 _UA_END_DECLS
 
 
-/*********************************** amalgamated original file "/home/sk/git/development/products/tahiti/tahiti-firmware/tahiti-fw-be-synce-usbhs/3rd-party/open62541/library/src_generated/open62541/types_generated_encoding_binary.h" ***********************************/
+/*********************************** amalgamated original file "/home/sk/git/development/products/common/firmware/open62541/library/src_generated/open62541/types_generated_encoding_binary.h" ***********************************/
 
-/* Generated from Opc.Ua.Types.bsd with script /home/sk/git/development/products/tahiti/tahiti-firmware/tahiti-fw-be-synce-usbhs/3rd-party/open62541/tools/generate_datatypes.py
- * on host pc-49a83f by user sk at 2021-09-21 04:52:21 */
+/* Generated from Opc.Ua.Types.bsd with script /home/sk/git/development/products/common/firmware/open62541/tools/generate_datatypes.py
+ * on host pc-49a83f by user sk at 2021-09-22 01:19:15 */
 
 
 #ifdef UA_ENABLE_AMALGAMATION
@@ -6348,9 +6348,9 @@ UA_PubSubConfigurationDataType_decodeBinary(const UA_ByteString *src, size_t *of
 }
 
 
-/*********************************** amalgamated original file "/home/sk/git/development/products/tahiti/tahiti-firmware/tahiti-fw-be-synce-usbhs/3rd-party/open62541/library/src_generated/open62541/transport_generated.h" ***********************************/
+/*********************************** amalgamated original file "/home/sk/git/development/products/common/firmware/open62541/library/src_generated/open62541/transport_generated.h" ***********************************/
 
-/* Generated from Custom.Opc.Ua.Transport.bsd with script /home/sk/git/development/products/tahiti/tahiti-firmware/tahiti-fw-be-synce-usbhs/3rd-party/open62541/tools/generate_datatypes.py * on host pc-49a83f by user sk at 2021-09-21 04:52:22 */
+/* Generated from Custom.Opc.Ua.Transport.bsd with script /home/sk/git/development/products/common/firmware/open62541/tools/generate_datatypes.py * on host pc-49a83f by user sk at 2021-09-22 01:19:17 */
 
 
 #ifdef UA_ENABLE_AMALGAMATION
@@ -6488,10 +6488,10 @@ typedef struct {
 _UA_END_DECLS
 
 
-/*********************************** amalgamated original file "/home/sk/git/development/products/tahiti/tahiti-firmware/tahiti-fw-be-synce-usbhs/3rd-party/open62541/library/src_generated/open62541/transport_generated_handling.h" ***********************************/
+/*********************************** amalgamated original file "/home/sk/git/development/products/common/firmware/open62541/library/src_generated/open62541/transport_generated_handling.h" ***********************************/
 
-/* Generated from Custom.Opc.Ua.Transport.bsd with script /home/sk/git/development/products/tahiti/tahiti-firmware/tahiti-fw-be-synce-usbhs/3rd-party/open62541/tools/generate_datatypes.py
- * on host pc-49a83f by user sk at 2021-09-21 04:52:22 */
+/* Generated from Custom.Opc.Ua.Transport.bsd with script /home/sk/git/development/products/common/firmware/open62541/tools/generate_datatypes.py
+ * on host pc-49a83f by user sk at 2021-09-22 01:19:17 */
 
 
 
@@ -6790,10 +6790,10 @@ UA_SymmetricAlgorithmSecurityHeader_delete(UA_SymmetricAlgorithmSecurityHeader *
 _UA_END_DECLS
 
 
-/*********************************** amalgamated original file "/home/sk/git/development/products/tahiti/tahiti-firmware/tahiti-fw-be-synce-usbhs/3rd-party/open62541/library/src_generated/open62541/transport_generated_encoding_binary.h" ***********************************/
+/*********************************** amalgamated original file "/home/sk/git/development/products/common/firmware/open62541/library/src_generated/open62541/transport_generated_encoding_binary.h" ***********************************/
 
-/* Generated from Custom.Opc.Ua.Transport.bsd with script /home/sk/git/development/products/tahiti/tahiti-firmware/tahiti-fw-be-synce-usbhs/3rd-party/open62541/tools/generate_datatypes.py
- * on host pc-49a83f by user sk at 2021-09-21 04:52:22 */
+/* Generated from Custom.Opc.Ua.Transport.bsd with script /home/sk/git/development/products/common/firmware/open62541/tools/generate_datatypes.py
+ * on host pc-49a83f by user sk at 2021-09-22 01:19:17 */
 
 
 #ifdef UA_ENABLE_AMALGAMATION
@@ -6929,7 +6929,7 @@ UA_SymmetricAlgorithmSecurityHeader_decodeBinary(const UA_ByteString *src, size_
 }
 
 
-/*********************************** amalgamated original file "/home/sk/git/development/products/tahiti/tahiti-firmware/tahiti-fw-be-synce-usbhs/3rd-party/open62541/src/ua_connection_internal.h" ***********************************/
+/*********************************** amalgamated original file "/home/sk/git/development/products/common/firmware/open62541/src/ua_connection_internal.h" ***********************************/
 
 /* This Source Code Form is subject to the terms of the Mozilla Public
  * License, v. 2.0. If a copy of the MPL was not distributed with this
@@ -6961,7 +6961,7 @@ void UA_Connection_attachSecureChannel(UA_Connection *connection,
 _UA_END_DECLS
 
 
-/*********************************** amalgamated original file "/home/sk/git/development/products/tahiti/tahiti-firmware/tahiti-fw-be-synce-usbhs/3rd-party/open62541/src/ua_securechannel.h" ***********************************/
+/*********************************** amalgamated original file "/home/sk/git/development/products/common/firmware/open62541/src/ua_securechannel.h" ***********************************/
 
 /* This Source Code Form is subject to the terms of the Mozilla Public
  * License, v. 2.0. If a copy of the MPL was not distributed with this
@@ -7336,7 +7336,7 @@ encryptChunkSym(UA_MessageContext *const messageContext, size_t totalLength);
 _UA_END_DECLS
 
 
-/*********************************** amalgamated original file "/home/sk/git/development/products/tahiti/tahiti-firmware/tahiti-fw-be-synce-usbhs/3rd-party/open62541/src/ua_timer.h" ***********************************/
+/*********************************** amalgamated original file "/home/sk/git/development/products/common/firmware/open62541/src/ua_timer.h" ***********************************/
 
 /* This Source Code Form is subject to the terms of the Mozilla Public
  * License, v. 2.0. If a copy of the MPL was not distributed with this
@@ -7438,7 +7438,7 @@ UA_Timer_clear(UA_Timer *t);
 _UA_END_DECLS
 
 
-/*********************************** amalgamated original file "/home/sk/git/development/products/tahiti/tahiti-firmware/tahiti-fw-be-synce-usbhs/3rd-party/open62541/src/server/ua_session.h" ***********************************/
+/*********************************** amalgamated original file "/home/sk/git/development/products/common/firmware/open62541/src/server/ua_session.h" ***********************************/
 
 /* This Source Code Form is subject to the terms of the Mozilla Public
  * License, v. 2.0. If a copy of the MPL was not distributed with this
@@ -7608,7 +7608,7 @@ UA_Session_dequeuePublishReq(UA_Session *session);
 _UA_END_DECLS
 
 
-/*********************************** amalgamated original file "/home/sk/git/development/products/tahiti/tahiti-firmware/tahiti-fw-be-synce-usbhs/3rd-party/open62541/src/server/ua_subscription.h" ***********************************/
+/*********************************** amalgamated original file "/home/sk/git/development/products/common/firmware/open62541/src/server/ua_subscription.h" ***********************************/
 
 /* This Source Code Form is subject to the terms of the Mozilla Public
  * License, v. 2.0. If a copy of the MPL was not distributed with this
@@ -7932,7 +7932,7 @@ UA_Server_evaluateWhereClauseContentFilter(
     if((SUB) && (SUB)->session) {                                       \
         UA_NodeId_print(&(SUB)->session->sessionId, &idString);         \
         UA_LOG_##LEVEL(LOGGER, UA_LOGCATEGORY_SESSION,                  \
-                       "SecureChannel %i | Session %.*s | Subscription %" PRIu32 " | " MSG "%.0s", \
+                       "SecureChannel %" PRIu32 " | Session %.*s | Subscription %" PRIu32 " | " MSG "%.0s", \
                        ((SUB)->session->header.channel ?                \
                         (SUB)->session->header.channel->securityToken.channelId : 0), \
                        (int)idString.length, idString.data, (SUB)->subscriptionId, __VA_ARGS__); \
@@ -7991,7 +7991,7 @@ UA_Server_evaluateWhereClauseContentFilter(
 _UA_END_DECLS
 
 
-/*********************************** amalgamated original file "/home/sk/git/development/products/tahiti/tahiti-firmware/tahiti-fw-be-synce-usbhs/3rd-party/open62541/src/pubsub/ua_pubsub_networkmessage.h" ***********************************/
+/*********************************** amalgamated original file "/home/sk/git/development/products/common/firmware/open62541/src/pubsub/ua_pubsub_networkmessage.h" ***********************************/
 
 /* This Source Code Form is subject to the terms of the Mozilla Public
  * License, v. 2.0. If a copy of the MPL was not distributed with this
@@ -8288,7 +8288,7 @@ UA_StatusCode UA_NetworkMessage_decodeJson(UA_NetworkMessage *dst, const UA_Byte
 _UA_END_DECLS
 
 
-/*********************************** amalgamated original file "/home/sk/git/development/products/tahiti/tahiti-firmware/tahiti-fw-be-synce-usbhs/3rd-party/open62541/src/pubsub/ua_pubsub.h" ***********************************/
+/*********************************** amalgamated original file "/home/sk/git/development/products/common/firmware/open62541/src/pubsub/ua_pubsub.h" ***********************************/
 
 /* This Source Code Form is subject to the terms of the Mozilla Public
  * License, v. 2.0. If a copy of the MPL was not distributed with this
@@ -8574,7 +8574,7 @@ UA_ReaderGroup_subscribeCallback(UA_Server *server, UA_ReaderGroup *readerGroup)
 _UA_END_DECLS
 
 
-/*********************************** amalgamated original file "/home/sk/git/development/products/tahiti/tahiti-firmware/tahiti-fw-be-synce-usbhs/3rd-party/open62541/src/pubsub/ua_pubsub_manager.h" ***********************************/
+/*********************************** amalgamated original file "/home/sk/git/development/products/common/firmware/open62541/src/pubsub/ua_pubsub_manager.h" ***********************************/
 
 /* This Source Code Form is subject to the terms of the Mozilla Public
  * License, v. 2.0. If a copy of the MPL was not distributed with this
@@ -8635,7 +8635,7 @@ UA_PubSubManager_setDefaultMonitoringCallbacks(UA_PubSubMonitoringInterface *mon
 _UA_END_DECLS
 
 
-/*********************************** amalgamated original file "/home/sk/git/development/products/tahiti/tahiti-firmware/tahiti-fw-be-synce-usbhs/3rd-party/open62541/src/pubsub/ua_pubsub_ns0.h" ***********************************/
+/*********************************** amalgamated original file "/home/sk/git/development/products/common/firmware/open62541/src/pubsub/ua_pubsub_ns0.h" ***********************************/
 
 /* This Source Code Form is subject to the terms of the Mozilla Public
  * License, v. 2.0. If a copy of the MPL was not distributed with this
@@ -8698,7 +8698,7 @@ _UA_END_DECLS
 
 #endif /* UA_PUBSUB_NS0_H_ */
 
-/*********************************** amalgamated original file "/home/sk/git/development/products/tahiti/tahiti-firmware/tahiti-fw-be-synce-usbhs/3rd-party/open62541/src/server/ua_server_async.h" ***********************************/
+/*********************************** amalgamated original file "/home/sk/git/development/products/common/firmware/open62541/src/server/ua_server_async.h" ***********************************/
 
 /* This Source Code Form is subject to the terms of the Mozilla Public
  * License, v. 2.0. If a copy of the MPL was not distributed with this
@@ -8813,7 +8813,7 @@ UA_FUNC_ATTR_WARN_UNUSED_RESULT;
 _UA_END_DECLS
 
 
-/*********************************** amalgamated original file "/home/sk/git/development/products/tahiti/tahiti-firmware/tahiti-fw-be-synce-usbhs/3rd-party/open62541/src/server/ua_server_internal.h" ***********************************/
+/*********************************** amalgamated original file "/home/sk/git/development/products/common/firmware/open62541/src/server/ua_server_internal.h" ***********************************/
 
 /* This Source Code Form is subject to the terms of the Mozilla Public
  * License, v. 2.0. If a copy of the MPL was not distributed with this
@@ -9421,7 +9421,7 @@ UA_NODESTORE_GETFROMREF(UA_Server *server, const UA_ReferenceTarget *target);
 _UA_END_DECLS
 
 
-/*********************************** amalgamated original file "/home/sk/git/development/products/tahiti/tahiti-firmware/tahiti-fw-be-synce-usbhs/3rd-party/open62541/src/server/ua_services.h" ***********************************/
+/*********************************** amalgamated original file "/home/sk/git/development/products/common/firmware/open62541/src/server/ua_services.h" ***********************************/
 
 /* This Source Code Form is subject to the terms of the Mozilla Public
  * License, v. 2.0. If a copy of the MPL was not distributed with this
@@ -9928,7 +9928,7 @@ void Service_TransferSubscriptions(UA_Server *server, UA_Session *session,
 _UA_END_DECLS
 
 
-/*********************************** amalgamated original file "/home/sk/git/development/products/tahiti/tahiti-firmware/tahiti-fw-be-synce-usbhs/3rd-party/open62541/src/client/ua_client_internal.h" ***********************************/
+/*********************************** amalgamated original file "/home/sk/git/development/products/common/firmware/open62541/src/client/ua_client_internal.h" ***********************************/
 
 /* This Source Code Form is subject to the terms of the Mozilla Public
  * License, v. 2.0. If a copy of the MPL was not distributed with this
@@ -10096,7 +10096,7 @@ receiveResponseAsync(UA_Client *client, UA_UInt32 timeout);
 _UA_END_DECLS
 
 
-/*********************************** amalgamated original file "/home/sk/git/development/products/tahiti/tahiti-firmware/tahiti-fw-be-synce-usbhs/3rd-party/open62541/src/pubsub/ua_pubsub_config.h" ***********************************/
+/*********************************** amalgamated original file "/home/sk/git/development/products/common/firmware/open62541/src/pubsub/ua_pubsub_config.h" ***********************************/
 
 /* This Source Code Form is subject to the terms of the Mozilla Public
  * License, v. 2.0. If a copy of the MPL was not distributed with this
@@ -10146,7 +10146,7 @@ UA_PubSubManager_getEncodedPubSubConfiguration
 
 #endif /* UA_ENABLE_PUBSUB_FILE_CONFIG */
 
-/*********************************** amalgamated original file "/home/sk/git/development/products/tahiti/tahiti-firmware/tahiti-fw-be-synce-usbhs/3rd-party/open62541/library/src_generated/open62541/namespace0_generated.h" ***********************************/
+/*********************************** amalgamated original file "/home/sk/git/development/products/common/firmware/open62541/library/src_generated/open62541/namespace0_generated.h" ***********************************/
 
 /* WARNING: This is a generated file.
  * Any manual changes will be overwritten. */
@@ -10197,7 +10197,7 @@ _UA_END_DECLS
 
 #endif /* NAMESPACE0_GENERATED_H_ */
 
-/*********************************** amalgamated original file "/home/sk/git/development/products/tahiti/tahiti-firmware/tahiti-fw-be-synce-usbhs/3rd-party/open62541/src/ua_types.c" ***********************************/
+/*********************************** amalgamated original file "/home/sk/git/development/products/common/firmware/open62541/src/ua_types.c" ***********************************/
 
 /* This Source Code Form is subject to the terms of the Mozilla Public
  * License, v. 2.0. If a copy of the MPL was not distributed with this
@@ -11670,7 +11670,7 @@ UA_NumericRange_parse(UA_NumericRange *range, const UA_String str) {
     return retval;
 }
 
-/*********************************** amalgamated original file "/home/sk/git/development/products/tahiti/tahiti-firmware/tahiti-fw-be-synce-usbhs/3rd-party/open62541/src/ua_types_encoding_binary.c" ***********************************/
+/*********************************** amalgamated original file "/home/sk/git/development/products/common/firmware/open62541/src/ua_types_encoding_binary.c" ***********************************/
 
 /* This Source Code Form is subject to the terms of the Mozilla Public
  * License, v. 2.0. If a copy of the MPL was not distributed with this
@@ -13731,7 +13731,7 @@ UA_calcSizeBinary(const void *p, const UA_DataType *type) {
     return calcSizeBinaryJumpTable[type->typeKind](p, type);
 }
 
-/*********************************** amalgamated original file "/home/sk/git/development/products/tahiti/tahiti-firmware/tahiti-fw-be-synce-usbhs/3rd-party/open62541/src/ua_types_print.c" ***********************************/
+/*********************************** amalgamated original file "/home/sk/git/development/products/common/firmware/open62541/src/ua_types_print.c" ***********************************/
 
 /* This Source Code Form is subject to the terms of the Mozilla Public
  * License, v. 2.0. If a copy of the MPL was not distributed with this
@@ -14539,10 +14539,10 @@ UA_print(const void *p, const UA_DataType *type, UA_String *output) {
 
 #endif /* UA_ENABLE_TYPEDESCRIPTION */
 
-/*********************************** amalgamated original file "/home/sk/git/development/products/tahiti/tahiti-firmware/tahiti-fw-be-synce-usbhs/3rd-party/open62541/library/src_generated/open62541/types_generated.c" ***********************************/
+/*********************************** amalgamated original file "/home/sk/git/development/products/common/firmware/open62541/library/src_generated/open62541/types_generated.c" ***********************************/
 
-/* Generated from Opc.Ua.Types.bsd with script /home/sk/git/development/products/tahiti/tahiti-firmware/tahiti-fw-be-synce-usbhs/3rd-party/open62541/tools/generate_datatypes.py
- * on host pc-49a83f by user sk at 2021-09-21 04:52:21 */
+/* Generated from Opc.Ua.Types.bsd with script /home/sk/git/development/products/common/firmware/open62541/tools/generate_datatypes.py
+ * on host pc-49a83f by user sk at 2021-09-22 01:19:15 */
 
 
 /* Boolean */
@@ -29012,10 +29012,10 @@ const UA_DataType UA_TYPES[UA_TYPES_COUNT] = {
 };
 
 
-/*********************************** amalgamated original file "/home/sk/git/development/products/tahiti/tahiti-firmware/tahiti-fw-be-synce-usbhs/3rd-party/open62541/library/src_generated/open62541/transport_generated.c" ***********************************/
+/*********************************** amalgamated original file "/home/sk/git/development/products/common/firmware/open62541/library/src_generated/open62541/transport_generated.c" ***********************************/
 
-/* Generated from Custom.Opc.Ua.Transport.bsd with script /home/sk/git/development/products/tahiti/tahiti-firmware/tahiti-fw-be-synce-usbhs/3rd-party/open62541/tools/generate_datatypes.py
- * on host pc-49a83f by user sk at 2021-09-21 04:52:22 */
+/* Generated from Custom.Opc.Ua.Transport.bsd with script /home/sk/git/development/products/common/firmware/open62541/tools/generate_datatypes.py
+ * on host pc-49a83f by user sk at 2021-09-22 01:19:17 */
 
 
 /* TcpHelloMessage */
@@ -29333,11 +29333,11 @@ const UA_DataType UA_TRANSPORT[UA_TRANSPORT_COUNT] = {
 };
 
 
-/*********************************** amalgamated original file "/home/sk/git/development/products/tahiti/tahiti-firmware/tahiti-fw-be-synce-usbhs/3rd-party/open62541/library/src_generated/open62541/statuscodes.c" ***********************************/
+/*********************************** amalgamated original file "/home/sk/git/development/products/common/firmware/open62541/library/src_generated/open62541/statuscodes.c" ***********************************/
 
 /**********************************************************
  * Autogenerated -- do not modify
- * Generated from /home/sk/git/development/products/tahiti/tahiti-firmware/tahiti-fw-be-synce-usbhs/3rd-party/open62541/deps/ua-nodeset/Schema/StatusCode.csv with script /home/sk/git/development/products/tahiti/tahiti-firmware/tahiti-fw-be-synce-usbhs/3rd-party/open62541/tools/generate_statuscode_descriptions.py
+ * Generated from /home/sk/git/development/products/common/firmware/open62541/deps/ua-nodeset/Schema/StatusCode.csv with script /home/sk/git/development/products/common/firmware/open62541/tools/generate_statuscode_descriptions.py
  *********************************************************/
 
 
@@ -29612,7 +29612,7 @@ const char * UA_StatusCode_name(UA_StatusCode code) {
 
 #endif
 
-/*********************************** amalgamated original file "/home/sk/git/development/products/tahiti/tahiti-firmware/tahiti-fw-be-synce-usbhs/3rd-party/open62541/src/ua_util.c" ***********************************/
+/*********************************** amalgamated original file "/home/sk/git/development/products/common/firmware/open62541/src/ua_util.c" ***********************************/
 
 /* This Source Code Form is subject to the terms of the Mozilla Public
  * License, v. 2.0. If a copy of the MPL was not distributed with this
@@ -29818,7 +29818,7 @@ UA_ByteString_fromBase64(UA_ByteString *bs,
     return UA_STATUSCODE_GOOD;
 }
 
-/*********************************** amalgamated original file "/home/sk/git/development/products/tahiti/tahiti-firmware/tahiti-fw-be-synce-usbhs/3rd-party/open62541/src/ua_timer.c" ***********************************/
+/*********************************** amalgamated original file "/home/sk/git/development/products/common/firmware/open62541/src/ua_timer.c" ***********************************/
 
 /* This Source Code Form is subject to the terms of the Mozilla Public
  * License, v. 2.0. If a copy of the MPL was not distributed with this
@@ -30054,7 +30054,7 @@ UA_Timer_clear(UA_Timer *t) {
     ZIP_INIT(&t->root);
 }
 
-/*********************************** amalgamated original file "/home/sk/git/development/products/tahiti/tahiti-firmware/tahiti-fw-be-synce-usbhs/3rd-party/open62541/src/ua_connection.c" ***********************************/
+/*********************************** amalgamated original file "/home/sk/git/development/products/common/firmware/open62541/src/ua_connection.c" ***********************************/
 
 /* This Source Code Form is subject to the terms of the Mozilla Public
  * License, v. 2.0. If a copy of the MPL was not distributed with this
@@ -30126,7 +30126,7 @@ UA_Connection_attachSecureChannel(UA_Connection *connection, UA_SecureChannel *c
         UA_atomic_xchg((void**)&connection->channel, (void*)channel);
 }
 
-/*********************************** amalgamated original file "/home/sk/git/development/products/tahiti/tahiti-firmware/tahiti-fw-be-synce-usbhs/3rd-party/open62541/src/ua_securechannel.c" ***********************************/
+/*********************************** amalgamated original file "/home/sk/git/development/products/common/firmware/open62541/src/ua_securechannel.c" ***********************************/
 
 /* This Source Code Form is subject to the terms of the Mozilla Public
  * License, v. 2.0. If a copy of the MPL was not distributed with this
@@ -31034,7 +31034,7 @@ UA_SecureChannel_receive(UA_SecureChannel *channel, void *application,
     return retval;
 }
 
-/*********************************** amalgamated original file "/home/sk/git/development/products/tahiti/tahiti-firmware/tahiti-fw-be-synce-usbhs/3rd-party/open62541/src/ua_securechannel_crypto.c" ***********************************/
+/*********************************** amalgamated original file "/home/sk/git/development/products/common/firmware/open62541/src/ua_securechannel_crypto.c" ***********************************/
 
 /* This Source Code Form is subject to the terms of the Mozilla Public
  * License, v. 2.0. If a copy of the MPL was not distributed with this
@@ -31686,7 +31686,7 @@ UA_SecurityPolicy_getRemoteAsymEncryptionBufferLengthOverhead(const UA_SecurityP
     return maxNumberOfBlocks * (encryptedBlockSize - plainTextBlockSize);
 }
 
-/*********************************** amalgamated original file "/home/sk/git/development/products/tahiti/tahiti-firmware/tahiti-fw-be-synce-usbhs/3rd-party/open62541/src/server/ua_session.c" ***********************************/
+/*********************************** amalgamated original file "/home/sk/git/development/products/common/firmware/open62541/src/server/ua_session.c" ***********************************/
 
 /* This Source Code Form is subject to the terms of the Mozilla Public
  * License, v. 2.0. If a copy of the MPL was not distributed with this
@@ -31875,7 +31875,7 @@ UA_Session_queuePublishReq(UA_Session *session, UA_PublishResponseEntry* entry, 
 
 #endif
 
-/*********************************** amalgamated original file "/home/sk/git/development/products/tahiti/tahiti-firmware/tahiti-fw-be-synce-usbhs/3rd-party/open62541/src/server/ua_nodes.c" ***********************************/
+/*********************************** amalgamated original file "/home/sk/git/development/products/common/firmware/open62541/src/server/ua_nodes.c" ***********************************/
 
 /* This Source Code Form is subject to the terms of the Mozilla Public
  * License, v. 2.0. If a copy of the MPL was not distributed with this
@@ -32592,7 +32592,7 @@ void UA_Node_deleteReferences(UA_Node *node) {
     UA_Node_deleteReferencesSubset(node, &noRefs);
 }
 
-/*********************************** amalgamated original file "/home/sk/git/development/products/tahiti/tahiti-firmware/tahiti-fw-be-synce-usbhs/3rd-party/open62541/src/server/ua_server.c" ***********************************/
+/*********************************** amalgamated original file "/home/sk/git/development/products/common/firmware/open62541/src/server/ua_server.c" ***********************************/
 
 /* This Source Code Form is subject to the terms of the Mozilla Public
  * License, v. 2.0. If a copy of the MPL was not distributed with this
@@ -33354,7 +33354,7 @@ UA_Server_run(UA_Server *server, const volatile UA_Boolean *running) {
     return UA_Server_run_shutdown(server);
 }
 
-/*********************************** amalgamated original file "/home/sk/git/development/products/tahiti/tahiti-firmware/tahiti-fw-be-synce-usbhs/3rd-party/open62541/src/server/ua_server_ns0.c" ***********************************/
+/*********************************** amalgamated original file "/home/sk/git/development/products/common/firmware/open62541/src/server/ua_server_ns0.c" ***********************************/
 
 /* This Source Code Form is subject to the terms of the Mozilla Public
  * License, v. 2.0. If a copy of the MPL was not distributed with this
@@ -34480,7 +34480,7 @@ UA_Server_initNS0(UA_Server *server) {
     return UA_STATUSCODE_GOOD;
 }
 
-/*********************************** amalgamated original file "/home/sk/git/development/products/tahiti/tahiti-firmware/tahiti-fw-be-synce-usbhs/3rd-party/open62541/src/server/ua_server_config.c" ***********************************/
+/*********************************** amalgamated original file "/home/sk/git/development/products/common/firmware/open62541/src/server/ua_server_config.c" ***********************************/
 
 /* This Source Code Form is subject to the terms of the Mozilla Public
  * License, v. 2.0. If a copy of the MPL was not distributed with this
@@ -34598,7 +34598,7 @@ UA_ServerConfig_addPubSubTransportLayer(UA_ServerConfig *config,
 }
 #endif /* UA_ENABLE_PUBSUB */
 
-/*********************************** amalgamated original file "/home/sk/git/development/products/tahiti/tahiti-firmware/tahiti-fw-be-synce-usbhs/3rd-party/open62541/src/server/ua_server_binary.c" ***********************************/
+/*********************************** amalgamated original file "/home/sk/git/development/products/common/firmware/open62541/src/server/ua_server_binary.c" ***********************************/
 
 /* This Source Code Form is subject to the terms of the Mozilla Public
  * License, v. 2.0. If a copy of the MPL was not distributed with this
@@ -35424,7 +35424,7 @@ UA_Server_removeConnection(UA_Server *server, UA_Connection *connection) {
     connection->free(connection);
 }
 
-/*********************************** amalgamated original file "/home/sk/git/development/products/tahiti/tahiti-firmware/tahiti-fw-be-synce-usbhs/3rd-party/open62541/src/server/ua_server_utils.c" ***********************************/
+/*********************************** amalgamated original file "/home/sk/git/development/products/common/firmware/open62541/src/server/ua_server_utils.c" ***********************************/
 
 /* This Source Code Form is subject to the terms of the Mozilla Public
  * License, v. 2.0. If a copy of the MPL was not distributed with this
@@ -35774,7 +35774,7 @@ const UA_ViewAttributes UA_ViewAttributes_default = {
 };
 
 
-/*********************************** amalgamated original file "/home/sk/git/development/products/tahiti/tahiti-firmware/tahiti-fw-be-synce-usbhs/3rd-party/open62541/src/server/ua_server_discovery.c" ***********************************/
+/*********************************** amalgamated original file "/home/sk/git/development/products/common/firmware/open62541/src/server/ua_server_discovery.c" ***********************************/
 
 /* This Source Code Form is subject to the terms of the Mozilla Public
  * License, v. 2.0. If a copy of the MPL was not distributed with this
@@ -35913,7 +35913,7 @@ UA_Server_unregister_discovery(UA_Server *server, UA_Client *client) {
 
 #endif /* UA_ENABLE_DISCOVERY */
 
-/*********************************** amalgamated original file "/home/sk/git/development/products/tahiti/tahiti-firmware/tahiti-fw-be-synce-usbhs/3rd-party/open62541/src/server/ua_server_async.c" ***********************************/
+/*********************************** amalgamated original file "/home/sk/git/development/products/common/firmware/open62541/src/server/ua_server_async.c" ***********************************/
 
 /* This Source Code Form is subject to the terms of the Mozilla Public
  * License, v. 2.0. If a copy of the MPL was not distributed with this
@@ -36341,7 +36341,7 @@ UA_Server_processServiceOperationsAsync(UA_Server *server, UA_Session *session,
 
 #endif
 
-/*********************************** amalgamated original file "/home/sk/git/development/products/tahiti/tahiti-firmware/tahiti-fw-be-synce-usbhs/3rd-party/open62541/src/pubsub/ua_pubsub_networkmessage.c" ***********************************/
+/*********************************** amalgamated original file "/home/sk/git/development/products/common/firmware/open62541/src/pubsub/ua_pubsub_networkmessage.c" ***********************************/
 
 /* This Source Code Form is subject to the terms of the Mozilla Public
  * License, v. 2.0. If a copy of the MPL was not distributed with this
@@ -37854,7 +37854,7 @@ UA_DataSetMessage_clear(const UA_DataSetMessage* p) {
 }
 #endif /* UA_ENABLE_PUBSUB */
 
-/*********************************** amalgamated original file "/home/sk/git/development/products/tahiti/tahiti-firmware/tahiti-fw-be-synce-usbhs/3rd-party/open62541/src/pubsub/ua_pubsub_writer.c" ***********************************/
+/*********************************** amalgamated original file "/home/sk/git/development/products/common/firmware/open62541/src/pubsub/ua_pubsub_writer.c" ***********************************/
 
 /* This Source Code Form is subject to the terms of the Mozilla Public
  * License, v. 2.0. If a copy of the MPL was not distributed with this
@@ -40089,7 +40089,7 @@ UA_WriterGroup_addPublishCallback(UA_Server *server, UA_WriterGroup *writerGroup
 
 #endif /* UA_ENABLE_PUBSUB */
 
-/*********************************** amalgamated original file "/home/sk/git/development/products/tahiti/tahiti-firmware/tahiti-fw-be-synce-usbhs/3rd-party/open62541/src/pubsub/ua_pubsub_reader.c" ***********************************/
+/*********************************** amalgamated original file "/home/sk/git/development/products/common/firmware/open62541/src/pubsub/ua_pubsub_reader.c" ***********************************/
 
 /* This Source Code Form is subject to the terms of the Mozilla Public
  * License, v. 2.0. If a copy of the MPL was not distributed with this
@@ -41787,7 +41787,7 @@ UA_Server_processNetworkMessage(UA_Server *server, UA_NetworkMessage *pMsg,
 
 #endif /* UA_ENABLE_PUBSUB */
 
-/*********************************** amalgamated original file "/home/sk/git/development/products/tahiti/tahiti-firmware/tahiti-fw-be-synce-usbhs/3rd-party/open62541/src/pubsub/ua_pubsub_manager.c" ***********************************/
+/*********************************** amalgamated original file "/home/sk/git/development/products/common/firmware/open62541/src/pubsub/ua_pubsub_manager.c" ***********************************/
 
 /* This Source Code Form is subject to the terms of the Mozilla Public
  * License, v. 2.0. If a copy of the MPL was not distributed with this
@@ -42354,7 +42354,7 @@ UA_PubSubManager_setDefaultMonitoringCallbacks(UA_PubSubMonitoringInterface *mon
 
 #endif /* UA_ENABLE_PUBSUB */
 
-/*********************************** amalgamated original file "/home/sk/git/development/products/tahiti/tahiti-firmware/tahiti-fw-be-synce-usbhs/3rd-party/open62541/src/pubsub/ua_pubsub_ns0.c" ***********************************/
+/*********************************** amalgamated original file "/home/sk/git/development/products/common/firmware/open62541/src/pubsub/ua_pubsub_ns0.c" ***********************************/
 
 /* This Source Code Form is subject to the terms of the Mozilla Public
  * License, v. 2.0. If a copy of the MPL was not distributed with this
@@ -43741,7 +43741,7 @@ UA_Server_initPubSubNS0(UA_Server *server) {
 
 #endif /* UA_ENABLE_PUBSUB_INFORMATIONMODEL */
 
-/*********************************** amalgamated original file "/home/sk/git/development/products/tahiti/tahiti-firmware/tahiti-fw-be-synce-usbhs/3rd-party/open62541/src/server/ua_services_view.c" ***********************************/
+/*********************************** amalgamated original file "/home/sk/git/development/products/common/firmware/open62541/src/server/ua_services_view.c" ***********************************/
 
 /* This Source Code Form is subject to the terms of the Mozilla Public
  * License, v. 2.0. If a copy of the MPL was not distributed with this
@@ -45019,7 +45019,7 @@ void Service_UnregisterNodes(UA_Server *server, UA_Session *session,
     }
 }
 
-/*********************************** amalgamated original file "/home/sk/git/development/products/tahiti/tahiti-firmware/tahiti-fw-be-synce-usbhs/3rd-party/open62541/src/server/ua_services_method.c" ***********************************/
+/*********************************** amalgamated original file "/home/sk/git/development/products/common/firmware/open62541/src/server/ua_services_method.c" ***********************************/
 
 /* This Source Code Form is subject to the terms of the Mozilla Public
  * License, v. 2.0. If a copy of the MPL was not distributed with this
@@ -45476,7 +45476,7 @@ UA_Server_call(UA_Server *server, const UA_CallMethodRequest *request) {
 
 #endif /* UA_ENABLE_METHODCALLS */
 
-/*********************************** amalgamated original file "/home/sk/git/development/products/tahiti/tahiti-firmware/tahiti-fw-be-synce-usbhs/3rd-party/open62541/src/server/ua_services_session.c" ***********************************/
+/*********************************** amalgamated original file "/home/sk/git/development/products/common/firmware/open62541/src/server/ua_services_session.c" ***********************************/
 
 /* This Source Code Form is subject to the terms of the Mozilla Public
  * License, v. 2.0. If a copy of the MPL was not distributed with this
@@ -46254,7 +46254,7 @@ Service_CloseSession(UA_Server *server, UA_SecureChannel *channel,
                                        UA_DIAGNOSTICEVENT_CLOSE);
 }
 
-/*********************************** amalgamated original file "/home/sk/git/development/products/tahiti/tahiti-firmware/tahiti-fw-be-synce-usbhs/3rd-party/open62541/src/server/ua_services_attribute.c" ***********************************/
+/*********************************** amalgamated original file "/home/sk/git/development/products/common/firmware/open62541/src/server/ua_services_attribute.c" ***********************************/
 
 /* This Source Code Form is subject to the terms of the Mozilla Public
  * License, v. 2.0. If a copy of the MPL was not distributed with this
@@ -48187,7 +48187,7 @@ UA_Server_writeObjectProperty_scalar(UA_Server *server, const UA_NodeId objectId
     return retval;
 }
 
-/*********************************** amalgamated original file "/home/sk/git/development/products/tahiti/tahiti-firmware/tahiti-fw-be-synce-usbhs/3rd-party/open62541/src/server/ua_services_discovery.c" ***********************************/
+/*********************************** amalgamated original file "/home/sk/git/development/products/common/firmware/open62541/src/server/ua_services_discovery.c" ***********************************/
 
 /* This Source Code Form is subject to the terms of the Mozilla Public
  * License, v. 2.0. If a copy of the MPL was not distributed with this
@@ -48904,7 +48904,7 @@ UA_Server_setRegisterServerCallback(UA_Server *server,
 
 #endif /* UA_ENABLE_DISCOVERY */
 
-/*********************************** amalgamated original file "/home/sk/git/development/products/tahiti/tahiti-firmware/tahiti-fw-be-synce-usbhs/3rd-party/open62541/src/server/ua_services_subscription.c" ***********************************/
+/*********************************** amalgamated original file "/home/sk/git/development/products/common/firmware/open62541/src/server/ua_services_subscription.c" ***********************************/
 
 /* This Source Code Form is subject to the terms of the Mozilla Public
  * License, v. 2.0. If a copy of the MPL was not distributed with this
@@ -49440,7 +49440,7 @@ void Service_TransferSubscriptions(UA_Server *server, UA_Session *session,
 
 #endif /* UA_ENABLE_SUBSCRIPTIONS */
 
-/*********************************** amalgamated original file "/home/sk/git/development/products/tahiti/tahiti-firmware/tahiti-fw-be-synce-usbhs/3rd-party/open62541/src/server/ua_services_monitoreditem.c" ***********************************/
+/*********************************** amalgamated original file "/home/sk/git/development/products/common/firmware/open62541/src/server/ua_services_monitoreditem.c" ***********************************/
 
 /* This Source Code Form is subject to the terms of the Mozilla Public
  * License, v. 2.0. If a copy of the MPL was not distributed with this
@@ -50117,7 +50117,7 @@ UA_Server_deleteMonitoredItem(UA_Server *server, UA_UInt32 monitoredItemId) {
 
 #endif /* UA_ENABLE_SUBSCRIPTIONS */
 
-/*********************************** amalgamated original file "/home/sk/git/development/products/tahiti/tahiti-firmware/tahiti-fw-be-synce-usbhs/3rd-party/open62541/src/server/ua_services_securechannel.c" ***********************************/
+/*********************************** amalgamated original file "/home/sk/git/development/products/common/firmware/open62541/src/server/ua_services_securechannel.c" ***********************************/
 
 /* This Source Code Form is subject to the terms of the Mozilla Public
  * License, v. 2.0. If a copy of the MPL was not distributed with this
@@ -50504,7 +50504,7 @@ Service_CloseSecureChannel(UA_Server *server, UA_SecureChannel *channel) {
                         UA_DIAGNOSTICEVENT_CLOSE);
 }
 
-/*********************************** amalgamated original file "/home/sk/git/development/products/tahiti/tahiti-firmware/tahiti-fw-be-synce-usbhs/3rd-party/open62541/src/server/ua_services_nodemanagement.c" ***********************************/
+/*********************************** amalgamated original file "/home/sk/git/development/products/common/firmware/open62541/src/server/ua_services_nodemanagement.c" ***********************************/
 
 /* This Source Code Form is subject to the terms of the Mozilla Public
  * License, v. 2.0. If a copy of the MPL was not distributed with this
@@ -53111,7 +53111,7 @@ UA_Server_setNodeTypeLifecycle(UA_Server *server, UA_NodeId nodeId,
     return retval;
 }
 
-/*********************************** amalgamated original file "/home/sk/git/development/products/tahiti/tahiti-firmware/tahiti-fw-be-synce-usbhs/3rd-party/open62541/src/server/ua_services_discovery_multicast.c" ***********************************/
+/*********************************** amalgamated original file "/home/sk/git/development/products/common/firmware/open62541/src/server/ua_services_discovery_multicast.c" ***********************************/
 
 /* This Source Code Form is subject to the terms of the Mozilla Public
  * License, v. 2.0. If a copy of the MPL was not distributed with this
@@ -53724,7 +53724,7 @@ iterateMulticastDiscoveryServer(UA_Server* server, UA_DateTime *nextRepeat,
 
 #endif /* defined(UA_ENABLE_DISCOVERY) && defined(UA_ENABLE_DISCOVERY_MULTICAST) */
 
-/*********************************** amalgamated original file "/home/sk/git/development/products/tahiti/tahiti-firmware/tahiti-fw-be-synce-usbhs/3rd-party/open62541/src/client/ua_client.c" ***********************************/
+/*********************************** amalgamated original file "/home/sk/git/development/products/common/firmware/open62541/src/client/ua_client.c" ***********************************/
 
 /* This Source Code Form is subject to the terms of the Mozilla Public
  * License, v. 2.0. If a copy of the MPL was not distributed with this
@@ -54000,7 +54000,7 @@ processAsyncResponse(UA_Client *client, UA_UInt32 requestId, const UA_NodeId *re
     if(retval != UA_STATUSCODE_GOOD) {
         UA_LOG_INFO(&client->config.logger, UA_LOGCATEGORY_CLIENT,
                     "Could not decode the response with id %u due to %s",
-                    requestId, UA_StatusCode_name(retval));
+                    (unsigned)requestId, UA_StatusCode_name(retval));
         response.responseHeader.serviceResult = retval;
     } else if(response.responseHeader.serviceResult != UA_STATUSCODE_GOOD) {
         /* Decode as a ServiceFault, i.e. only the response header */
@@ -54441,7 +54441,7 @@ UA_Client_findDataType(UA_Client *client, const UA_NodeId *typeId) {
     return UA_findDataTypeWithCustom(typeId, client->config.customDataTypes);
 }
 
-/*********************************** amalgamated original file "/home/sk/git/development/products/tahiti/tahiti-firmware/tahiti-fw-be-synce-usbhs/3rd-party/open62541/src/client/ua_client_connect.c" ***********************************/
+/*********************************** amalgamated original file "/home/sk/git/development/products/common/firmware/open62541/src/client/ua_client_connect.c" ***********************************/
 
 /* This Source Code Form is subject to the terms of the Mozilla Public
  * License, v. 2.0. If a copy of the MPL was not distributed with this
@@ -55664,7 +55664,7 @@ UA_Client_disconnect(UA_Client *client) {
 }
 
 
-/*********************************** amalgamated original file "/home/sk/git/development/products/tahiti/tahiti-firmware/tahiti-fw-be-synce-usbhs/3rd-party/open62541/src/client/ua_client_discovery.c" ***********************************/
+/*********************************** amalgamated original file "/home/sk/git/development/products/common/firmware/open62541/src/client/ua_client_discovery.c" ***********************************/
 
 /* This Source Code Form is subject to the terms of the Mozilla Public
  * License, v. 2.0. If a copy of the MPL was not distributed with this
@@ -55841,7 +55841,7 @@ UA_Client_findServersOnNetwork(UA_Client *client, const char *serverUrl,
 
 #endif
 
-/*********************************** amalgamated original file "/home/sk/git/development/products/tahiti/tahiti-firmware/tahiti-fw-be-synce-usbhs/3rd-party/open62541/src/client/ua_client_highlevel.c" ***********************************/
+/*********************************** amalgamated original file "/home/sk/git/development/products/common/firmware/open62541/src/client/ua_client_highlevel.c" ***********************************/
 
 /* This Source Code Form is subject to the terms of the Mozilla Public
  * License, v. 2.0. If a copy of the MPL was not distributed with this
@@ -56789,7 +56789,7 @@ UA_Cient_translateBrowsePathsToNodeIds_async(UA_Client *client, char **paths,
     return UA_STATUSCODE_BADNOTIMPLEMENTED;
 }
 
-/*********************************** amalgamated original file "/home/sk/git/development/products/tahiti/tahiti-firmware/tahiti-fw-be-synce-usbhs/3rd-party/open62541/src/client/ua_client_subscriptions.c" ***********************************/
+/*********************************** amalgamated original file "/home/sk/git/development/products/common/firmware/open62541/src/client/ua_client_subscriptions.c" ***********************************/
 
 /* This Source Code Form is subject to the terms of the Mozilla Public
  * License, v. 2.0. If a copy of the MPL was not distributed with this
@@ -58077,7 +58077,7 @@ UA_Client_Subscriptions_backgroundPublish(UA_Client *client) {
 
 #endif /* UA_ENABLE_SUBSCRIPTIONS */
 
-/*********************************** amalgamated original file "/home/sk/git/development/products/tahiti/tahiti-firmware/tahiti-fw-be-synce-usbhs/3rd-party/open62541/deps/libc_time.c" ***********************************/
+/*********************************** amalgamated original file "/home/sk/git/development/products/common/firmware/open62541/deps/libc_time.c" ***********************************/
 
 /* Originally released by the musl project (http://www.musl-libc.org/) under the
  * MIT license. Taken from the file /src/time/__secs_to_tm.c */
@@ -58226,7 +58226,7 @@ long long __tm_to_secs(const struct mytm *tm) {
     return t;
 }
 
-/*********************************** amalgamated original file "/home/sk/git/development/products/tahiti/tahiti-firmware/tahiti-fw-be-synce-usbhs/3rd-party/open62541/deps/pcg_basic.c" ***********************************/
+/*********************************** amalgamated original file "/home/sk/git/development/products/common/firmware/open62541/deps/pcg_basic.c" ***********************************/
 
 /*
  * PCG Random Number Generation for C.
@@ -58268,7 +58268,7 @@ uint32_t pcg32_random_r(pcg32_random_t* rng) {
     return (xorshifted >> rot) | (xorshifted << ((~rot + 1u) & 31)); /* was (xorshifted >> rot) | (xorshifted << ((-rot) & 31)) */
 }
 
-/*********************************** amalgamated original file "/home/sk/git/development/products/tahiti/tahiti-firmware/tahiti-fw-be-synce-usbhs/3rd-party/open62541/deps/base64.c" ***********************************/
+/*********************************** amalgamated original file "/home/sk/git/development/products/common/firmware/open62541/deps/base64.c" ***********************************/
 
 /*
  * Base64 encoding: Copyright (c) 2005-2011, Jouni Malinen <j@w1.fi>
@@ -58384,7 +58384,7 @@ UA_unbase64(const unsigned char *src, size_t len, size_t *out_len) {
     return str;
 }
 
-/*********************************** amalgamated original file "/home/sk/git/development/products/tahiti/tahiti-firmware/tahiti-fw-be-synce-usbhs/3rd-party/open62541/deps/aa_tree.c" ***********************************/
+/*********************************** amalgamated original file "/home/sk/git/development/products/common/firmware/open62541/deps/aa_tree.c" ***********************************/
 
 /* This Source Code Form is subject to the terms of the Mozilla Public
  * License, v. 2.0. If a copy of the MPL was not distributed with this
@@ -58649,7 +58649,7 @@ aa_prev(const struct aa_head *head, const void *elem) {
     return (prev) ? aa_entry_container(head, prev) : NULL;
 }
 
-/*********************************** amalgamated original file "/home/sk/git/development/products/tahiti/tahiti-firmware/tahiti-fw-be-synce-usbhs/3rd-party/open62541/src/pubsub/ua_pubsub_config.c" ***********************************/
+/*********************************** amalgamated original file "/home/sk/git/development/products/common/firmware/open62541/src/pubsub/ua_pubsub_config.c" ***********************************/
 
 /* This Source Code Form is subject to the terms of the Mozilla Public
  * License, v. 2.0. If a copy of the MPL was not distributed with this
@@ -60018,7 +60018,7 @@ cleanup:
 
 #endif /* UA_ENABLE_PUBSUB_FILE_CONFIG */
 
-/*********************************** amalgamated original file "/home/sk/git/development/products/tahiti/tahiti-firmware/tahiti-fw-be-synce-usbhs/3rd-party/open62541/library/src_generated/open62541/namespace0_generated.c" ***********************************/
+/*********************************** amalgamated original file "/home/sk/git/development/products/common/firmware/open62541/library/src_generated/open62541/namespace0_generated.c" ***********************************/
 
 /* WARNING: This is a generated file.
  * Any manual changes will be overwritten. */
@@ -79818,7 +79818,7 @@ bool dummy = (
 return retVal;
 }
 
-/*********************************** amalgamated original file "/home/sk/git/development/products/tahiti/tahiti-firmware/tahiti-fw-be-synce-usbhs/3rd-party/open62541/src/ua_types_lex.c" ***********************************/
+/*********************************** amalgamated original file "/home/sk/git/development/products/common/firmware/open62541/src/ua_types_lex.c" ***********************************/
 
 /* Generated by re2c 1.1.1 */
 /* This Source Code Form is subject to the terms of the Mozilla Public
@@ -80760,7 +80760,7 @@ UA_RelativePath_parse(UA_RelativePath *rp, const UA_String str) {
     return res;
 }
 
-/*********************************** amalgamated original file "/home/sk/git/development/products/tahiti/tahiti-firmware/tahiti-fw-be-synce-usbhs/3rd-party/open62541/src/server/ua_subscription.c" ***********************************/
+/*********************************** amalgamated original file "/home/sk/git/development/products/common/firmware/open62541/src/server/ua_subscription.c" ***********************************/
 
 /* This Source Code Form is subject to the terms of the Mozilla Public
  * License, v. 2.0. If a copy of the MPL was not distributed with this
@@ -81393,7 +81393,7 @@ Subscription_unregisterPublishCallback(UA_Server *server, UA_Subscription *sub) 
 
 #endif /* UA_ENABLE_SUBSCRIPTIONS */
 
-/*********************************** amalgamated original file "/home/sk/git/development/products/tahiti/tahiti-firmware/tahiti-fw-be-synce-usbhs/3rd-party/open62541/src/server/ua_subscription_monitoreditem.c" ***********************************/
+/*********************************** amalgamated original file "/home/sk/git/development/products/common/firmware/open62541/src/server/ua_subscription_monitoreditem.c" ***********************************/
 
 /* This Source Code Form is subject to the terms of the Mozilla Public
  * License, v. 2.0. If a copy of the MPL was not distributed with this
@@ -82136,7 +82136,7 @@ UA_MonitoredItem_addLink(UA_Subscription *sub, UA_MonitoredItem *mon, UA_UInt32 
 
 #endif /* UA_ENABLE_SUBSCRIPTIONS */
 
-/*********************************** amalgamated original file "/home/sk/git/development/products/tahiti/tahiti-firmware/tahiti-fw-be-synce-usbhs/3rd-party/open62541/src/server/ua_subscription_datachange.c" ***********************************/
+/*********************************** amalgamated original file "/home/sk/git/development/products/common/firmware/open62541/src/server/ua_subscription_datachange.c" ***********************************/
 
 /* This Source Code Form is subject to the terms of the Mozilla Public
  * License, v. 2.0. If a copy of the MPL was not distributed with this
@@ -82486,7 +82486,7 @@ monitoredItem_sampleCallback(UA_Server *server, UA_MonitoredItem *monitoredItem)
 
 #endif /* UA_ENABLE_SUBSCRIPTIONS */
 
-/*********************************** amalgamated original file "/home/sk/git/development/products/tahiti/tahiti-firmware/tahiti-fw-be-synce-usbhs/3rd-party/open62541/plugins/crypto/openssl/securitypolicy_openssl_common.h" ***********************************/
+/*********************************** amalgamated original file "/home/sk/git/development/products/common/firmware/open62541/plugins/crypto/openssl/securitypolicy_openssl_common.h" ***********************************/
 
 /* This Source Code Form is subject to the terms of the Mozilla Public
  * License, v. 2.0. If a copy of the MPL was not distributed with this
@@ -82631,7 +82631,7 @@ _UA_END_DECLS
 #endif /* UA_ENABLE_ENCRYPTION_OPENSSL */
 
 
-/*********************************** amalgamated original file "/home/sk/git/development/products/tahiti/tahiti-firmware/tahiti-fw-be-synce-usbhs/3rd-party/open62541/plugins/crypto/openssl/securitypolicy_openssl_common.c" ***********************************/
+/*********************************** amalgamated original file "/home/sk/git/development/products/common/firmware/open62541/plugins/crypto/openssl/securitypolicy_openssl_common.c" ***********************************/
 
 /* This Source Code Form is subject to the terms of the Mozilla Public
  * License, v. 2.0. If a copy of the MPL was not distributed with this
@@ -83601,7 +83601,7 @@ UA_OpenSSL_LoadLocalCertificate(const UA_ByteString *certificate, UA_ByteString 
 
 #endif
 
-/*********************************** amalgamated original file "/home/sk/git/development/products/tahiti/tahiti-firmware/tahiti-fw-be-synce-usbhs/3rd-party/open62541/plugins/crypto/openssl/ua_openssl_basic128rsa15.c" ***********************************/
+/*********************************** amalgamated original file "/home/sk/git/development/products/common/firmware/open62541/plugins/crypto/openssl/ua_openssl_basic128rsa15.c" ***********************************/
 
 /* This Source Code Form is subject to the terms of the Mozilla Public
  * License, v. 2.0. If a copy of the MPL was not distributed with this
@@ -84247,7 +84247,7 @@ UA_SecurityPolicy_Basic128Rsa15 (UA_SecurityPolicy * policy,
 
 #endif
 
-/*********************************** amalgamated original file "/home/sk/git/development/products/tahiti/tahiti-firmware/tahiti-fw-be-synce-usbhs/3rd-party/open62541/plugins/crypto/openssl/ua_openssl_basic256.c" ***********************************/
+/*********************************** amalgamated original file "/home/sk/git/development/products/common/firmware/open62541/plugins/crypto/openssl/ua_openssl_basic256.c" ***********************************/
 
 /* This Source Code Form is subject to the terms of the Mozilla Public
  * License, v. 2.0. If a copy of the MPL was not distributed with this
@@ -84894,7 +84894,7 @@ UA_SecurityPolicy_Basic256 (UA_SecurityPolicy * policy,
 
 #endif
 
-/*********************************** amalgamated original file "/home/sk/git/development/products/tahiti/tahiti-firmware/tahiti-fw-be-synce-usbhs/3rd-party/open62541/plugins/crypto/openssl/ua_openssl_basic256sha256.c" ***********************************/
+/*********************************** amalgamated original file "/home/sk/git/development/products/common/firmware/open62541/plugins/crypto/openssl/ua_openssl_basic256sha256.c" ***********************************/
 
 /* This Source Code Form is subject to the terms of the Mozilla Public
  * License, v. 2.0. If a copy of the MPL was not distributed with this
@@ -85555,7 +85555,7 @@ UA_SecurityPolicy_Basic256Sha256(UA_SecurityPolicy * policy,
 
 #endif
 
-/*********************************** amalgamated original file "/home/sk/git/development/products/tahiti/tahiti-firmware/tahiti-fw-be-synce-usbhs/3rd-party/open62541/plugins/crypto/openssl/ua_openssl_aes128sha256rsaoaep.c" ***********************************/
+/*********************************** amalgamated original file "/home/sk/git/development/products/common/firmware/open62541/plugins/crypto/openssl/ua_openssl_aes128sha256rsaoaep.c" ***********************************/
 
 /* This Source Code Form is subject to the terms of the Mozilla Public
  * License, v. 2.0. If a copy of the MPL was not distributed with this
@@ -86238,7 +86238,7 @@ UA_SecurityPolicy_Aes128Sha256RsaOaep(UA_SecurityPolicy *policy,
 
 #endif
 
-/*********************************** amalgamated original file "/home/sk/git/development/products/tahiti/tahiti-firmware/tahiti-fw-be-synce-usbhs/3rd-party/open62541/plugins/crypto/openssl/ua_pki_openssl.c" ***********************************/
+/*********************************** amalgamated original file "/home/sk/git/development/products/common/firmware/open62541/plugins/crypto/openssl/ua_pki_openssl.c" ***********************************/
 
 /* This work is licensed under a Creative Commons CCZero 1.0 Universal License.
  * See http://creativecommons.org/publicdomain/zero/1.0/ for more information.
@@ -87003,7 +87003,7 @@ UA_CertificateVerification_CertFolders(UA_CertificateVerification * cv,
 
 #endif  /* end of UA_ENABLE_ENCRYPTION_OPENSSL */
 
-/*********************************** amalgamated original file "/home/sk/git/development/products/tahiti/tahiti-firmware/tahiti-fw-be-synce-usbhs/3rd-party/open62541/plugins/crypto/mbedtls/securitypolicy_mbedtls_common.h" ***********************************/
+/*********************************** amalgamated original file "/home/sk/git/development/products/common/firmware/open62541/plugins/crypto/mbedtls/securitypolicy_mbedtls_common.h" ***********************************/
 
 /* This work is licensed under a Creative Commons CCZero 1.0 Universal License.
  * See http://creativecommons.org/publicdomain/zero/1.0/ for more information. 
@@ -87079,7 +87079,7 @@ _UA_END_DECLS
 #endif
 
 
-/*********************************** amalgamated original file "/home/sk/git/development/products/tahiti/tahiti-firmware/tahiti-fw-be-synce-usbhs/3rd-party/open62541/plugins/crypto/mbedtls/securitypolicy_mbedtls_common.c" ***********************************/
+/*********************************** amalgamated original file "/home/sk/git/development/products/common/firmware/open62541/plugins/crypto/mbedtls/securitypolicy_mbedtls_common.c" ***********************************/
 
 
 #ifdef UA_ENABLE_ENCRYPTION_MBEDTLS
@@ -87378,7 +87378,7 @@ UA_ByteString UA_mbedTLS_CopyDataFormatAware(const UA_ByteString *data)
 
 #endif
 
-/*********************************** amalgamated original file "/home/sk/git/development/products/tahiti/tahiti-firmware/tahiti-fw-be-synce-usbhs/3rd-party/open62541/plugins/crypto/mbedtls/ua_securitypolicy_basic128rsa15.c" ***********************************/
+/*********************************** amalgamated original file "/home/sk/git/development/products/common/firmware/open62541/plugins/crypto/mbedtls/ua_securitypolicy_basic128rsa15.c" ***********************************/
 
 /* This Source Code Form is subject to the terms of the Mozilla Public
  * License, v. 2.0. If a copy of the MPL was not distributed with this
@@ -88254,7 +88254,7 @@ UA_SecurityPolicy_Basic128Rsa15(UA_SecurityPolicy *policy, const UA_ByteString l
 
 #endif
 
-/*********************************** amalgamated original file "/home/sk/git/development/products/tahiti/tahiti-firmware/tahiti-fw-be-synce-usbhs/3rd-party/open62541/plugins/crypto/mbedtls/ua_securitypolicy_basic256.c" ***********************************/
+/*********************************** amalgamated original file "/home/sk/git/development/products/common/firmware/open62541/plugins/crypto/mbedtls/ua_securitypolicy_basic256.c" ***********************************/
 
 /* This Source Code Form is subject to the terms of the Mozilla Public
  * License, v. 2.0. If a copy of the MPL was not distributed with this
@@ -89077,7 +89077,7 @@ UA_SecurityPolicy_Basic256(UA_SecurityPolicy *policy, const UA_ByteString localC
 
 #endif
 
-/*********************************** amalgamated original file "/home/sk/git/development/products/tahiti/tahiti-firmware/tahiti-fw-be-synce-usbhs/3rd-party/open62541/plugins/crypto/mbedtls/ua_securitypolicy_basic256sha256.c" ***********************************/
+/*********************************** amalgamated original file "/home/sk/git/development/products/common/firmware/open62541/plugins/crypto/mbedtls/ua_securitypolicy_basic256sha256.c" ***********************************/
 
 /* This Source Code Form is subject to the terms of the Mozilla Public
  * License, v. 2.0. If a copy of the MPL was not distributed with this
@@ -89944,7 +89944,7 @@ UA_SecurityPolicy_Basic256Sha256(UA_SecurityPolicy *policy, const UA_ByteString 
 
 #endif
 
-/*********************************** amalgamated original file "/home/sk/git/development/products/tahiti/tahiti-firmware/tahiti-fw-be-synce-usbhs/3rd-party/open62541/plugins/crypto/mbedtls/ua_securitypolicy_aes128sha256rsaoaep.c" ***********************************/
+/*********************************** amalgamated original file "/home/sk/git/development/products/common/firmware/open62541/plugins/crypto/mbedtls/ua_securitypolicy_aes128sha256rsaoaep.c" ***********************************/
 
 /* This Source Code Form is subject to the terms of the Mozilla Public
  * License, v. 2.0. If a copy of the MPL was not distributed with this
@@ -90814,7 +90814,7 @@ UA_SecurityPolicy_Aes128Sha256RsaOaep(UA_SecurityPolicy *policy, const UA_ByteSt
 
 #endif
 
-/*********************************** amalgamated original file "/home/sk/git/development/products/tahiti/tahiti-firmware/tahiti-fw-be-synce-usbhs/3rd-party/open62541/plugins/crypto/mbedtls/ua_pki_mbedtls.c" ***********************************/
+/*********************************** amalgamated original file "/home/sk/git/development/products/common/firmware/open62541/plugins/crypto/mbedtls/ua_pki_mbedtls.c" ***********************************/
 
 /* This work is licensed under a Creative Commons CCZero 1.0 Universal License.
  * See http://creativecommons.org/publicdomain/zero/1.0/ for more information.
@@ -91427,7 +91427,7 @@ UA_CertificateVerification_CertFolders(UA_CertificateVerification *cv,
 #endif
 #endif
 
-/*********************************** amalgamated original file "/home/sk/git/development/products/tahiti/tahiti-firmware/tahiti-fw-be-synce-usbhs/3rd-party/open62541/plugins/ua_log_stdout.c" ***********************************/
+/*********************************** amalgamated original file "/home/sk/git/development/products/common/firmware/open62541/plugins/ua_log_stdout.c" ***********************************/
 
 /* This work is licensed under a Creative Commons CCZero 1.0 Universal License.
  * See http://creativecommons.org/publicdomain/zero/1.0/ for more information.
@@ -91521,7 +91521,7 @@ UA_Logger UA_Log_Stdout_withLevel(UA_LogLevel minlevel)
     return logger;
 }
 
-/*********************************** amalgamated original file "/home/sk/git/development/products/tahiti/tahiti-firmware/tahiti-fw-be-synce-usbhs/3rd-party/open62541/plugins/ua_accesscontrol_default.c" ***********************************/
+/*********************************** amalgamated original file "/home/sk/git/development/products/common/firmware/open62541/plugins/ua_accesscontrol_default.c" ***********************************/
 
 /* This work is licensed under a Creative Commons CCZero 1.0 Universal License.
  * See http://creativecommons.org/publicdomain/zero/1.0/ for more information. 
@@ -91869,7 +91869,7 @@ UA_AccessControl_default(UA_ServerConfig *config, UA_Boolean allowAnonymous,
     return UA_STATUSCODE_GOOD;
 }
 
-/*********************************** amalgamated original file "/home/sk/git/development/products/tahiti/tahiti-firmware/tahiti-fw-be-synce-usbhs/3rd-party/open62541/plugins/ua_nodestore_ziptree.c" ***********************************/
+/*********************************** amalgamated original file "/home/sk/git/development/products/common/firmware/open62541/plugins/ua_nodestore_ziptree.c" ***********************************/
 
 /* This work is licensed under a Creative Commons CCZero 1.0 Universal License.
  * See http://creativecommons.org/publicdomain/zero/1.0/ for more information. 
@@ -92235,7 +92235,7 @@ UA_Nodestore_ZipTree(UA_Nodestore *ns) {
     return UA_STATUSCODE_GOOD;
 }
 
-/*********************************** amalgamated original file "/home/sk/git/development/products/tahiti/tahiti-firmware/tahiti-fw-be-synce-usbhs/3rd-party/open62541/plugins/ua_nodestore_hashmap.c" ***********************************/
+/*********************************** amalgamated original file "/home/sk/git/development/products/common/firmware/open62541/plugins/ua_nodestore_hashmap.c" ***********************************/
 
 /* This work is licensed under a Creative Commons CCZero 1.0 Universal License.
  * See http://creativecommons.org/publicdomain/zero/1.0/ for more information. 
@@ -92744,7 +92744,7 @@ UA_Nodestore_HashMap(UA_Nodestore *ns) {
     return UA_STATUSCODE_GOOD;
 }
 
-/*********************************** amalgamated original file "/home/sk/git/development/products/tahiti/tahiti-firmware/tahiti-fw-be-synce-usbhs/3rd-party/open62541/plugins/ua_config_default.c" ***********************************/
+/*********************************** amalgamated original file "/home/sk/git/development/products/common/firmware/open62541/plugins/ua_config_default.c" ***********************************/
 
 /* This work is licensed under a Creative Commons CCZero 1.0 Universal License.
  * See http://creativecommons.org/publicdomain/zero/1.0/ for more information.
@@ -93609,7 +93609,7 @@ UA_ClientConfig_setDefaultEncryption(UA_ClientConfig *config,
 }
 #endif
 
-/*********************************** amalgamated original file "/home/sk/git/development/products/tahiti/tahiti-firmware/tahiti-fw-be-synce-usbhs/3rd-party/open62541/plugins/crypto/ua_pki_none.c" ***********************************/
+/*********************************** amalgamated original file "/home/sk/git/development/products/common/firmware/open62541/plugins/crypto/ua_pki_none.c" ***********************************/
 
 /* This work is licensed under a Creative Commons CCZero 1.0 Universal License.
  * See http://creativecommons.org/publicdomain/zero/1.0/ for more information.
@@ -93642,7 +93642,7 @@ void UA_CertificateVerification_AcceptAll(UA_CertificateVerification *cv) {
     cv->clear = clearVerifyAllowAll;
 }
 
-/*********************************** amalgamated original file "/home/sk/git/development/products/tahiti/tahiti-firmware/tahiti-fw-be-synce-usbhs/3rd-party/open62541/plugins/crypto/ua_securitypolicy_none.c" ***********************************/
+/*********************************** amalgamated original file "/home/sk/git/development/products/common/firmware/open62541/plugins/crypto/ua_securitypolicy_none.c" ***********************************/
 
 /* This work is licensed under a Creative Commons CCZero 1.0 Universal License.
  * See http://creativecommons.org/publicdomain/zero/1.0/ for more information.
@@ -93842,7 +93842,7 @@ UA_SecurityPolicy_None(UA_SecurityPolicy *policy, const UA_ByteString localCerti
     return UA_STATUSCODE_GOOD;
 }
 
-/*********************************** amalgamated original file "/home/sk/git/development/products/tahiti/tahiti-firmware/tahiti-fw-be-synce-usbhs/3rd-party/open62541/plugins/ua_log_syslog.c" ***********************************/
+/*********************************** amalgamated original file "/home/sk/git/development/products/common/firmware/open62541/plugins/ua_log_syslog.c" ***********************************/
 
 /* This work is licensed under a Creative Commons CCZero 1.0 Universal License.
  * See http://creativecommons.org/publicdomain/zero/1.0/ for more information.
@@ -93929,7 +93929,7 @@ UA_Log_Syslog_withLevel(UA_LogLevel minlevel) {
 
 #endif
 
-/*********************************** amalgamated original file "/home/sk/git/development/products/tahiti/tahiti-firmware/tahiti-fw-be-synce-usbhs/3rd-party/open62541/arch/freertosLWIP/ua_clock.c" ***********************************/
+/*********************************** amalgamated original file "/home/sk/git/development/products/common/firmware/open62541/arch/freertosLWIP/ua_clock.c" ***********************************/
 
 /* This work is licensed under a Creative Commons CCZero 1.0 Universal License.
  * See http://creativecommons.org/publicdomain/zero/1.0/ for more information. 
@@ -93974,7 +93974,7 @@ UA_DateTime UA_DateTime_nowMonotonic(void) {
 
 #endif /* UA_ARCHITECTURE_FREERTOSLWIP */
 
-/*********************************** amalgamated original file "/home/sk/git/development/products/tahiti/tahiti-firmware/tahiti-fw-be-synce-usbhs/3rd-party/open62541/arch/freertosLWIP/ua_architecture_functions.c" ***********************************/
+/*********************************** amalgamated original file "/home/sk/git/development/products/common/firmware/open62541/arch/freertosLWIP/ua_architecture_functions.c" ***********************************/
 
 /* This work is licensed under a Creative Commons CCZero 1.0 Universal License.
  * See http://creativecommons.org/publicdomain/zero/1.0/ for more information.
@@ -94068,7 +94068,7 @@ unsigned int lwip_if_nametoindex(const char *ifname){
 
 #endif /* UA_ARCHITECTURE_FREERTOSLWIP */
 
-/*********************************** amalgamated original file "/home/sk/git/development/products/tahiti/tahiti-firmware/tahiti-fw-be-synce-usbhs/3rd-party/open62541/arch/network_tcp.c" ***********************************/
+/*********************************** amalgamated original file "/home/sk/git/development/products/common/firmware/open62541/arch/network_tcp.c" ***********************************/
 
 /* This work is licensed under a Creative Commons CCZero 1.0 Universal License.
  * See http://creativecommons.org/publicdomain/zero/1.0/ for more information.
