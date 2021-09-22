@@ -1,6 +1,6 @@
 /* THIS IS A SINGLE-FILE DISTRIBUTION CONCATENATED FROM THE OPEN62541 SOURCES
  * visit http://open62541.org/ for information about this software
- * Git-Revision: v1.2.2-freertos-6-gb25328da-dirty
+ * Git-Revision: v1.2.2-freertos-1-g51a3469f-dirty
  */
 
 /*
@@ -1060,7 +1060,7 @@ _UA_END_DECLS
 /*********************************** amalgamated original file "/home/sk/git/development/products/common/firmware/open62541/library/src_generated/open62541/types_generated_encoding_binary.h" ***********************************/
 
 /* Generated from Opc.Ua.Types.bsd with script /home/sk/git/development/products/common/firmware/open62541/tools/generate_datatypes.py
- * on host pc-49a83f by user sk at 2021-09-22 01:19:39 */
+ * on host pc-49a83f by user sk at 2021-09-22 01:27:31 */
 
 
 #ifdef UA_ENABLE_AMALGAMATION
@@ -3732,7 +3732,7 @@ UA_EventFilter_decodeBinary(const UA_ByteString *src, size_t *offset, UA_EventFi
 
 /*********************************** amalgamated original file "/home/sk/git/development/products/common/firmware/open62541/library/src_generated/open62541/transport_generated.h" ***********************************/
 
-/* Generated from Custom.Opc.Ua.Transport.bsd with script /home/sk/git/development/products/common/firmware/open62541/tools/generate_datatypes.py * on host pc-49a83f by user sk at 2021-09-22 01:19:40 */
+/* Generated from Custom.Opc.Ua.Transport.bsd with script /home/sk/git/development/products/common/firmware/open62541/tools/generate_datatypes.py * on host pc-49a83f by user sk at 2021-09-22 01:27:32 */
 
 
 #ifdef UA_ENABLE_AMALGAMATION
@@ -3873,7 +3873,7 @@ _UA_END_DECLS
 /*********************************** amalgamated original file "/home/sk/git/development/products/common/firmware/open62541/library/src_generated/open62541/transport_generated_handling.h" ***********************************/
 
 /* Generated from Custom.Opc.Ua.Transport.bsd with script /home/sk/git/development/products/common/firmware/open62541/tools/generate_datatypes.py
- * on host pc-49a83f by user sk at 2021-09-22 01:19:40 */
+ * on host pc-49a83f by user sk at 2021-09-22 01:27:32 */
 
 
 
@@ -4175,7 +4175,7 @@ _UA_END_DECLS
 /*********************************** amalgamated original file "/home/sk/git/development/products/common/firmware/open62541/library/src_generated/open62541/transport_generated_encoding_binary.h" ***********************************/
 
 /* Generated from Custom.Opc.Ua.Transport.bsd with script /home/sk/git/development/products/common/firmware/open62541/tools/generate_datatypes.py
- * on host pc-49a83f by user sk at 2021-09-22 01:19:40 */
+ * on host pc-49a83f by user sk at 2021-09-22 01:27:32 */
 
 
 #ifdef UA_ENABLE_AMALGAMATION
@@ -4940,7 +4940,7 @@ UA_Session_dequeuePublishReq(UA_Session *session);
                 (SESSION)->header.channel->securityToken.channelId : 0; \
         }                                                               \
         UA_LOG_##LEVEL(LOGGER, UA_LOGCATEGORY_SESSION,                  \
-                       "SecureChannel %i | Session %.*s | " MSG "%.0s", \
+                       "SecureChannel %" PRIu32 " | Session %.*s | " MSG "%.0s", \
                        channelId, (int)idString.length, idString.data, __VA_ARGS__); \
         UA_String_clear(&idString);                                     \
     } while(0)
@@ -11873,7 +11873,7 @@ UA_print(const void *p, const UA_DataType *type, UA_String *output) {
 /*********************************** amalgamated original file "/home/sk/git/development/products/common/firmware/open62541/library/src_generated/open62541/types_generated.c" ***********************************/
 
 /* Generated from Opc.Ua.Types.bsd with script /home/sk/git/development/products/common/firmware/open62541/tools/generate_datatypes.py
- * on host pc-49a83f by user sk at 2021-09-22 01:19:39 */
+ * on host pc-49a83f by user sk at 2021-09-22 01:27:31 */
 
 
 /* Boolean */
@@ -19186,7 +19186,7 @@ const UA_DataType UA_TYPES[UA_TYPES_COUNT] = {
 /*********************************** amalgamated original file "/home/sk/git/development/products/common/firmware/open62541/library/src_generated/open62541/transport_generated.c" ***********************************/
 
 /* Generated from Custom.Opc.Ua.Transport.bsd with script /home/sk/git/development/products/common/firmware/open62541/tools/generate_datatypes.py
- * on host pc-49a83f by user sk at 2021-09-22 01:19:40 */
+ * on host pc-49a83f by user sk at 2021-09-22 01:27:32 */
 
 
 /* TcpHelloMessage */
