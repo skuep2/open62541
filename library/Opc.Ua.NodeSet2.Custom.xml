@@ -5647,94 +5647,6 @@ bmFyeT4=</ByteString>
       <Reference ReferenceType="HasProperty" IsForward="false">i=11646</Reference>
     </References>
   </UAVariable>
-  <UAObjectType NodeId="i=2041" BrowseName="BaseEventType" IsAbstract="true">
-    <DisplayName>BaseEventType</DisplayName>
-    <Documentation>https://reference.opcfoundation.org/v104/Core/docs/Part5/6.4.2</Documentation>
-    <References>
-      <Reference ReferenceType="HasProperty">i=2042</Reference>
-      <Reference ReferenceType="HasProperty">i=2043</Reference>
-      <Reference ReferenceType="HasProperty">i=2044</Reference>
-      <Reference ReferenceType="HasProperty">i=2045</Reference>
-      <Reference ReferenceType="HasProperty">i=2046</Reference>
-      <Reference ReferenceType="HasProperty">i=2047</Reference>
-      <Reference ReferenceType="HasProperty">i=3190</Reference>
-      <Reference ReferenceType="HasProperty">i=2050</Reference>
-      <Reference ReferenceType="HasProperty">i=2051</Reference>
-      <Reference ReferenceType="HasSubtype" IsForward="false">i=58</Reference>
-    </References>
-  </UAObjectType>
-  <UAVariable NodeId="i=2042" BrowseName="EventId" ParentNodeId="i=2041" DataType="ByteString">
-    <DisplayName>EventId</DisplayName>
-    <References>
-      <Reference ReferenceType="HasTypeDefinition">i=68</Reference>
-      <Reference ReferenceType="HasModellingRule">i=78</Reference>
-      <Reference ReferenceType="HasProperty" IsForward="false">i=2041</Reference>
-    </References>
-  </UAVariable>
-  <UAVariable NodeId="i=2043" BrowseName="EventType" ParentNodeId="i=2041" DataType="NodeId">
-    <DisplayName>EventType</DisplayName>
-    <References>
-      <Reference ReferenceType="HasTypeDefinition">i=68</Reference>
-      <Reference ReferenceType="HasModellingRule">i=78</Reference>
-      <Reference ReferenceType="HasProperty" IsForward="false">i=2041</Reference>
-    </References>
-  </UAVariable>
-  <UAVariable NodeId="i=2044" BrowseName="SourceNode" ParentNodeId="i=2041" DataType="NodeId">
-    <DisplayName>SourceNode</DisplayName>
-    <References>
-      <Reference ReferenceType="HasTypeDefinition">i=68</Reference>
-      <Reference ReferenceType="HasModellingRule">i=78</Reference>
-      <Reference ReferenceType="HasProperty" IsForward="false">i=2041</Reference>
-    </References>
-  </UAVariable>
-  <UAVariable NodeId="i=2045" BrowseName="SourceName" ParentNodeId="i=2041" DataType="String">
-    <DisplayName>SourceName</DisplayName>
-    <References>
-      <Reference ReferenceType="HasTypeDefinition">i=68</Reference>
-      <Reference ReferenceType="HasModellingRule">i=78</Reference>
-      <Reference ReferenceType="HasProperty" IsForward="false">i=2041</Reference>
-    </References>
-  </UAVariable>
-  <UAVariable NodeId="i=2046" BrowseName="Time" ParentNodeId="i=2041" DataType="i=294">
-    <DisplayName>Time</DisplayName>
-    <References>
-      <Reference ReferenceType="HasTypeDefinition">i=68</Reference>
-      <Reference ReferenceType="HasModellingRule">i=78</Reference>
-      <Reference ReferenceType="HasProperty" IsForward="false">i=2041</Reference>
-    </References>
-  </UAVariable>
-  <UAVariable NodeId="i=2047" BrowseName="ReceiveTime" ParentNodeId="i=2041" DataType="i=294">
-    <DisplayName>ReceiveTime</DisplayName>
-    <References>
-      <Reference ReferenceType="HasTypeDefinition">i=68</Reference>
-      <Reference ReferenceType="HasModellingRule">i=78</Reference>
-      <Reference ReferenceType="HasProperty" IsForward="false">i=2041</Reference>
-    </References>
-  </UAVariable>
-  <UAVariable NodeId="i=3190" BrowseName="LocalTime" ParentNodeId="i=2041" DataType="i=8912">
-    <DisplayName>LocalTime</DisplayName>
-    <References>
-      <Reference ReferenceType="HasTypeDefinition">i=68</Reference>
-      <Reference ReferenceType="HasModellingRule">i=80</Reference>
-      <Reference ReferenceType="HasProperty" IsForward="false">i=2041</Reference>
-    </References>
-  </UAVariable>
-  <UAVariable NodeId="i=2050" BrowseName="Message" ParentNodeId="i=2041" DataType="LocalizedText">
-    <DisplayName>Message</DisplayName>
-    <References>
-      <Reference ReferenceType="HasTypeDefinition">i=68</Reference>
-      <Reference ReferenceType="HasModellingRule">i=78</Reference>
-      <Reference ReferenceType="HasProperty" IsForward="false">i=2041</Reference>
-    </References>
-  </UAVariable>
-  <UAVariable NodeId="i=2051" BrowseName="Severity" ParentNodeId="i=2041" DataType="UInt16">
-    <DisplayName>Severity</DisplayName>
-    <References>
-      <Reference ReferenceType="HasTypeDefinition">i=68</Reference>
-      <Reference ReferenceType="HasModellingRule">i=78</Reference>
-      <Reference ReferenceType="HasProperty" IsForward="false">i=2041</Reference>
-    </References>
-  </UAVariable>
   <UAObjectType NodeId="i=2052" BrowseName="AuditEventType" IsAbstract="true">
     <DisplayName>AuditEventType</DisplayName>
     <Documentation>https://reference.opcfoundation.org/v104/Core/docs/Part5/6.4.3</Documentation>
@@ -7906,31 +7818,6 @@ bmFyeT4=</ByteString>
     </References>
     <InverseName>InterfaceOf</InverseName>
   </UAReferenceType>
-  <UAVariableType NodeId="i=2365" BrowseName="DataItemType" ValueRank="-2">
-    <DisplayName>DataItemType</DisplayName>
-    <Documentation>https://reference.opcfoundation.org/v104/Core/docs/Part8/5.3.1</Documentation>
-    <References>
-      <Reference ReferenceType="HasProperty">i=2366</Reference>
-      <Reference ReferenceType="HasProperty">i=2367</Reference>
-      <Reference ReferenceType="HasSubtype" IsForward="false">i=63</Reference>
-    </References>
-  </UAVariableType>
-  <UAVariable NodeId="i=2366" BrowseName="Definition" ParentNodeId="i=2365" DataType="String">
-    <DisplayName>Definition</DisplayName>
-    <References>
-      <Reference ReferenceType="HasTypeDefinition">i=68</Reference>
-      <Reference ReferenceType="HasModellingRule">i=80</Reference>
-      <Reference ReferenceType="HasProperty" IsForward="false">i=2365</Reference>
-    </References>
-  </UAVariable>
-  <UAVariable NodeId="i=2367" BrowseName="ValuePrecision" ParentNodeId="i=2365" DataType="Double">
-    <DisplayName>ValuePrecision</DisplayName>
-    <References>
-      <Reference ReferenceType="HasTypeDefinition">i=68</Reference>
-      <Reference ReferenceType="HasModellingRule">i=80</Reference>
-      <Reference ReferenceType="HasProperty" IsForward="false">i=2365</Reference>
-    </References>
-  </UAVariable>
   <UAVariableType NodeId="i=15318" BrowseName="BaseAnalogType" DataType="Number" ValueRank="-2">
     <DisplayName>BaseAnalogType</DisplayName>
     <Documentation>https://reference.opcfoundation.org/v104/Core/docs/Part8/5.3.2/#5.3.2.2</Documentation>
@@ -7965,22 +7852,6 @@ bmFyeT4=</ByteString>
       <Reference ReferenceType="HasProperty" IsForward="false">i=15318</Reference>
     </References>
   </UAVariable>
-  <UAVariableType NodeId="i=2368" BrowseName="AnalogItemType" DataType="Number" ValueRank="-2">
-    <DisplayName>AnalogItemType</DisplayName>
-    <Documentation>https://reference.opcfoundation.org/v104/Core/docs/Part8/5.3.2/#5.3.2.3</Documentation>
-    <References>
-      <Reference ReferenceType="HasProperty">i=2369</Reference>
-      <Reference ReferenceType="HasSubtype" IsForward="false">i=15318</Reference>
-    </References>
-  </UAVariableType>
-  <UAVariable NodeId="i=2369" BrowseName="EURange" ParentNodeId="i=2368" DataType="i=884">
-    <DisplayName>EURange</DisplayName>
-    <References>
-      <Reference ReferenceType="HasTypeDefinition">i=68</Reference>
-      <Reference ReferenceType="HasModellingRule">i=78</Reference>
-      <Reference ReferenceType="HasProperty" IsForward="false">i=2368</Reference>
-    </References>
-  </UAVariable>
   <UAVariableType NodeId="i=17570" BrowseName="AnalogUnitRangeType" DataType="Number" ValueRank="-2">
     <DisplayName>AnalogUnitRangeType</DisplayName>
     <Documentation>https://reference.opcfoundation.org/v104/Core/docs/Part8/5.3.2/#5.3.2.5</Documentation>
@@ -7995,63 +7866,6 @@ bmFyeT4=</ByteString>
       <Reference ReferenceType="HasTypeDefinition">i=68</Reference>
       <Reference ReferenceType="HasModellingRule">i=78</Reference>
       <Reference ReferenceType="HasProperty" IsForward="false">i=17570</Reference>
-    </References>
-  </UAVariable>
-  <UAVariableType NodeId="i=2372" BrowseName="DiscreteItemType" IsAbstract="true" ValueRank="-2">
-    <DisplayName>DiscreteItemType</DisplayName>
-    <Documentation>https://reference.opcfoundation.org/v104/Core/docs/Part8/5.3.3/#5.3.3.1</Documentation>
-    <References>
-      <Reference ReferenceType="HasSubtype" IsForward="false">i=2365</Reference>
-    </References>
-  </UAVariableType>
-  <UAVariableType NodeId="i=2373" BrowseName="TwoStateDiscreteType" DataType="Boolean" ValueRank="-2">
-    <DisplayName>TwoStateDiscreteType</DisplayName>
-    <Documentation>https://reference.opcfoundation.org/v104/Core/docs/Part8/5.3.3/#5.3.3.2</Documentation>
-    <References>
-      <Reference ReferenceType="HasProperty">i=2374</Reference>
-      <Reference ReferenceType="HasProperty">i=2375</Reference>
-      <Reference ReferenceType="HasSubtype" IsForward="false">i=2372</Reference>
-    </References>
-  </UAVariableType>
-  <UAVariable NodeId="i=2374" BrowseName="FalseState" ParentNodeId="i=2373" DataType="LocalizedText">
-    <DisplayName>FalseState</DisplayName>
-    <References>
-      <Reference ReferenceType="HasTypeDefinition">i=68</Reference>
-      <Reference ReferenceType="HasModellingRule">i=78</Reference>
-      <Reference ReferenceType="HasProperty" IsForward="false">i=2373</Reference>
-    </References>
-  </UAVariable>
-  <UAVariable NodeId="i=2375" BrowseName="TrueState" ParentNodeId="i=2373" DataType="LocalizedText">
-    <DisplayName>TrueState</DisplayName>
-    <References>
-      <Reference ReferenceType="HasTypeDefinition">i=68</Reference>
-      <Reference ReferenceType="HasModellingRule">i=78</Reference>
-      <Reference ReferenceType="HasProperty" IsForward="false">i=2373</Reference>
-    </References>
-  </UAVariable>
-  <UAVariableType NodeId="i=11238" BrowseName="MultiStateValueDiscreteType" DataType="Number" ValueRank="-2">
-    <DisplayName>MultiStateValueDiscreteType</DisplayName>
-    <Documentation>https://reference.opcfoundation.org/v104/Core/docs/Part8/5.3.3/#5.3.3.4</Documentation>
-    <References>
-      <Reference ReferenceType="HasProperty">i=11241</Reference>
-      <Reference ReferenceType="HasProperty">i=11461</Reference>
-      <Reference ReferenceType="HasSubtype" IsForward="false">i=2372</Reference>
-    </References>
-  </UAVariableType>
-  <UAVariable NodeId="i=11241" BrowseName="EnumValues" ParentNodeId="i=11238" DataType="i=7594" ValueRank="1" ArrayDimensions="0">
-    <DisplayName>EnumValues</DisplayName>
-    <References>
-      <Reference ReferenceType="HasTypeDefinition">i=68</Reference>
-      <Reference ReferenceType="HasModellingRule">i=78</Reference>
-      <Reference ReferenceType="HasProperty" IsForward="false">i=11238</Reference>
-    </References>
-  </UAVariable>
-  <UAVariable NodeId="i=11461" BrowseName="ValueAsText" ParentNodeId="i=11238" DataType="LocalizedText">
-    <DisplayName>ValueAsText</DisplayName>
-    <References>
-      <Reference ReferenceType="HasTypeDefinition">i=68</Reference>
-      <Reference ReferenceType="HasModellingRule">i=78</Reference>
-      <Reference ReferenceType="HasProperty" IsForward="false">i=11238</Reference>
     </References>
   </UAVariable>
   <UAVariableType NodeId="i=8995" BrowseName="TwoStateVariableType" DataType="LocalizedText">
@@ -10509,46 +10323,11 @@ bmFyeT4=</ByteString>
       <Field Name="Permissions" DataType="i=94"/>
     </Definition>
   </UADataType>
-  <UADataType NodeId="i=8912" BrowseName="TimeZoneDataType">
-    <DisplayName>TimeZoneDataType</DisplayName>
-    <Documentation>https://reference.opcfoundation.org/v104/Core/docs/Part3/8.28</Documentation>
-    <References>
-      <Reference ReferenceType="HasSubtype" IsForward="false">i=22</Reference>
-    </References>
-    <Definition Name="TimeZoneDataType">
-      <Field Name="Offset" DataType="i=4"/>
-      <Field Name="DaylightSavingInOffset" DataType="i=1"/>
-    </Definition>
-  </UADataType>
   <UADataType NodeId="i=291" BrowseName="NumericRange">
     <DisplayName>NumericRange</DisplayName>
     <Documentation>https://reference.opcfoundation.org/v104/Core/docs/Part4/7.22</Documentation>
     <References>
       <Reference ReferenceType="HasSubtype" IsForward="false">i=12</Reference>
     </References>
-  </UADataType>
-  <UADataType NodeId="i=884" BrowseName="Range">
-    <DisplayName>Range</DisplayName>
-    <Documentation>https://reference.opcfoundation.org/v104/Core/docs/Part8/5.6.2</Documentation>
-    <References>
-      <Reference ReferenceType="HasSubtype" IsForward="false">i=22</Reference>
-    </References>
-    <Definition Name="Range">
-      <Field Name="Low" DataType="i=11"/>
-      <Field Name="High" DataType="i=11"/>
-    </Definition>
-  </UADataType>
-  <UADataType NodeId="i=887" BrowseName="EUInformation">
-    <DisplayName>EUInformation</DisplayName>
-    <Documentation>https://reference.opcfoundation.org/v104/Core/docs/Part8/5.6.3</Documentation>
-    <References>
-      <Reference ReferenceType="HasSubtype" IsForward="false">i=22</Reference>
-    </References>
-    <Definition Name="EUInformation">
-      <Field Name="NamespaceUri" DataType="i=12"/>
-      <Field Name="UnitId" DataType="i=6"/>
-      <Field Name="DisplayName" DataType="i=21"/>
-      <Field Name="Description" DataType="i=21"/>
-    </Definition>
   </UADataType>
   </UANodeSet>
