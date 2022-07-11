@@ -1,6 +1,6 @@
 /* THIS IS A SINGLE-FILE DISTRIBUTION CONCATENATED FROM THE OPEN62541 SOURCES
  * visit http://open62541.org/ for information about this software
- * Git-Revision: v1.3.2-freertos
+ * Git-Revision: v1.3.2-freertos-3-g7921fa16-dirty
  */
 
 /*
@@ -31,9 +31,9 @@
 #define UA_OPEN62541_VER_MAJOR 1
 #define UA_OPEN62541_VER_MINOR 3
 #define UA_OPEN62541_VER_PATCH 2
-#define UA_OPEN62541_VER_LABEL "-freertos" /* Release candidate label, etc. */
-#define UA_OPEN62541_VER_COMMIT "v1.3.2-freertos"
-#define UA_OPEN62541_VERSION "v1.3.2-freertos"
+#define UA_OPEN62541_VER_LABEL "-freertos-3-g7921fa16-dirty" /* Release candidate label, etc. */
+#define UA_OPEN62541_VER_COMMIT "v1.3.2-freertos-3-g7921fa16-dirty"
+#define UA_OPEN62541_VERSION "v1.3.2-freertos-3-g7921fa16-dirty"
 
 /**
  * Feature Options
